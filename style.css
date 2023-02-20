@@ -1,5 +1,5 @@
 body{
- background-color: darkturquoise;
+ background-color: white;
  font-family: Arial, Helvetica, sans-serif;
 
 }
@@ -14,23 +14,34 @@ table, th, tr{
 
 }
 nav{
-    font-size: x-large;
-    text-align: center;
-    background: chartreuse;
+
+    background: black;
     margin:-6pt ;
     padding-top: 10pt;
 
 }
+
 nav ul{
+    padding-left: 100pt;
+}
+.logo{
+alignment: left;
+    position: absolute;
 
 }
-label.logo{
-
-
+label.szoveg{
+    color: white;
+    alignment: left;
+    font-weight: bold;
 }
 nav ul li{
+
     display: inline-block;
     padding-bottom: 5pt;
+    font-size: x-large;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
 }
 .center {
     margin-left: auto;
@@ -38,7 +49,7 @@ nav ul li{
 }
 
 a{
-    color: black;
+    color: white;
     text-decoration: none;
     padding: 20pt;
 
