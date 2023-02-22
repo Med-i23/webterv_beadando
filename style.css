@@ -20,6 +20,9 @@ nav{
     padding-top: 10pt;
 
 }
+nav a:hover {                                   /* Ha egy navigációs link fölé visszük a kurzort, akkor a link háttere sötétzöldre változik */
+    background-color: dimgrey;
+}
 
 nav ul{
     padding-left: 100pt;
