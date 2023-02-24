@@ -1,16 +1,18 @@
-body{
- background-color: white;
- font-family: Arial, Helvetica, sans-serif;
+@font-face {
+    font-family: ErgoDefault;
+    src: url("sources/Heavitas.ttf");
+}
+
+*{
+    font-family: ErgoDefault;
 
 }
 
-table, th, tr{
-    align-items: center;
-    padding: 10pt;
-    border: 1pt solid;
-    background-image: url("sources/table_background.jpg");
-    height: 20pt;
-    width: 800pt;
+body{
+    background-color: white;
+ /*font-family: Arial, Helvetica, sans-serif;*/
+    /*background-image: url("sources/");*/
+
 
 }
 nav{
@@ -20,23 +22,14 @@ nav{
     padding-top: 10pt;
 
 }
-nav a:hover {                                   /* Ha egy navigációs link fölé visszük a kurzort, akkor a link háttere sötétzöldre változik */
-    background-color: dimgrey;
+nav a:hover {
+    background-color: gray;
 }
 
 nav ul{
     padding-left: 100pt;
 }
-.logo{
-alignment: left;
-    position: absolute;
 
-}
-label.szoveg{
-    color: white;
-    alignment: left;
-    font-weight: bold;
-}
 nav ul li{
 
     display: inline-block;
@@ -46,10 +39,33 @@ nav ul li{
     text-transform: uppercase;
     text-align: center;
 }
+
+table, th, tr{
+    align-items: center;
+    padding: 10pt;
+    border: 1pt solid;
+    height: 20pt;
+    width: 800pt;
+
+}
+
+.logo{
+    alignment: left;
+    position: absolute;
+
+}
+
 .center {
     margin-left: auto;
     margin-right: auto;
 }
+
+label.szoveg{
+    color: white;
+    alignment: left;
+    font-weight: bold;
+}
+
 
 a{
     color: white;
@@ -57,3 +73,9 @@ a{
     padding: 20pt;
 
 }
+
+footer{
+    align-self: center;
+
+}
+
