@@ -16,15 +16,18 @@ body{
 
 }
 nav{
-
     background: black;
     margin:-6pt ;
     padding-top: 10pt;
-
+    position: fixed;
+    height: 80pt;
+   width: 10000pt
 }
 nav a:hover {
     background-color: gray;
+
 }
+
 
 nav ul{
     padding-left: 100pt;
@@ -39,6 +42,16 @@ nav ul li{
     text-transform: uppercase;
     text-align: center;
 }
+header{
+position: fixed;
+    margin: 10pt 200pt;
+    color: white;
+}
+main{
+   padding: 100pt 0pt;
+}
+
+
 
 table, th, tr{
     align-items: center;
@@ -70,12 +83,12 @@ label.szoveg{
 a{
     color: white;
     text-decoration: none;
-    padding: 20pt;
+    padding:0pt 20pt ;
 
 }
 
 footer{
-    align-self: center;
+
 
 }
 
