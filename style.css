@@ -24,10 +24,16 @@ nav{
     height: 80pt;
    width: 10000pt
 }
-a:hover {
+nav a{
+    transition: 1s;
+}
+nav a:hover {
     background-color: gray;
-     transform: scale(200%);
+     transform: scale(120%);
     border-radius: 30pt;
+    display: block;
+    color: turquoise;
+
 }
 
 
