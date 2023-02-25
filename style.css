@@ -5,6 +5,7 @@
 
 *{
     font-family: ErgoDefault;
+    scroll-behavior: smooth;
 
 }
 
@@ -64,6 +65,7 @@ div > img{
     width: 300pt;
     margin: 0pt 200pt;
     border-radius: 300pt;
+    position: page;
 }
 section{
 
