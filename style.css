@@ -24,9 +24,10 @@ nav{
     height: 80pt;
    width: 10000pt
 }
-nav a:hover {
+a:hover {
     background-color: gray;
-
+     transform: scale(200%);
+    border-radius: 30pt;
 }
 
 
@@ -35,7 +36,6 @@ nav ul{
 }
 
 nav ul li{
-
     display: inline-block;
     padding-bottom: 5pt;
     font-size: x-large;
@@ -57,7 +57,7 @@ main{
 div > img{
     width: 300pt;
     margin: 0pt 200pt;
-
+    border-radius: 300pt;
 }
 section{
 
@@ -100,7 +100,7 @@ label.szoveg{
 a{
     color: white;
     text-decoration: none;
-    padding:0pt 20pt ;
+    padding:0pt 20pt;
 
 }
 
