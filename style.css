@@ -10,8 +10,9 @@
 
 body{
     background-color: white;
- /*font-family: Arial, Helvetica, sans-serif;*/
-    /*background-image: url("sources/");*/
+ /*font-family: Arial, Helvetica, sans-serif;
+    background-image: url("sources/backgroundtemp.png");
+    background-repeat: repeat;*/
 
 
 }
@@ -43,15 +44,31 @@ nav ul li{
     text-align: center;
 }
 header{
-position: fixed;
-    margin: 10pt 200pt;
+    position: fixed;
+    margin: 10pt 290pt;
     color: white;
 }
 main{
    padding: 100pt 0pt;
 }
+.picture{
 
+}
+div > img{
+    width: 300pt;
+    margin: 0pt 200pt;
 
+}
+section{
+
+}
+
+article{
+    margin: 0pt 100pt;
+    align-content: center;
+    text-align: justify;
+
+}
 
 table, th, tr{
     align-items: center;
@@ -92,7 +109,12 @@ a.twitch{
 }
 
 footer{
-
+    text-align: center ;
+    background: lightgray;
+    vertical-align: center;
+    horiz-align: center;
+    padding: 0pt;
+    margin: -6pt;
 
 }
 
