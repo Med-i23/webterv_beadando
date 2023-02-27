@@ -5,12 +5,11 @@
 
 *{
     font-family: ErgoDefault;
-    scroll-behavior: smooth;
 
 }
 
 body{
-    background-color: white;
+    background-color: #FAF9F6;
  /*font-family: Arial, Helvetica, sans-serif;
     background-image: url("sources/backgroundtemp.png");
     background-repeat: repeat;*/
@@ -24,9 +23,11 @@ nav{
     position: fixed;
     height: 80pt;
    width: 10000pt
+
 }
 nav a{
     transition: 1s;
+
 }
 nav a:hover {
     background-color: gray;
@@ -36,7 +37,6 @@ nav a:hover {
     color: turquoise;
 
 }
-
 
 nav ul{
     padding-left: 100pt;
@@ -50,23 +50,50 @@ nav ul li{
     text-transform: uppercase;
     text-align: center;
 }
-header{
-    position: fixed;
-    margin: 10pt 290pt;
-    color: white;
+h1{
+    padding: 100pt 0pt 20pt;
+    margin: 0pt 100pt;
+    font-size: x-large;
+    border-style: solid;
+
+
+}
+h1::first-letter{
+
+}
+.h1imitator{
+    padding: 100pt 0pt 20pt;
+    margin: 0pt -6.2pt -2pt;
+    font-size: x-large;
+    border-style: solid;
+    background-color: turquoise;
+    text-align: center;
+    display: block;
+}
+p::before{
+    content:"";
+    display: block;
+    background:turquoise;
+    height: 10pt;
+}
+p::after{
+    content:"";
+    display: block;
+    background:turquoise;
+    height: 10pt;
 }
 main{
-   padding: 100pt 0pt;
+   padding: 50pt 0pt 20pt;
+    margin: 0pt 100pt;
+    align-content: center;
+    text-align: justify;
+    border-style: solid;
+
 }
 .picture{
 
 }
-div > img{
-    width: 300pt;
-    margin: 0pt 200pt;
-    border-radius: 300pt;
-    position: page;
-}
+
 section{
 
 }
@@ -122,8 +149,43 @@ footer{
     vertical-align: center;
     horiz-align: center;
     padding: 0pt;
-    margin: -6pt;
-
+    margin: -2pt -6pt -6pt -6pt;
+    border-style: solid;
+}
+div > img{
+    width: 300pt;
+    align-content: center;
+    border-radius: 300pt;
+    float: top;
+    position: static;
+    animation: hehe 1s forwards;
 }
 
+@keyframes hehe {
+    0%{
+      transform: translateX(0pt);
+    }
+    100%{
+        transform: translateX(150pt);
+    }
+}
+
+/*preview::hover<-arnyek*/
+@media print{
+    nav,header,footer,img{
+        display: none;
+    }
+    label.szoveg{
+        display: none;
+    }
+    article,section{
+        margin: 100pt;
+    }
+    h1,h1::first-letter{
+        margin: 0pt;
+        padding: 0pt;
+        font-size: 25pt;
+        text-align: center;
+    }
+}
 
