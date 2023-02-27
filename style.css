@@ -10,9 +10,9 @@
 
 body{
     background-color: #FAF9F6;
- /*font-family: Arial, Helvetica, sans-serif;
-    background-image: url("sources/backgroundtemp.png");
-    background-repeat: repeat;*/
+    /*font-family: Arial, Helvetica, sans-serif;
+       background-image: url("sources/backgroundtemp.png");
+       background-repeat: repeat;*/
 
 
 }
@@ -22,7 +22,8 @@ nav{
     padding-top: 10pt;
     position: fixed;
     height: 80pt;
-   width: 10000pt
+    width: 10000pt;
+    z-index:20;
 
 }
 nav a{
@@ -31,7 +32,7 @@ nav a{
 }
 nav a:hover {
     background-color: gray;
-     transform: scale(120%);
+    transform: scale(120%);
     border-radius: 30pt;
     display: block;
     color: turquoise;
@@ -49,6 +50,7 @@ nav ul li{
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
+
 }
 h1{
     padding: 100pt 0pt 20pt;
@@ -83,7 +85,7 @@ p::after{
     height: 10pt;
 }
 main{
-   padding: 50pt 0pt 20pt;
+    padding: 50pt 0pt 20pt;
     margin: 0pt 100pt;
     align-content: center;
     text-align: justify;
@@ -157,13 +159,14 @@ div > img{
     align-content: center;
     border-radius: 300pt;
     float: top;
-    position: static;
-    animation: hehe 1s forwards;
+    z-index: 1;
+    animation: hehe 3s forwards;
 }
 
 @keyframes hehe {
     0%{
-      transform: translateX(0pt);
+        transform: translateX(-1000pt);
+
     }
     100%{
         transform: translateX(150pt);
@@ -188,6 +191,4 @@ div > img{
         text-align: center;
     }
 }
-
-
 
