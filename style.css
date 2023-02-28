@@ -43,7 +43,7 @@ nav ul{
     padding-left: 100pt;
 }
 
-nav ul li{
+nav ul li:not(#loginreg){
     display: inline-block;
     padding-bottom: 5pt;
     font-size: x-large;
@@ -52,6 +52,7 @@ nav ul li{
     text-align: center;
 
 }
+
 h1{
     padding: 100pt 0pt 20pt;
     margin: 0pt 100pt;
@@ -162,13 +163,16 @@ div > img{
     z-index: 1;
     animation: hehe 3s forwards;
 }
-section > img {
+section > img:not(#cspic) {
     width: 300pt;
     align-content: center;
     border-radius: 30pt;
     float: top;
     z-index: 1;
-
+    height: 100pt;
+    width: auto;
+}
+#cspic{
 
 }
 
