@@ -162,6 +162,16 @@ div > img{
     z-index: 1;
     animation: hehe 3s forwards;
 }
+section > img {
+    width: 300pt;
+    align-content: center;
+    border-radius: 30pt;
+    float: top;
+    z-index: 1;
+
+
+}
+
 
 @keyframes hehe {
     0%{
@@ -182,7 +192,10 @@ div > img{
         display: none;
     }
     article,section{
-        margin: 100pt;
+        margin:0pt 20pt;
+    }
+    main{
+        margin: 0pt;
     }
     h1,h1::first-letter{
         margin: 0pt;
@@ -190,5 +203,15 @@ div > img{
         font-size: 25pt;
         text-align: center;
     }
+    .h1imitator{
+        padding: 0pt 0pt 20pt;
+        margin: 100pt -6.2pt -2pt;
+        font-size: x-large;
+        border-style: solid;
+        background-color: turquoise;
+        text-align: center;
+        display: block;
+    }
+
 }
 
