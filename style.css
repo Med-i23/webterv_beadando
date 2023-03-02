@@ -185,8 +185,8 @@ section > img:not(#cspic,#valopic) {
     width: 300pt;
     align-content: center;
     border-radius: 30pt;
-    float: top;
-    clear: top;
+    float: right;
+    clear: right;
     z-index: 1;
     height: 100pt;
     width: auto;
