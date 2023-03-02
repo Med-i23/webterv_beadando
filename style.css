@@ -91,7 +91,7 @@ article{
     text-align: justify;
 
 }
-table, th, tr{
+table, th,td, tr{
     align-items: center;
     padding: 10pt;
     border: 1pt solid;
@@ -107,6 +107,7 @@ table, th, tr{
 section{
 
 }
+
 
 td.cancelled{
     color: red;
