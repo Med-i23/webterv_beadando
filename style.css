@@ -7,7 +7,6 @@
     font-family: ErgoDefault;
 
 }
-
 body{
     background-color: #FAF9F6;
     /*font-family: Arial, Helvetica, sans-serif;
@@ -52,18 +51,6 @@ nav ul li{
 
 }
 
-
-h1{
-    padding: 100pt 0pt 20pt;
-    margin: 0pt 100pt;
-    font-size: x-large;
-    border-style: solid;
-
-
-}
-h1::first-letter{
-
-}
 .h1imitator{
     padding: 100pt 0pt 20pt;
     margin: 0pt -6.2pt -2pt;
@@ -72,18 +59,22 @@ h1::first-letter{
     background-color: turquoise;
     text-align: center;
     display: block;
+
 }
+
 p::before{
     content:"";
     display: block;
     background:turquoise;
     height: 10pt;
+
 }
 p::after{
     content:"";
     display: block;
     background:turquoise;
     height: 10pt;
+
 }
 main{
     padding: 50pt 0pt 20pt;
@@ -93,14 +84,6 @@ main{
     border-style: solid;
 
 }
-.picture{
-
-}
-
-section{
-
-}
-
 article{
     margin-left: 2%;
     margin-right: 2%;
@@ -108,7 +91,6 @@ article{
     text-align: justify;
 
 }
-
 table, th, tr{
     align-items: center;
     padding: 10pt;
@@ -117,6 +99,23 @@ table, th, tr{
     width: 800pt;
 
 }
+th.cancelled{
+    color: red;
+}
+
+img.tablelogo{
+    width: 40px;
+    float: left;
+}
+
+.picture{
+
+}
+
+section{
+
+}
+
 
 th.cancelled{
     color: red;
@@ -165,13 +164,14 @@ footer{
     margin: -2pt -6pt -6pt -6pt;
     border-style: solid;
 }
+/*Képek leginkább*/
 div > img{
     width: 300pt;
     align-content: center;
     border-radius: 300pt;
     float: top;
     z-index: 1;
-    animation: hehe 3s forwards;
+    animation: hehe 1s forwards;
 }
 
 section > img:not(#cspic,#valopic) {
@@ -191,6 +191,8 @@ img:is(#accpic){
     height: 0%;
     width: auto;
 }
+
+/* Űrlap és dolgai nagyrészt*/
 #form{
     margin: 50pt 100pt 20pt;
 }
@@ -238,18 +240,35 @@ input[type="reset"]{
    color: red;
 
 }
+#login-signup{
+    position: absolute;
+    right: 7%;
+    top: 35%;
+}
+#login{
+    position: fixed;
+    right: 2.25%;
+}
 
+/*Animációk*/
 @keyframes hehe {
     0%{
-        transform: translateX(-1000pt);
+        transform: translateX(-1000pt)rotate(180deg);
+
+
+    }
+    50%{
 
     }
     100%{
-        transform: translateX(150pt);
+        transform: rotate(360deg) translateX(150pt);
+
     }
 }
 
 /*preview::hover<-arnyek*/
+
+/*Nyomtatási stíluslap*/
 @media print{
     nav,header,footer,img,label.szoveg{
         display: none;
