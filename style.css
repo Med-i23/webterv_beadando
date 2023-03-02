@@ -99,6 +99,10 @@ table, th,td, tr{
     width: 800pt;
 
 }
+td[rowspan="3"] {
+    text-align: center;
+    font-size: 30pt;
+}
 
 .picture{
 
