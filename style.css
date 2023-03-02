@@ -118,6 +118,15 @@ table, th, tr{
 
 }
 
+th.cancelled{
+    color: red;
+}
+
+img.tablelogo{
+    width: 40px;
+    float: left;
+}
+
 .logo{
     alignment: left;
     position: absolute;
@@ -193,6 +202,9 @@ fieldset{
     border: 2pt solid ;
     text-shadow:3px 3px turquoise;
 }
+
+
+
 input{
     border: 2pt solid ;
 }
