@@ -22,13 +22,12 @@ nav{
     padding-top: 10pt;
     position: fixed;
     height: 80pt;
-    width: 10000pt;
+    width: 100%;
     z-index:20;
 
 }
 nav a{
     transition: 1s;
-
 }
 nav a:hover {
     background-color: gray;
@@ -43,7 +42,7 @@ nav ul{
     padding-left: 100pt;
 }
 
-nav ul li:not(#loginreg){
+nav ul li{
     display: inline-block;
     padding-bottom: 5pt;
     font-size: x-large;
@@ -52,6 +51,7 @@ nav ul li:not(#loginreg){
     text-align: center;
 
 }
+
 
 h1{
     padding: 100pt 0pt 20pt;
@@ -102,7 +102,8 @@ section{
 }
 
 article{
-    margin: 0pt 100pt;
+    margin-left: 2%;
+    margin-right: 2%;
     align-content: center;
     text-align: justify;
 
@@ -163,7 +164,8 @@ div > img{
     z-index: 1;
     animation: hehe 3s forwards;
 }
-section > img:not(#cspic) {
+
+section > img:not(#cspic,#valopic) {
     width: 300pt;
     align-content: center;
     border-radius: 30pt;
@@ -172,10 +174,58 @@ section > img:not(#cspic) {
     height: 100pt;
     width: auto;
 }
-#cspic{
+img:is(#accpic){
+    margin: 0;
+    position: absolute;
+}
+#cspic #valopic{
+    height: 0%;
+    width: auto;
+}
+#form{
+    margin: 50pt 100pt 20pt;
+}
+fieldset{
+    display: grid;
+    grid-gap: 5pt;
+    padding: 0 100pt 10pt;
+    margin: 0pt 100pt;
+    border: 2pt solid ;
+    text-shadow:3px 3px turquoise;
+}
+input{
+    border: 2pt solid ;
+}
+legend{
+    text-align: center;
+}
+fieldset > label{
 
 }
+strong{
+    font-size: 30pt;
+}
+.required-label::after{
+    content: "*";
+    color: red;
+}
+.buttons{
+    display: grid;
+    grid-gap: 5pt;
+    align-content: center;
+    padding: 10pt 500pt;
 
+}
+input[type="submit"]{
+    background-color: black;
+   color: turquoise;
+
+}
+input[type="reset"]{
+    background-color: black;
+   color: red;
+
+}
 
 @keyframes hehe {
     0%{
@@ -189,12 +239,10 @@ section > img:not(#cspic) {
 
 /*preview::hover<-arnyek*/
 @media print{
-    nav,header,footer,img{
+    nav,header,footer,img,label.szoveg{
         display: none;
     }
-    label.szoveg{
-        display: none;
-    }
+
     article,section{
         margin:0pt 20pt;
     }
