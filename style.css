@@ -99,14 +99,6 @@ table, th, tr{
     width: 800pt;
 
 }
-th.cancelled{
-    color: red;
-}
-
-img.tablelogo{
-    width: 40px;
-    float: left;
-}
 
 .picture{
 
@@ -115,7 +107,6 @@ img.tablelogo{
 section{
 
 }
-
 
 th.cancelled{
     color: red;
@@ -144,11 +135,16 @@ label.szoveg{
 }
 
 
-a{
+a {
     color: white;
     text-decoration: none;
     padding:0pt 20pt;
 
+}
+#login-signup-pic-link{
+    position: absolute;
+    right: 7%;
+    top: 35%;
 }
 
 a.twitch{
@@ -205,8 +201,6 @@ fieldset{
     text-shadow:3px 3px turquoise;
 }
 
-
-
 input{
     border: 2pt solid ;
 }
@@ -240,7 +234,7 @@ input[type="reset"]{
    color: red;
 
 }
-#login-signup{
+#login-signup-pic{
     position: absolute;
     right: 7%;
     top: 35%;
