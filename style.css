@@ -170,6 +170,12 @@ div > img{
     animation: hehe 1s forwards;
 }
 
+.shopitem{
+    background: lightgray;
+    border-right: 0pt;
+    border-style: solid;
+}
+
 section > img:not(#cspic,#valopic) {
     width: 300pt;
     align-content: center;
