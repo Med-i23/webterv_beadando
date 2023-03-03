@@ -91,14 +91,13 @@ article{
     text-align: justify;
 
 }
-
-
-table,th,td, tr{
+table, th,td, tr{
     align-items: center;
     padding: 10pt;
     border: 1pt solid;
     height: 20pt;
     width: 800pt;
+
 }
 td[rowspan="3"] {
     text-align: center;
