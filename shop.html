@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="sources/favicon.ico">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
     <title>Ergo Inc.</title>
 </head>
 <body>
@@ -26,7 +27,15 @@
         </nav>
     </header>
     <div class="h1imitator">SHOP</div>
+
     <main>
+        <audio autoplay controls loop id="music" >
+            <source src="sources/Rockin'%20Robin.mp3" type="audio/mp3">
+        </audio>
+        <script>
+            var audio = document.getElementById("music");
+            audio.volume = 0.06;
+        </script>
         <section class="shopitem">
             <img src="sources/blackshirt.png" alt="blackshirt"><br>
             Black T-shirt (men) <br>
