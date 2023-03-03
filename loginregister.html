@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="hu">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -32,10 +32,9 @@
             <fieldset>
                 <legend><strong>Login</strong></legend>
                 <label for="e-mail" class="required-label">E-mail:</label>
-                <input type="email" name="e-mail" id="e-mail" required>
-                <label for="password" class="required-label">Password:</label>
-                <input type="text" name="password" id="password" required>
-
+                <input type="email" name="e-mail" id="e-mail" placeholder="cat.tits@garden.meow" maxlength="40" required>
+                <label for="login-password" class="required-label">Password:</label>
+                <input type="password" name="login-password" id="login-password" placeholder="password" minlength="8" maxlength="20" autocomplete="on" required>
             </fieldset>
             <div class="buttons">
                 <input type="submit" value="Login">
@@ -44,6 +43,16 @@
         <form>
             <fieldset>
                 <legend>SingUp</legend>
+                <label for="sign-up-password" class="required-label">Password must contain:</label>
+                <ul>
+                    <li>small,</li>
+                    <li>capital letter,</li>
+                    <li>number,</li>
+                    <li>special character,</li>
+                    <li>at least 8 characters</li>
+                </ul>
+
+                <input type="password" name="sign-up-password" id="sign-up-password" placeholder="Pu$sy69!" minlength="8" maxlength="20" autocomplete="on" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\|\]\[\(\)\-<>]).{8,}" required>
 
 
 
