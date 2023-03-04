@@ -2,19 +2,22 @@
     font-family: ErgoDefault;
     src: url("sources/Heavitas.ttf");
 }
-
+:root{
+    --offwhite:#FAF9F6;
+}
 *{
     font-family: ErgoDefault;
+    /*outline: 1px solid #f00 !important;*//*overflow debugger*/
 
 }
 body{
-    background-color: #FAF9F6;
+    background-color: var(--offwhite);
     /*font-family: Arial, Helvetica, sans-serif;
        background-image: url("sources/backgroundtemp.png");
        background-repeat: repeat;*/
 
-
 }
+
 nav{
     background: black;
     margin:-6pt ;
@@ -220,6 +223,9 @@ fieldset{
 input{
     border: 2pt solid ;
 }
+#subscribe{
+    width: fit-content;
+}
 legend{
     text-align: center;
 }
@@ -237,17 +243,17 @@ strong{
     display: grid;
     grid-gap: 5pt;
     align-content: center;
-    padding: 10pt 500pt;
+    padding: 10pt 300pt;
 
 }
 input[type="submit"]{
     background-color: black;
-   color: turquoise;
+    color: turquoise;
 
 }
 input[type="reset"]{
     background-color: black;
-   color: red;
+    color: red;
 
 }
 #login-signup-pic{
