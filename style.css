@@ -265,12 +265,12 @@ input[type="reset"]{
     position: fixed;
     right: 2.25%;
 }
-@media (max-width: 659.5pt ) {
+@media (max-width: 655.5pt ) {
     .h1imitator {
         padding: 130pt 0pt 20pt;
     }
 }
-@media (max-width: 450pt ) {
+@media (max-width: 446pt ) {
     .h1imitator {
         padding: 160pt 0pt 20pt;
     }
