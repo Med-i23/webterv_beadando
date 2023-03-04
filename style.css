@@ -15,7 +15,8 @@ body{
     /*font-family: Arial, Helvetica, sans-serif;
        background-image: url("sources/backgroundtemp.png");
        background-repeat: repeat;*/
-
+    word-break: break-word;
+    hyphens: auto;
 }
 
 nav{
@@ -268,12 +269,6 @@ input[type="reset"]{
 audio{
     width: 50%;
 }
-@media (max-width: 659.5pt ) {
-    .h1imitator {
-        padding: 120pt 0pt 20pt;
-    }
-}
-
 @media (max-width: 655.5pt ) {
     .h1imitator {
         padding: 130pt 0pt 20pt;
