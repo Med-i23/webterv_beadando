@@ -267,12 +267,12 @@ input[type="reset"]{
 }
 @media (max-width: 659.5pt ) {
     .h1imitator {
-        padding: 120pt 0pt 20pt;
+        padding: 130pt 0pt 20pt;
     }
 }
-@media (max-width: 300pt ) {
+@media (max-width: 450pt ) {
     .h1imitator {
-        padding: 120pt 0pt 20pt;
+        padding: 160pt 0pt 20pt;
     }
 }
 
