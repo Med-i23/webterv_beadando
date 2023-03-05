@@ -113,6 +113,9 @@ table, th,td, tr{
     table-layout: fixed;
 
 }
+thead{
+    font-size: 14pt;
+}
 
 .picture{
     max-width: 400px;
