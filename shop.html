@@ -26,15 +26,31 @@
         </nav>
     </header>
     <div class="h1imitator">SHOP</div>
+   <div onclick="look()" id="do-not-mind-me"></div>
 
     <main>
         <p>You can listen shopping music if you want to:</p>
         <audio controls loop id="music">
             <source src="sources/Rockin'%20Robin.mp3" type="audio/mp3">
         </audio>
-        <script>
+        <script type="text/javascript">
             var audio = document.getElementById("music");
             audio.volume = 0.06;
+            var dance = document.getElementById("do-not-mind-me");
+            var click=0;
+            function look() {
+                click+=1;
+
+                if(click===2){
+                    click=0;
+                    dance.classList.add("back-to")
+                    dance.classList.remove("dot-dance")
+                }else {
+                    dance.classList.add("dot-dance")
+                    dance.classList.remove("back-to")
+                }
+            }
+
 
         </script>
         <section class="shopitem">

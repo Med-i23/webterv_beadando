@@ -17,6 +17,11 @@ body{
        background-repeat: repeat;*/
     word-break: break-word;
     hyphens: auto;
+   animation: fader 1s forwards ease-in;
+
+}
+script{
+    display: none;
 }
 
 nav{
@@ -28,6 +33,7 @@ nav{
     height: fit-content;
     width: 100%;
     z-index:20;
+    animation: downe 1s forwards;
 
 }
 nav a{
@@ -46,13 +52,14 @@ nav ul{
     padding-left: 100pt;
 }
 
-nav ul li{
+nav ul li {
     display: inline-block;
     padding-bottom: 5pt;
     font-size: x-large;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
+    animation: downe 1s forwards;
 
 }
 
@@ -96,22 +103,20 @@ article{
     text-align: justify;
 
 }
+
 table, th,td, tr{
     align-items: center;
     padding: 10pt;
     border: 1pt solid;
     height: 20pt;
-    width: 800pt;
+    width: 100%;
+    table-layout: fixed;
 
-
-}
-td[rowspan="3"] {
-    text-align: center;
-    font-size: 30pt;
 }
 
 .picture{
-
+    max-width: 400px;
+    max-height: 400px;
 }
 
 section{
@@ -124,8 +129,10 @@ td.cancelled{
 }
 
 img.tablelogo{
-    width: 40px;
+    width: 30%;
     float: left;
+    clear: top;
+    max-width: 40pt;
 }
 
 .logo{
@@ -178,6 +185,7 @@ div > img{
     border-radius: 300pt;
     z-index: 1;
     animation: hehe 1s forwards;
+
 }
 
 .shopitem{
@@ -268,6 +276,35 @@ input[type="reset"]{
 }
 audio{
     width: 50%;
+    background: transparent;
+}
+#do-not-mind-me{
+    display: block;
+    background-color: black;
+    height:  30pt;
+    width: 30pt;
+    border-radius: 50%;
+    margin: 30pt ;
+    position: absolute;
+
+}
+
+
+/*idk man*/
+.dot-dance{
+    animation: dancing 1s forwards;
+
+}
+.back-to{
+    animation: back-dancing 1s forwards;
+
+}
+
+/*trick*/
+@media (max-width: 659.5pt ) {
+    .h1imitator {
+        padding: 120pt 0pt 20pt;
+    }
 }
 @media (max-width: 655.5pt ) {
     .h1imitator {
@@ -280,6 +317,13 @@ audio{
         padding: 160pt 0pt 20pt;
     }
 }
+/*1200+*/
+@media (max-width: 1200px ) {
+    article{
+        font-size: 80%;
+    }
+}
+
 
 /*Animációk*/
 @keyframes hehe {
@@ -288,11 +332,45 @@ audio{
 
 
     }
-    50%{
 
-    }
     100%{
         transform: rotate(360deg) translateX(45%);
+
+    }
+}
+
+@keyframes dancing {
+    0%{
+
+    }
+
+    100%{
+        transform: translateY(1900%);
+    }
+
+}
+@keyframes back-dancing {
+    0%{
+        transform:translateY(1900%);
+    }
+
+}
+@keyframes downe {
+    0%{
+        transform: translateY(-200pt);
+    }
+    100%{
+
+    }
+}
+@keyframes fader {
+    0%{
+        opacity: 0;
+        color: var(--offwhite);
+        background-color: black;
+    }
+    100%{
+        opacity: 1;
 
     }
 }
@@ -301,7 +379,7 @@ audio{
 
 /*Nyomtatási stíluslap*/
 @media print{
-    nav,header,footer,img,label.szoveg{
+    nav,header,footer,img,audio,video,label.szoveg{
         display: none;
     }
 
