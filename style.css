@@ -10,6 +10,9 @@
     /*outline: 1px solid #f00 !important;*//*overflow debugger*/
 
 }
+html{
+    scroll-behavior: smooth;
+}
 body{
     background-color: var(--offwhite);
     /*font-family: Arial, Helvetica, sans-serif;
@@ -17,7 +20,7 @@ body{
        background-repeat: repeat;*/
     word-break: break-word;
     hyphens: auto;
-   animation: fader 1s forwards ease-in;
+    animation: fader 1s forwards ease-in;
 
 }
 script{
@@ -71,6 +74,7 @@ nav ul li {
     background-color: turquoise;
     text-align: center;
     display: block;
+    position: static;
 
 }
 
@@ -184,13 +188,18 @@ footer{
 /*Képek leginkább*/
 div > img{
     width: 35%;
+    margin-left: -1000pt;
     align-content: center;
     border-radius: 300pt;
     z-index: 1;
-    animation: hehe 1s forwards;
 
 }
-
+img[alt="valorantchallengers"]{
+    animation: hehe 1s forwards 3s alternate;
+}
+[alt="csgo"]{
+    animation: hehe 1s forwards ;
+}
 .shopitem{
     background: lightgray;
     border-right: 0pt;
@@ -279,19 +288,23 @@ input[type="reset"]{
 }
 audio{
     width: 50%;
-    background: transparent;
+}
+p:is(.marker)::grammar-error{
+    color: red;
 }
 #do-not-mind-me{
     display: block;
-    background-color: black;
-    height:  30pt;
-    width: 30pt;
+    height:  7%;
+    width: 1pt;
     border-radius: 50%;
-    margin: 30pt ;
-    position: absolute;
+    margin: 1% ;
+    position: fixed;
 
 }
-
+img[alt="arrow"]{
+    height: 100%;
+    width: 30pt;
+}
 
 /*idk man*/
 .dot-dance{
@@ -331,13 +344,13 @@ audio{
 /*Animációk*/
 @keyframes hehe {
     0%{
-        transform: translateX(-1000pt)rotate(180deg);
+        transform:rotate(180deg);
 
 
     }
 
     100%{
-        transform: rotate(360deg) translateX(45%);
+        transform: translateX(1000pt);
 
     }
 }
@@ -346,16 +359,19 @@ audio{
     0%{
 
     }
+    99%{
 
+    }
     100%{
-        transform: translateY(1900%);
+        transform: rotateX(180deg) translateY(100%);
     }
 
 }
 @keyframes back-dancing {
-    0%{
-        transform:translateY(1900%);
+    0% {
+        transform:rotateX(180deg) translateY(100%);
     }
+
 
 }
 @keyframes downe {

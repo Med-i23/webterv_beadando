@@ -25,12 +25,12 @@
             </ul>
         </nav>
     </header>
-    <div class="h1imitator">SHOP</div>
-   <div onclick="look()" id="do-not-mind-me"></div>
+    <div id="header" class="h1imitator">SHOP</div>
+   <a onclick="look()" id="do-not-mind-me"><img src="sources/arrow-down.png" alt="arrow"></a>
 
     <main>
-        <p>You can listen shopping music if you want to:</p>
-        <audio controls loop id="music">
+        <p class="marker">You can listen our mascot's favourite song! Do not forget to start it while shopping:</p>
+        <audio controls loop id="music" class="center">
             <source src="sources/Rockin'%20Robin.mp3" type="audio/mp3">
         </audio>
         <script type="text/javascript">
@@ -43,9 +43,12 @@
 
                 if(click===2){
                     click=0;
+                    dance.href="#header";
+                    dance.href
                     dance.classList.add("back-to")
                     dance.classList.remove("dot-dance")
                 }else {
+                    dance.href="#footer";
                     dance.classList.add("dot-dance")
                     dance.classList.remove("back-to")
                 }
@@ -95,6 +98,6 @@
             <input type="button" value="Add to cart">
         </section>
     </main>
-    <footer>©2023 Ergo Inc. All rights reserved.</footer>
+    <footer id="footer">©2023 Ergo Inc. All rights reserved.</footer>
 </body>
 </html>
