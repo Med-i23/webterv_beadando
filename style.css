@@ -6,8 +6,8 @@
     --offwhite:#FAF9F6;
 }
 *{
-    font-family: ErgoDefault;
-    /*outline: 1px solid #f00 !important;*//*overflow debugger*/
+    font-family: ErgoDefault, serif;
+   /* outline: 1px solid #f00 !important;/*overflow debugger*/
 
 }
 html{
@@ -38,6 +38,7 @@ nav{
     z-index:20;
     animation: downe 1s forwards;
 
+
 }
 nav a{
     transition: 1s;
@@ -67,8 +68,8 @@ nav ul li {
 }
 
 .h1imitator{
-    padding: 100pt 0pt 20pt;
-    margin: 0pt -6.2pt -2pt;
+    padding: 100pt 0 20pt;
+    margin: 0 -6.2pt -2pt;
     font-size: x-large;
     border-style: solid;
     background-color: turquoise;
@@ -93,8 +94,8 @@ p::after{
 
 }
 main{
-    padding: 50pt 0pt 20pt;
-    margin: 0pt 100pt;
+    padding: 50pt 0 20pt;
+    margin: 0 10%;
     align-content: center;
     text-align: justify;
     border-style: solid;
@@ -122,14 +123,9 @@ thead{
 }
 
 .picture{
-    max-width: 400px;
-    max-height: 400px;
+    max-width: 30%;
+    max-height: 30%;
 }
-
-section{
-
-}
-
 
 td.cancelled{
     color: red;
@@ -163,7 +159,7 @@ label.szoveg{
 a {
     color: white;
     text-decoration: none;
-    padding:0pt 20pt;
+    padding:0 20pt;
 
 }
 #login-signup-pic-link{
@@ -181,12 +177,12 @@ footer{
     background: lightgray;
     vertical-align: center;
     horiz-align: center;
-    padding: 0pt;
+    padding: 0;
     margin: -2pt -6pt -6pt -6pt;
     border-style: solid;
 }
 /*Képek leginkább*/
-div > img{
+main div > img{
     width: 35%;
     margin-left: -1000pt;
     align-content: center;
@@ -195,14 +191,14 @@ div > img{
 
 }
 img[alt="valorantchallengers"]{
-    animation: hehe 1s forwards 3s alternate;
+    animation: hehe 1s forwards 1s ;
 }
 [alt="csgo"]{
     animation: hehe 1s forwards ;
 }
 .shopitem{
     background: lightgray;
-    border-right: 0pt;
+    border-right: 0;
     border-style: solid;
 
 }
@@ -215,10 +211,7 @@ section > img:not(#cspic,#valopic) {
     height: 100pt;
     width: auto;
 }
-img:is(#accpic){
-    margin: 0;
-    position: absolute;
-}
+
 #cspic #valopic{
     height: 5%;
     width: auto;
@@ -230,19 +223,21 @@ img:is(#accpic){
 
 /* Űrlap és dolgai nagyrészt*/
 #form{
-    margin: 50pt 100pt 20pt;
+    margin: 50pt 10% 20pt;
 }
 fieldset{
     display: grid;
     grid-gap: 5pt;
-    padding: 0 100pt 10pt;
-    margin: 0pt 100pt;
+    padding: 0 10% 10pt;
+    margin: 0 10%;
     border: 2pt solid ;
     text-shadow:3px 3px turquoise;
+    min-width: 130pt;
 }
 
 input{
     border: 2pt solid ;
+   min-width: 10pt;
 }
 #subscribe{
     width: fit-content;
@@ -264,7 +259,7 @@ strong{
     display: grid;
     grid-gap: 5pt;
     align-content: center;
-    padding: 10pt 300pt;
+    padding: 10pt 30%;
 
 }
 input[type="submit"]{
@@ -279,31 +274,39 @@ input[type="reset"]{
 }
 #login-signup-pic{
     position: absolute;
-    right: 7%;
+    left: 90%;
     top: 35%;
 }
 #login{
     position: fixed;
-    right: 2.25%;
+    margin-top: -15pt;
+    right: 2%;
+}
+.upper{
+
 }
 audio{
     width: 50%;
 }
-p:is(.marker)::grammar-error{
+p:is(.marker){
     color: red;
 }
 #do-not-mind-me{
     display: block;
-    height:  7%;
-    width: 1pt;
+    height: 5%;
+    width: 2.5%;
     border-radius: 50%;
     margin: 1% ;
+    padding: 0;
     position: fixed;
+
 
 }
 img[alt="arrow"]{
     height: 100%;
     width: 30pt;
+    border-radius: 50%;
+
 }
 
 /*idk man*/
@@ -316,30 +319,6 @@ img[alt="arrow"]{
 
 }
 
-/*trick*/
-@media (max-width: 659.5pt ) {
-    .h1imitator {
-        padding: 120pt 0pt 20pt;
-    }
-}
-@media (max-width: 655.5pt ) {
-    .h1imitator {
-        padding: 130pt 0pt 20pt;
-    }
-}
-
-@media (max-width: 446pt ) {
-    .h1imitator {
-        padding: 160pt 0pt 20pt;
-    }
-}
-/*1200+*/
-@media (max-width: 1200px ) {
-    article{
-        font-size: 80%;
-    }
-}
-
 
 /*Animációk*/
 @keyframes hehe {
@@ -350,7 +329,7 @@ img[alt="arrow"]{
     }
 
     100%{
-        transform: translateX(1000pt);
+        transform: translateX(1100pt);
 
     }
 }
@@ -403,20 +382,20 @@ img[alt="arrow"]{
     }
 
     article,section{
-        margin:0pt 20pt;
+        margin:0 20pt;
     }
     main{
-        margin: 0pt;
+        margin: 0;
     }
     h1,h1::first-letter{
-        margin: 0pt;
-        padding: 0pt;
+        margin: 0;
+        padding: 0;
         font-size: 25pt;
         text-align: center;
     }
 
     .h1imitator{
-        padding: 0pt 0pt 20pt;
+        padding: 0 0 20pt;
         margin: 100pt -6.2pt -2pt;
         font-size: x-large;
         border-style: solid;
@@ -425,5 +404,48 @@ img[alt="arrow"]{
         display: block;
     }
 
+}
+/*trick*/
+@media (max-width: 659.5pt ) {
+    .h1imitator {
+        padding: 90pt 0 20pt;/*+10+30*/
+    }
+    nav ul li {
+        font-size: large;
+
+    }
+
+
+    @keyframes hehe {
+        0%{
+            transform:rotate(180deg);
+
+        }
+
+        100%{
+            transform: translateX(1020pt);
+
+        }
+    }
+}
+@media (max-width: 655.5pt ) {
+    nav ul li {
+        font-size: small;
+
+    }
+}
+
+@media (max-width: 446pt ) {
+    .h1imitator {
+        padding: 110pt 0 20pt;/*+10+30*/
+    }
+
+
+}
+/*1200+*/
+@media (max-width: 1200px ) {
+    article{
+        font-size: 80%;
+    }
 }
 
