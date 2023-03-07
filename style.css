@@ -122,6 +122,11 @@ thead{
     font-size: 14pt;
 }
 
+h2.mainold{
+    align-content: center;
+    text-align: center;
+}
+
 .picture{
     max-width: 30%;
     max-height: 30%;
@@ -162,6 +167,8 @@ a {
     padding:0 20pt;
 
 }
+
+
 #login-signup-pic-link{
     position: absolute;
     right: 7%;
@@ -170,6 +177,11 @@ a {
 
 a.twitch{
     color: blue;
+}
+
+a.newpage{
+    color: blue;
+    align-content: justify;
 }
 
 footer{
