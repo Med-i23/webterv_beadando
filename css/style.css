@@ -313,6 +313,7 @@ p:is(.marker){
     margin: 1% ;
     padding: 0;
     position: fixed;
+    inset: auto 2.5% 2.5%;
 
 
 }
@@ -320,6 +321,7 @@ img[alt="arrow"]{
     height: 100%;
     width: 30pt;
     border-radius: 50%;
+    transform:rotate(180deg);
 
 }
 
@@ -347,10 +349,10 @@ img[alt="arrow"]{
 
     }
 }
-
+/*
 @keyframes dancing {
     0%{
-
+        transform:rotate(180deg);
     }
     99%{
 
@@ -366,7 +368,7 @@ img[alt="arrow"]{
     }
 
 
-}
+}*/
 @keyframes downe {
     0%{
         transform: translateY(-200pt);
@@ -430,9 +432,10 @@ img[alt="arrow"]{
     }
 
 
+
     @keyframes hehe {
         0%{
-            transform:rotate(180deg);
+
 
         }
 

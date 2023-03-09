@@ -30,8 +30,7 @@
         </nav>
     </header>
     <div id="header" class="h1imitator">SHOP</div>
-   <a onclick="look()" id="do-not-mind-me"><img src="sources/websiteElement/arrow-down.png" alt="arrow"></a>
-
+   <a id="do-not-mind-me" href="#header"><img src="sources/websiteElement/arrow-down.png" alt="arrow"></a>
     <main>
         <p class="marker">You can listen our mascot's favourite song! Do not forget to start it while shopping:</p>
         <audio controls loop id="music" class="center">
@@ -40,9 +39,9 @@
         <script type="text/javascript">
             var audio = document.getElementById("music");
             audio.volume = 0.06;
-            var dance = document.getElementById("do-not-mind-me");
+            /*var dance = document.getElementById("do-not-mind-me");  onclick="look()"
             var click=0;
-            /*function look() {
+            function look() {
                 click+=1;
 
                 if(click===2){
