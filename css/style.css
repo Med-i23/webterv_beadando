@@ -326,18 +326,6 @@ img[alt="arrow"]{
 
 }
 
-/*idk man*/
-/*
-.dot-dance{
-    animation: dancing 1s forwards;
-
-}
-.back-to{
-    animation: back-dancing 1s forwards;
-
-}
-*/
-
 /*Animációk*/
 @keyframes hehe {
     0%{
@@ -351,26 +339,7 @@ img[alt="arrow"]{
 
     }
 }
-/*
-@keyframes dancing {
-    0%{
-        transform:rotate(180deg);
-    }
-    99%{
 
-    }
-    100%{
-        transform: rotateX(180deg) translateY(100%);
-    }
-
-}
-@keyframes back-dancing {
-    0% {
-        transform:rotateX(180deg) translateY(100%);
-    }
-
-
-}*/
 @keyframes downe {
     0%{
         transform: translateY(-200pt);
