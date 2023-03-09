@@ -116,6 +116,7 @@ table, th,td, tr{
     height: 20pt;
     width: 100%;
     table-layout: fixed;
+    font-size: 10pt;
 
 }
 
@@ -182,7 +183,7 @@ a.twitch{
 
 a.newpage{
     color: blue;
-    align-content: justify;
+
 }
 
 footer{
@@ -326,6 +327,7 @@ img[alt="arrow"]{
 }
 
 /*idk man*/
+/*
 .dot-dance{
     animation: dancing 1s forwards;
 
@@ -334,7 +336,7 @@ img[alt="arrow"]{
     animation: back-dancing 1s forwards;
 
 }
-
+*/
 
 /*Animációk*/
 @keyframes hehe {
@@ -429,6 +431,12 @@ img[alt="arrow"]{
     nav ul li {
         font-size: large;
 
+    }
+    thead{
+        font-size: 14pt;
+    }
+    td{
+        font-size: 10pt;
     }
 
 
