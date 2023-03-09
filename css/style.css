@@ -1,0 +1,464 @@
+@font-face {
+    font-family: ErgoDefault;
+    src: url("../sources/websiteElement/Heavitas.ttf");
+}
+:root{
+    --offwhite:#FAF9F6;
+}
+*{
+    font-family: ErgoDefault, serif;
+   /* outline: 1px solid #f00 !important;/*overflow debugger*/
+
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: var(--offwhite);
+    /*font-family: Arial, Helvetica, sans-serif;
+       background-image: url("sources/backgroundtemp.png");
+       background-repeat: repeat;*/
+    word-break: break-word;
+    hyphens: auto;
+    animation: fader 1s forwards ease-in;
+
+}
+script{
+    display: none;
+}
+
+nav{
+    background: black;
+    margin:-6pt ;
+    padding-top: 10pt;
+    padding-bottom: 10pt;
+    position: fixed;
+    height: fit-content;
+    width: 100%;
+    z-index:20;
+    animation: downe 1s forwards;
+
+
+}
+nav a{
+    transition: 1s;
+}
+nav a:hover {
+    background-color: gray;
+    transform: scale(120%);
+    border-radius: 30pt;
+    display: block;
+    color: turquoise;
+
+}
+
+nav ul{
+    padding-left: 100pt;
+}
+
+nav ul li {
+    display: inline-block;
+    padding-bottom: 5pt;
+    font-size: x-large;
+    font-weight: bold;
+    text-transform: uppercase;
+    text-align: center;
+    animation: downe 1s forwards;
+
+}
+
+.h1imitator{
+    padding: 100pt 0 20pt;
+    margin: 0 -6.2pt -2pt;
+    font-size: x-large;
+    border-style: solid;
+    background-color: turquoise;
+    text-align: center;
+    display: block;
+    position: static;
+
+}
+
+p::before{
+    content:"";
+    display: block;
+    background:turquoise;
+    height: 10pt;
+
+}
+p::after{
+    content:"";
+    display: block;
+    background:turquoise;
+    height: 10pt;
+
+}
+main{
+    padding: 50pt 0 20pt;
+    margin: 0 10%;
+    align-content: center;
+    text-align: justify;
+    border-style: solid;
+
+}
+article{
+    margin-left: 2%;
+    margin-right: 2%;
+    align-content: center;
+    text-align: justify;
+
+}
+
+table, th,td, tr{
+    align-items: center;
+    padding: 10pt;
+    border: 1pt solid;
+    height: 20pt;
+    width: 100%;
+    table-layout: fixed;
+
+}
+thead{
+    font-size: 14pt;
+}
+
+h2.mainold{
+    align-content: center;
+    text-align: center;
+}
+
+.picture{
+    max-width: 30%;
+    max-height: 30%;
+}
+
+td.cancelled{
+    color: red;
+}
+
+img.tablelogo{
+    width: 30%;
+    float: left;
+    clear: top;
+    max-width: 40pt;
+}
+
+.logo{
+    alignment: left;
+    position: absolute;
+
+}
+
+.center {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+label.szoveg{
+    color: white;
+    alignment: left;
+    font-weight: bold;
+}
+
+
+a {
+    color: white;
+    text-decoration: none;
+    padding:0 20pt;
+
+}
+
+
+#login-signup-pic-link{
+    position: absolute;
+    right: 7%;
+    top: 35%;
+}
+
+a.twitch{
+    color: blue;
+}
+
+a.newpage{
+    color: blue;
+    align-content: justify;
+}
+
+footer{
+    text-align: center ;
+    background: lightgray;
+    vertical-align: center;
+    horiz-align: center;
+    padding: 0;
+    margin: -2pt -6pt -6pt -6pt;
+    border-style: solid;
+}
+/*Képek leginkább*/
+main div > img{
+    width: 35%;
+    margin-left: -1000pt;
+    align-content: center;
+    border-radius: 300pt;
+    z-index: 1;
+
+}
+img[alt="valorantchallengers"]{
+    animation: hehe 1s forwards 1s ;
+}
+[alt="csgo"]{
+    animation: hehe 1s forwards ;
+}
+.shopitem{
+    background: lightgray;
+    border-right: 0;
+    border-style: solid;
+    text-align: center;
+
+}
+
+section > img:not(#cspic,#valopic) {
+    width: 30%;
+    align-content: center;
+    border-radius: 30pt;
+    z-index: 1;
+    height: 100pt;
+    width: auto;
+}
+
+#cspic #valopic{
+    height: 5%;
+    width: auto;
+}
+#csteam > img{
+    height: 5%;
+    width: auto;
+}
+
+/* Űrlap és dolgai nagyrészt*/
+#form{
+    margin: 50pt 10% 20pt;
+}
+fieldset{
+    display: grid;
+    grid-gap: 5pt;
+    padding: 0 10% 10pt;
+    margin: 0 10%;
+    border: 2pt solid ;
+    text-shadow:3px 3px turquoise;
+    min-width: 130pt;
+}
+
+input{
+    border: 2pt solid ;
+   min-width: 10pt;
+}
+#subscribe{
+    width: fit-content;
+}
+legend{
+    text-align: center;
+}
+fieldset > label{
+
+}
+strong{
+    font-size: 30pt;
+}
+.required-label::after{
+    content: "*";
+    color: red;
+}
+.buttons{
+    display: grid;
+    grid-gap: 5pt;
+    align-content: center;
+    padding: 10pt 30%;
+
+}
+input[type="submit"]{
+    background-color: black;
+    color: turquoise;
+
+}
+input[type="reset"]{
+    background-color: black;
+    color: red;
+
+}
+#login-signup-pic{
+    position: absolute;
+    left: 90%;
+    top: 35%;
+}
+#login{
+    position: fixed;
+    margin-top: -15pt;
+    right: 2%;
+}
+.upper{
+
+}
+audio{
+    width: 50%;
+}
+p:is(.marker){
+    color: red;
+}
+#do-not-mind-me{
+    display: block;
+    height: 5%;
+    width: 2.5%;
+    border-radius: 50%;
+    margin: 1% ;
+    padding: 0;
+    position: fixed;
+
+
+}
+img[alt="arrow"]{
+    height: 100%;
+    width: 30pt;
+    border-radius: 50%;
+
+}
+
+/*idk man*/
+.dot-dance{
+    animation: dancing 1s forwards;
+
+}
+.back-to{
+    animation: back-dancing 1s forwards;
+
+}
+
+
+/*Animációk*/
+@keyframes hehe {
+    0%{
+        transform:rotate(180deg);
+
+
+    }
+
+    100%{
+        transform: translateX(1100pt);
+
+    }
+}
+
+@keyframes dancing {
+    0%{
+
+    }
+    99%{
+
+    }
+    100%{
+        transform: rotateX(180deg) translateY(100%);
+    }
+
+}
+@keyframes back-dancing {
+    0% {
+        transform:rotateX(180deg) translateY(100%);
+    }
+
+
+}
+@keyframes downe {
+    0%{
+        transform: translateY(-200pt);
+    }
+    100%{
+
+    }
+}
+@keyframes fader {
+    0%{
+        opacity: 0;
+        color: var(--offwhite);
+        background-color: black;
+    }
+    100%{
+        opacity: 1;
+
+    }
+}
+
+/*preview::hover<-arnyek*/
+
+/*Nyomtatási stíluslap*/
+@media print{
+    nav,header,footer,img,audio,video,label.szoveg{
+        display: none;
+    }
+
+    article,section{
+        margin:0 20pt;
+    }
+    main{
+        margin: 0;
+    }
+    h1,h1::first-letter{
+        margin: 0;
+        padding: 0;
+        font-size: 25pt;
+        text-align: center;
+    }
+
+    .h1imitator{
+        padding: 0 0 20pt;
+        margin: 100pt -6.2pt -2pt;
+        font-size: x-large;
+        border-style: solid;
+        background-color: turquoise;
+        text-align: center;
+        display: block;
+    }
+
+}
+/*trick*/
+@media (max-width: 659.5pt ) {
+    .h1imitator {
+        padding: 90pt 0 20pt;/*+10+30*/
+    }
+    nav ul li {
+        font-size: large;
+
+    }
+
+
+    @keyframes hehe {
+        0%{
+            transform:rotate(180deg);
+
+        }
+
+        100%{
+            transform: translateX(1020pt);
+
+        }
+    }
+}
+@media (max-width: 655.5pt ) {
+    nav ul li {
+        font-size: small;
+
+    }
+}
+
+@media (max-width: 446pt ) {
+    .h1imitator {
+        padding: 110pt 0 20pt;/*+10+30*/
+    }
+
+
+}
+/*1200+*/
+@media (max-width: 1200px ) {
+    article{
+        font-size: 80%;
+    }
+}
+
