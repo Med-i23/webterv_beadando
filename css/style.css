@@ -42,7 +42,8 @@ nav{
 
 }
 nav a{
-    transition: 1s;
+    transition:1s;
+
 }
 nav a:hover {
     background-color: gray;
@@ -95,9 +96,7 @@ article{
     text-align: justify;
 
 }
-section > ul li{
 
-}
 /* === Kiemelő === */
 p:not(.pkek_first,.pkek_second)::before{
     content:"";
@@ -245,29 +244,30 @@ section > img:not(#cspic,#valopic,#rlpic) {
     width: auto;
 }
 
-#cspic #valopic #rlpic{
-    height: 5%;
-    width: auto;
-}
+
 
 #csteam,#valoteam,#rlteam{
     background-color: lightgray;
+    text-align: center;
 
+
+}
+#csteam{
+    border-top: black 1pt solid;
+}
+#cspic,#valopic,#rlpic{
+    margin: 20pt 0;
 }
 .flex-container{
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
 
-
-
-
 }
 .flex-container > .card{
     display: flex;
     flex-direction: column;
     flex: 1 1 100pt;
-
 
 }
 .card > img{
@@ -277,13 +277,17 @@ section > img:not(#cspic,#valopic,#rlpic) {
     align-items: center;
     border: black 1pt solid;
     background-color: lightgray;
+    transition: transform 1s ease-in-out;
 
 
 }
 .card:hover{
     text-shadow: black 1pt 1pt;
-    box-shadow: black 2pt 2pt 2pt 2pt;
+    box-shadow: black 2pt 2pt 2pt,darkgreen 2pt 2pt 2pt, darkred 2pt 2pt 2pt;
     transform: scale(130%);
+    z-index: 19;
+
+
 
 
 }
@@ -297,6 +301,7 @@ section > img:not(#cspic,#valopic,#rlpic) {
 #csteam #cspic, #valopic,#rlpic{
     height: auto;
     width: 15%;
+    align-content: center;
 }
 #csteam img:not(#cspic){
     height: auto;
@@ -433,8 +438,6 @@ img[alt="arrow"]{
 
     }
 }
-
-
 
 /*Nyomtatási stíluslap*/
 @media print{
