@@ -97,6 +97,9 @@ article{
 
 }
 
+h3{
+    display: none;
+}
 /* === Kiemelő === */
 p:not(.pkek_first,.pkek_second)::before{
     content:"";
@@ -283,7 +286,7 @@ section > img:not(#cspic,#valopic,#rlpic) {
 }
 .card:hover{
     text-shadow: black 1pt 1pt;
-    box-shadow: black 2pt 2pt 2pt,darkgreen 2pt 2pt 2pt, darkred 2pt 2pt 2pt;
+    box-shadow: grey 2pt 2pt 2pt,grey 2pt 2pt 2pt, grey 2pt 2pt 2pt;
     transform: scale(130%);
     z-index: 19;
 
@@ -450,6 +453,9 @@ img[alt="arrow"]{
     }
     main{
         margin: 0;
+    }
+    h3{
+        display: block;
     }
     h1,h1::first-letter{
         margin: 0;
