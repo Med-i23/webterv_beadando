@@ -250,16 +250,27 @@ section > img:not(#cspic,#valopic,#rlpic) {
     width: auto;
 }
 
-#csteam{
+#csteam,#valoteam,#rlteam{
     background-color: grey;
 }
 #csteam div{
-    display: compact;
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#valoteam div{
+    display: flex;
+
+}
+#rlteam div{
+    display: flex;
 
 }
 #csteam img{
-    height: 50pt;
-    width: auto;
+    height: auto;
+    width: 5%;
+
+
 
 }
 #valoteam img{
