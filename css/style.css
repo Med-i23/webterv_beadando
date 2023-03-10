@@ -251,20 +251,23 @@ section > img:not(#cspic,#valopic,#rlpic) {
 }
 
 #csteam,#valoteam,#rlteam{
-    background-color: grey;
+    background-color: lightgray;
 }
 #csteam div{
     display: flex;
     flex-wrap: wrap;
+    align-items: baseline;
 
 }
 #valoteam div{
     display: flex;
-
+    flex-wrap: wrap;
+    align-items: baseline;
 }
 #rlteam div{
     display: flex;
-
+    flex-wrap: wrap;
+    align-items: baseline;
 }
 #csteam img{
     height: auto;
@@ -347,6 +350,7 @@ audio{
 }
 video{
     margin-left: 20pt;
+    width: 50%;
 }
 #do-not-mind-me{
     display: block;
