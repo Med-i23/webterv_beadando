@@ -233,10 +233,13 @@ img[alt="valorantchallengers"]{
 /*preview::hover<-arnyek*/
 .shopitem{
     background: lightgray;
-    border-right: 0;
-    border-style: solid;
+    border-top: 2pt solid;
+    border-bottom: none;
     text-align: center;
 
+}
+.shopitem:last-of-type{
+    border-bottom: 2pt solid;
 }
 
 section > img:not(#cspic,#valopic,#rlpic) {
@@ -248,12 +251,9 @@ section > img:not(#cspic,#valopic,#rlpic) {
     width: auto;
 }
 
-
-
 #csteam,#valoteam,#rlteam{
     background-color: lightgray;
     text-align: center;
-
 
 }
 #csteam{
@@ -291,9 +291,6 @@ section > img:not(#cspic,#valopic,#rlpic) {
     transform: scale(130%);
     z-index: 19;
 
-
-
-
 }
 #valoteam div{
 
@@ -322,7 +319,7 @@ section > img:not(#cspic,#valopic,#rlpic) {
     width: 30%;
 }
 
-/* === Űrlap és dolgai nagyrészt === */
+/* === Űrlap és dolgai === */
 #form{
     margin: 50pt 10% 20pt;
 }
@@ -453,7 +450,12 @@ img[alt="arrow"]{
         margin:0 20pt;
     }
     main{
-        margin: 0;
+        padding: 0 10pt;
+        margin: 0 ;
+        align-content: center;
+        text-align: justify;
+        border-style: solid;
+
     }
     h3{
         display: block;
@@ -466,14 +468,16 @@ img[alt="arrow"]{
     }
 
     .h1imitator{
-        padding: 0 0 20pt;
-        margin: 0 -6.2pt -2pt;
+        padding: 20pt 0 !important;
+        margin: 100pt -6.2pt -2pt;
         font-size: x-large;
         border-style: solid;
         background-color: turquoise;
         text-align: center;
         display: block;
     }
+
+
 
 }
 /*trick*/
