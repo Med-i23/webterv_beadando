@@ -162,12 +162,6 @@ h2.mainold{
     text-align: center;
 }
 
-.picture{
-    max-width: 30%;
-    max-height: 30%;
-}
-
-
 .logo{
     alignment: left;
     position: absolute;
@@ -218,7 +212,7 @@ footer{
     border-style: solid;
 }
 /* === Képek leginkább === */
-main div > img{
+main div.picture > img{
     width: 35%;
     margin-left: -1000pt;
     align-content: center;
@@ -255,9 +249,18 @@ section > img:not(#cspic,#valopic,#rlpic) {
     height: 5%;
     width: auto;
 }
+
+#csteam{
+    background-color: grey;
+}
+#csteam div{
+    display: compact;
+
+}
 #csteam img{
     height: 50pt;
     width: auto;
+
 }
 #valoteam img{
     height: 50pt;
