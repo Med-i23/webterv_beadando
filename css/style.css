@@ -79,14 +79,29 @@ nav ul li {
 
 }
 
-p::before{
+p:not(.pkek_first,.pkek_second)::before{
     content:"";
     display: block;
     background:turquoise;
     height: 10pt;
 
 }
-p::after{
+
+p:not(.pkek_first,.pkek_second)::after{
+    content:"";
+    display: block;
+    background:turquoise;
+    height: 10pt;
+
+}
+p.pkek_second::after{
+    content:"";
+    display: block;
+    background:turquoise;
+    height: 10pt;
+
+}
+p.pkek_first::before{
     content:"";
     display: block;
     background:turquoise;
@@ -303,8 +318,8 @@ input[type="reset"]{
 audio{
     width: 50%;
 }
-p:is(.marker){
-    color: red;
+video{
+    margin-left: 20pt;
 }
 #do-not-mind-me{
     display: block;
