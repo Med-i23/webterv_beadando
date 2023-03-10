@@ -1,3 +1,4 @@
+/* === Fő elemek === */
 @font-face {
     font-family: ErgoDefault;
     src: url("../sources/websiteElement/Heavitas.ttf");
@@ -10,7 +11,7 @@
    /* outline: 1px solid #f00 !important;/*overflow debugger*/
 
 }
-/* === Fő elemek === */
+
 html{
     scroll-behavior: smooth;
 }
@@ -466,7 +467,7 @@ img[alt="arrow"]{
 
     .h1imitator{
         padding: 0 0 20pt;
-        margin: 100pt -6.2pt -2pt;
+        margin: 0 -6.2pt -2pt;
         font-size: x-large;
         border-style: solid;
         background-color: turquoise;
