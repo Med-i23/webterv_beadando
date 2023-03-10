@@ -252,37 +252,65 @@ section > img:not(#cspic,#valopic,#rlpic) {
 
 #csteam,#valoteam,#rlteam{
     background-color: lightgray;
+
 }
-#csteam div{
+.flex-container{
     display: flex;
+    flex-direction: row;
     flex-wrap: wrap;
-    align-items: baseline;
+
+
+
+
+}
+.flex-container > .card{
+    display: flex;
+    flex-direction: column;
+    flex: 1 1 100pt;
+
+
+}
+.card > img{
+
+}
+.card{
+    align-items: center;
+    border: black 1pt solid;
+    background-color: lightgray;
+
+
+}
+.card:hover{
+    text-shadow: black 1pt 1pt;
+    box-shadow: black 2pt 2pt 2pt 2pt;
+    transform: scale(130%);
+
 
 }
 #valoteam div{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
+
+
 }
 #rlteam div{
-    display: flex;
-    flex-wrap: wrap;
-    align-items: baseline;
+
 }
-#csteam img{
+#csteam #cspic, #valopic,#rlpic{
     height: auto;
-    width: 5%;
-
-
+    width: 15%;
+}
+#csteam img:not(#cspic){
+    height: auto;
+    min-width: 150pt;
+    width: 30%;
 
 }
-#valoteam img{
-    height: 50pt;
-    width: auto;
+#valoteam img:not(#valopic){
+    min-width: 100pt;
+    width: 30%;
 }
-#rlteam img{
-    height: 50pt;
-    width: auto;
+#rlteam img:not(#rlpic){
+    min-width: 100pt;
+    width: 30%;
 }
 
 /* === Űrlap és dolgai nagyrészt === */
