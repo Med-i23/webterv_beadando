@@ -10,6 +10,7 @@
    /* outline: 1px solid #f00 !important;/*overflow debugger*/
 
 }
+/* === Fő elemek === */
 html{
     scroll-behavior: smooth;
 }
@@ -79,6 +80,25 @@ nav ul li {
 
 }
 
+main{
+    padding: 50pt 0 20pt;
+    margin: 0 10%;
+    align-content: center;
+    text-align: justify;
+    border-style: solid;
+
+}
+article{
+    margin-left: 2%;
+    margin-right: 2%;
+    align-content: center;
+    text-align: justify;
+
+}
+section > ul li{
+
+}
+/* === Kiemelő === */
 p:not(.pkek_first,.pkek_second)::before{
     content:"";
     display: block;
@@ -108,22 +128,8 @@ p.pkek_first::before{
     height: 10pt;
 
 }
-main{
-    padding: 50pt 0 20pt;
-    margin: 0 10%;
-    align-content: center;
-    text-align: justify;
-    border-style: solid;
 
-}
-article{
-    margin-left: 2%;
-    margin-right: 2%;
-    align-content: center;
-    text-align: justify;
-
-}
-
+/* === Táblázat === */
 table, th,td, tr{
     align-items: center;
     padding: 10pt;
@@ -139,16 +145,6 @@ thead{
     font-size: 16pt;
 }
 
-h2.mainold{
-    align-content: center;
-    text-align: center;
-}
-
-.picture{
-    max-width: 30%;
-    max-height: 30%;
-}
-
 td.cancelled{
     color: red;
 }
@@ -159,6 +155,18 @@ img.tablelogo{
     clear: top;
     max-width: 40pt;
 }
+
+/*idk*/
+h2.mainold{
+    align-content: center;
+    text-align: center;
+}
+
+.picture{
+    max-width: 30%;
+    max-height: 30%;
+}
+
 
 .logo{
     alignment: left;
@@ -178,18 +186,17 @@ label.szoveg{
 }
 
 
+#login-signup-pic-link{
+    position: absolute;
+    right: 7%;
+    top: 35%;
+}
+/* === Linkek === */
 a {
     color: white;
     text-decoration: none;
     padding:0 20pt;
 
-}
-
-
-#login-signup-pic-link{
-    position: absolute;
-    right: 7%;
-    top: 35%;
 }
 
 a.twitch{
@@ -200,7 +207,7 @@ a.newpage{
     color: blue;
 
 }
-
+/* === Lábléc === */
 footer{
     text-align: center ;
     background: lightgray;
@@ -210,7 +217,7 @@ footer{
     margin: -2pt -6pt -6pt -6pt;
     border-style: solid;
 }
-/*Képek leginkább*/
+/* === Képek leginkább === */
 main div > img{
     width: 35%;
     margin-left: -1000pt;
@@ -219,12 +226,14 @@ main div > img{
     z-index: 1;
 
 }
+
 img[alt="valorantchallengers"]{
     animation: hehe 1s forwards 1s ;
 }
 [alt="csgo"]{
     animation: hehe 1s forwards ;
 }
+/*preview::hover<-arnyek*/
 .shopitem{
     background: lightgray;
     border-right: 0;
@@ -242,16 +251,24 @@ section > img:not(#cspic,#valopic) {
     width: auto;
 }
 
-#cspic #valopic{
+#cspic #valopic #rlpic{
     height: 5%;
     width: auto;
 }
-#csteam > img{
-    height: 5%;
+#csteam img{
+    height: 50pt;
+    width: auto;
+}
+#valoteam img{
+    height: 50pt;
+    width: auto;
+}
+#rlteam img{
+    height: 50pt;
     width: auto;
 }
 
-/* Űrlap és dolgai nagyrészt*/
+/* === Űrlap és dolgai nagyrészt === */
 #form{
     margin: 50pt 10% 20pt;
 }
@@ -275,9 +292,7 @@ input{
 legend{
     text-align: center;
 }
-fieldset > label{
 
-}
 strong{
     font-size: 30pt;
 }
@@ -312,9 +327,7 @@ input[type="reset"]{
     margin-top: -15pt;
     right: 2%;
 }
-.upper{
-
-}
+/* === Vid/Aud/Anchor === */
 audio{
     width: 50%;
 }
@@ -375,7 +388,7 @@ img[alt="arrow"]{
     }
 }
 
-/*preview::hover<-arnyek*/
+
 
 /*Nyomtatási stíluslap*/
 @media print{
