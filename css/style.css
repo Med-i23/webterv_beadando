@@ -141,10 +141,11 @@ table, th,td, tr{
     width: 100%;
     table-layout: fixed;
     font-size: 15pt;
+    text-align: center;
 
 }
 
-thead{
+td{
     font-size: 16pt;
 }
 
@@ -493,11 +494,15 @@ img[alt="arrow"]{
         font-size: large;
 
     }
-    thead{
-        font-size: 14pt;
+    th{
+        font-size: 7pt;
+        padding: 0;
+
     }
     td{
-        font-size: 10pt;
+        font-size: 6pt;
+        padding: 0;
+
     }
 
 
@@ -524,6 +529,9 @@ img[alt="arrow"]{
 @media (max-width: 446pt ) {
     .h1imitator {
         padding: 110pt 0 20pt;/*+10+30*/
+    }
+    td{
+
     }
 
 
