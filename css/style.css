@@ -39,6 +39,7 @@ nav{
     width: 100%;
     z-index:20;
     animation: downe 1s forwards;
+    justify-content: unset;
 
 
 }
@@ -53,22 +54,34 @@ nav a:hover {
     display: block;
     color: turquoise;
 
+
 }
 
 nav ul{
     padding-left: 100pt;
+
+
 }
 
-nav ul li {
+nav ul li:not(.exception) {
     display: inline-block;
-    padding-bottom: 5pt;
+    padding-bottom: 2.5pt;
+    padding-top: 2.5pt;
     font-size: x-large;
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
     animation: downe 1s forwards;
+    border: turquoise 1pt solid;
+    border-radius: 30pt;
 
 }
+
+nav ul li:hover{
+    border: none;
+
+}
+
 
 .h1imitator{
     padding: 100pt 0 20pt;
@@ -187,8 +200,19 @@ label.szoveg{
 
 #login-signup-pic-link{
     position: absolute;
-    right: 7%;
-    top: 35%;
+    right: 150pt;
+    top: 7pt;
+}
+#login-signup-pic{
+    position: absolute;
+    width: 60%;
+    height: auto;
+}
+
+#login{
+    position: fixed;
+    top: 10pt;
+    right: 1%;
 }
 /* === Linkek === */
 a {
@@ -370,16 +394,7 @@ input[type="reset"]{
     color: red;
 
 }
-#login-signup-pic{
-    position: absolute;
-    left: 90%;
-    top: 35%;
-}
-#login{
-    position: fixed;
-    margin-top: -15pt;
-    right: 2%;
-}
+
 /* === Vid/Aud/Anchor === */
 audio{
     width: 50%;
@@ -442,6 +457,7 @@ img[alt="arrow"]{
     }
 }
 
+
 /*Nyomtatási stíluslap*/
 @media print{
     nav,header,footer,img,audio,video,label.szoveg{
@@ -487,11 +503,11 @@ img[alt="arrow"]{
 }
 
 /*trick*/
-@media (max-width: 659.5pt ) {
+@media (max-width: 661.5pt ) {
     .h1imitator {
         padding: 90pt 0 20pt;/*+10+30*/
     }
-    nav ul li {
+    nav ul li:not(.exception) {
         font-size: large;
 
     }
@@ -521,13 +537,13 @@ img[alt="arrow"]{
     }
 }
 @media (max-width: 655.5pt ) {
-    nav ul li {
+    nav ul li:not(.exception) {
         font-size: small;
 
     }
 }
 
-@media (max-width: 446pt ) {
+@media (max-width: 512pt ) {
     .h1imitator {
         padding: 110pt 0 20pt;/*+10+30*/
     }
