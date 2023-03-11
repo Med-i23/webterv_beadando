@@ -43,27 +43,27 @@ nav{
 
 
 }
-nav a{
+nav a:not(#login-signup-pic-link){
     transition:1s;
+    box-shadow: turquoise 0 0 2pt 2pt;
+
 
 }
-nav a:hover {
+
+nav a:not(#login-signup-pic-link):hover {
     background-color: gray;
     transform: scale(120%);
     border-radius: 30pt;
     display: block;
     color: turquoise;
 
-
 }
 
 nav ul{
     padding-left: 100pt;
-
-
 }
 
-nav ul li:not(.exception) {
+nav ul li{
     display: inline-block;
     padding-bottom: 2.5pt;
     padding-top: 2.5pt;
@@ -72,15 +72,11 @@ nav ul li:not(.exception) {
     text-transform: uppercase;
     text-align: center;
     animation: downe 1s forwards;
-    border: turquoise 1pt solid;
     border-radius: 30pt;
 
 }
 
-nav ul li:hover{
-    border: none;
 
-}
 
 
 .h1imitator{
@@ -200,7 +196,7 @@ label.szoveg{
 
 #login-signup-pic-link{
     position: absolute;
-    right: 150pt;
+    right: 170pt;
     top: 7pt;
 }
 #login-signup-pic{
@@ -507,7 +503,7 @@ img[alt="arrow"]{
     .h1imitator {
         padding: 90pt 0 20pt;/*+10+30*/
     }
-    nav ul li:not(.exception) {
+    nav ul li{
         font-size: large;
 
     }
@@ -537,7 +533,7 @@ img[alt="arrow"]{
     }
 }
 @media (max-width: 655.5pt ) {
-    nav ul li:not(.exception) {
+    nav ul li{
         font-size: small;
 
     }
