@@ -140,12 +140,13 @@ table, th,td, tr{
     height: 20pt;
     width: 100%;
     table-layout: fixed;
-    font-size: 15pt;
     text-align: center;
 
 }
-
 td{
+    font-size: 15pt;
+}
+th{
     font-size: 16pt;
 }
 
@@ -288,7 +289,7 @@ section > img:not(#cspic,#valopic,#rlpic) {
 }
 .card:hover{
     text-shadow: black 1pt 1pt;
-    box-shadow: grey 2pt 2pt 2pt,grey 2pt 2pt 2pt, grey 2pt 2pt 2pt;
+    box-shadow: grey 2pt 2pt 2pt;
     transform: scale(130%);
     z-index: 19;
 
@@ -384,7 +385,7 @@ audio{
     width: 50%;
 }
 video{
-    margin-left: 20pt;
+    margin-left: 25%;
     width: 50%;
 }
 #do-not-mind-me{
