@@ -76,18 +76,15 @@ nav ul li{
 
 }
 
-
-
-
 .h1imitator{
     padding: 100pt 0 20pt;
     margin: 0 -6.2pt -2pt;
     font-size: x-large;
     border-style: solid;
-    background-color: turquoise;
     text-align: center;
     display: block;
     position: static;
+    text-shadow:3px 3px turquoise;
 
 }
 
