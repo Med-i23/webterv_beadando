@@ -137,6 +137,20 @@ p.pkek_first::before{
     height: 10pt;
 
 }
+/*fix
+h2::before {
+    content: "";
+    display: block;
+    background: turquoise;
+    height: 10pt;
+}
+h2::before {
+    content: "";
+    display: block;
+    background: turquoise;
+    height: 10pt;
+}*/
+
 
 /* === Táblázat === */
 table, th,td, tr{
