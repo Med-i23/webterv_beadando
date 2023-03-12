@@ -109,8 +109,8 @@ h3{
     display: none;
 }
 h4{
-    background: radial-gradient(mediumblue,deepskyblue,turquoise);
-    color: white;
+    background: radial-gradient(mediumblue,turquoise);
+    color: var(--offwhite);
    text-align: center;
 
 }
