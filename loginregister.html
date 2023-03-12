@@ -14,11 +14,11 @@
     <nav>
         <div id="logo-er" class="upper">
             <img class="logo" src="sources/websiteElement/logo_white.png" alt="ergo-logo" title="Ergo Inc." height="100">
-            <label class="szoveg" >&nbsp&nbsp&nbspErgo Inc.</label><! kukás behúzással(&nbsp=space) [Kell ez ide?]/>
+            <label class="text" >&nbsp&nbsp&nbspErgo Inc.</label><! kukás behúzással(&nbsp=space) [Kell ez ide?]/>
         </div>
         <div id="sign-os" class="upper">
             <a href="loginregister.html" id="login">Login/Signup</a>
-            <a id="login-signup-pic-link" href="loginregister.html"><img src="sources/websiteElement/account.png" alt="account" id="login-signup-pic" width="40px"></a>
+            <a id="login-signup__pic-link" href="loginregister.html"><img src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40px"></a>
         </div>
         <ul>
             <li><a href="index.html">Main</a></li>
@@ -31,14 +31,14 @@
 </header>
 
 <main>
-    <section id="form">
+    <section id="form-block">
         <form>
             <fieldset>
                 <legend><strong>Login</strong></legend>
                 <label for="login-e-mail" class="required-label">E-mail:</label>
                 <input type="email" name="login-e-mail" id="login-e-mail" placeholder="Email address" maxlength="40" required>
                 <label for="login-password" class="required-label">Password:</label>
-                <input type="password" name="login-password" id="login-password" placeholder="password" minlength="8" maxlength="20" autocomplete="on" required>
+                <input type="password" name="login-password" id="login-password" placeholder="Password" minlength="8" maxlength="20" autocomplete="on" required>
             </fieldset>
             <div class="buttons">
                 <input type="submit" value="Login">
@@ -48,7 +48,7 @@
             <fieldset>
                 <legend><strong>SingUp</strong></legend>
                 <label for="nickname" class="required-label">Nickname:</label>
-                <input type="text" name="nickname" id="nickname" placeholder="Daveyy" required>
+                <input type="text" name="nickname" id="nickname" placeholder="TheBigNickName666" required>
                 <label for="signup-e-mail" class="required-label">E-mail:</label>
                 <input type="email" name="signup-e-mail" id="signup-e-mail" placeholder="cat.tits@garden.meow" maxlength="40" required>
                 <label for="sign-up-password" class="required-label">Password must contain:</label>
@@ -60,7 +60,7 @@
                     <li>at least 8 characters</li>
                 </ul>
 
-                <input type="password" name="sign-up-password" id="sign-up-password" placeholder="Pu$sy69!" minlength="8" maxlength="20" autocomplete="on" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\|\]\[\(\)\-<>]).{8,}" required>
+                <input type="password" name="sign-up-password" id="sign-up-password" placeholder="Password$541" minlength="8" maxlength="20" autocomplete="on" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\|\]\[\(\)\-<>]).{8,}" required>
 
                 <label for="subscribe">Subscribe to newsletter:<input type="checkbox" name="subscribe" id="subscribe"></label>
             </fieldset>

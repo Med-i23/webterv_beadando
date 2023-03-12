@@ -4,7 +4,7 @@
     src: url("../sources/websiteElement/Heavitas.ttf");
 }
 :root{
-    --offwhite:#FAF9F6;
+    --off-white:#FAF9F6;
 }
 *{
     font-family: ErgoDefault, serif;
@@ -16,13 +16,13 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-color: var(--offwhite);
+    background-color: var(--off-white);
     /*font-family: Arial, Helvetica, sans-serif;
        background-image: url("sources/backgroundtemp.png");
        background-repeat: repeat;*/
     word-break: break-word;
     hyphens: auto;
-    animation: fader 1s forwards ease-in;
+    animation: fade 1s forwards ease-in;
 
 
 }
@@ -39,19 +39,19 @@ nav{
     height: fit-content;
     width: 100%;
     z-index:20;
-    animation: downe 1s forwards;
+    animation: down 1s forwards;
     justify-content: unset;
 
 
 }
-nav a:not(#login-signup-pic-link){
+nav a:not(#login-signup__pic-link){
     transition:1s;
     box-shadow: turquoise 0 0 2pt 2pt;
 
 
 }
 
-nav a:not(#login-signup-pic-link):hover {
+nav a:not(#login-signup__pic-link):hover {
     background-color: gray;
     transform: scale(120%);
     border-radius: 30pt;
@@ -72,12 +72,12 @@ nav ul li{
     font-weight: bold;
     text-transform: uppercase;
     text-align: center;
-    animation: downe 1s forwards;
+    animation: down 1s forwards;
     border-radius: 30pt;
 
 }
 
-.h1imitator{
+.h1-imitator{
     padding: 100pt 0 20pt;
     margin: 0 -6.2pt -2pt;
     font-size: x-large;
@@ -115,7 +115,7 @@ h4{
 }
 
 /* === Kiemelő === */
-p:not(.pkek_first,.pkek_second)::before{
+p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::before,p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::after{
     content:"";
     display: block;
     background:turquoise;
@@ -123,21 +123,7 @@ p:not(.pkek_first,.pkek_second)::before{
 
 }
 
-p:not(.pkek_first,.pkek_second)::after{
-    content:"";
-    display: block;
-    background:turquoise;
-    height: 10pt;
-
-}
-p.pkek_second::after{
-    content:"";
-    display: block;
-    background:turquoise;
-    height: 10pt;
-
-}
-p.pkek_first::before{
+p.paragraph-highlighter__second::after,p.paragraph-highlighter__first::before{
     content:"";
     display: block;
     background:turquoise;
@@ -190,7 +176,7 @@ td.cancelled{
     color: red;
 }
 
-img.tablelogo{
+img.table-logo{
     width: 30%;
     float: left;
     clear: top;
@@ -198,7 +184,7 @@ img.tablelogo{
 }
 
 /*idk*/
-h2.mainold{
+h2.main-old{
     align-content: center;
     text-align: center;
 }
@@ -214,19 +200,19 @@ h2.mainold{
     margin-right: auto;
 }
 
-label.szoveg{
+label.text{
     color: white;
     alignment: left;
     font-weight: bold;
 }
 
 
-#login-signup-pic-link{
+#login-signup__pic-link{
     position: absolute;
     right: 170pt;
     top: 7pt;
 }
-#login-signup-pic{
+#login-signup__pic{
     position: absolute;
     width: 60%;
     height: auto;
@@ -249,7 +235,7 @@ a.twitch{
     color: blue;
 }
 
-a.newpage{
+a.new-page{
     color: blue;
 
 }
@@ -273,25 +259,25 @@ main div.picture > img{
 
 }
 
-img[alt="valorantchallengers"]{
-    animation: hehe 1s forwards 1s ;
+img[alt="valorant-challengers"]{
+    animation: pic-coming-in 1s forwards 1s ;
 }
-[alt="csgo"]{
-    animation: hehe 1s forwards ;
+img[alt="csgo"]{
+    animation: pic-coming-in 1s forwards ;
 }
 /*preview::hover<-arnyek*/
-.shopitem{
+.shop-item{
     background: lightgray;
     border-top: 2pt solid;
     border-bottom: none;
     text-align: center;
 
 }
-.shopitem:last-of-type{
+.shop-item:last-of-type{
     border-bottom: 2pt solid;
 }
 
-section > img:not(#cspic,#valopic,#rlpic) {
+section > img:not(#cs-pic,#valo-pic,#rl-pic) {
     width: 30%;
     align-content: center;
     border-radius: 30pt;
@@ -300,15 +286,15 @@ section > img:not(#cspic,#valopic,#rlpic) {
     width: auto;
 }
 
-#csteam,#valoteam,#rlteam{
+#cs-team,#valo-team,#rl-team{
     background-color: lightgray;
     text-align: center;
 
 }
-#csteam{
+#cs-team{
     border-top: black 1pt solid;
 }
-#cspic,#valopic,#rlpic{
+#cs-pic,#valo-pic,#rl-pic{
     margin: 20pt 0;
 }
 .flex-container{
@@ -341,35 +327,35 @@ section > img:not(#cspic,#valopic,#rlpic) {
     z-index: 19;
 
 }
-#valoteam div{
+#valo-team div{
 
 
 }
-#rlteam div{
+#rl-team div{
 
 }
-#csteam #cspic, #valopic,#rlpic{
+#cs-team #cs-pic, #valo-pic,#rl-pic{
     height: auto;
     width: 15%;
     align-content: center;
 }
-#csteam img:not(#cspic){
+#cs-team img:not(#cs-pic){
     height: auto;
     min-width: 150pt;
     width: 30%;
 
 }
-#valoteam img:not(#valopic){
+#valo-team img:not(#valo-pic){
     min-width: 100pt;
     width: 30%;
 }
-#rlteam img:not(#rlpic){
+#rl-team img:not(#rl-pic){
     min-width: 100pt;
     width: 30%;
 }
 
 /* === Űrlap és dolgai === */
-#form{
+#form-block{
     margin: 50pt 10% 20pt;
 }
 fieldset{
@@ -426,7 +412,7 @@ video{
     margin-left: 25%;
     width: 50%;
 }
-#do-not-mind-me{
+#arrow-anchor{
     display: block;
     height: 5%;
     width: 2.5%;
@@ -435,7 +421,6 @@ video{
     padding: 0;
     position: fixed;
     inset: auto 2.5% 2.5%;
-
 
 }
 img[alt="arrow"]{
@@ -447,7 +432,7 @@ img[alt="arrow"]{
 }
 
 /*Animációk*/
-@keyframes hehe {
+@keyframes pic-coming-in {
     0%{
         transform:rotate(180deg);
 
@@ -460,7 +445,7 @@ img[alt="arrow"]{
     }
 }
 
-@keyframes downe {
+@keyframes down {
     0%{
         transform: translateY(-200pt);
     }
@@ -468,10 +453,10 @@ img[alt="arrow"]{
 
     }
 }
-@keyframes fader {
+@keyframes fade {
     0%{
         opacity: 0;
-        color: var(--offwhite);
+        color: var(--off-white);
         background-color: black;
     }
     100%{
@@ -483,7 +468,7 @@ img[alt="arrow"]{
 
 /*Nyomtatási stíluslap*/
 @media print{
-    nav,header,footer,img,audio,video,label.szoveg{
+    nav,header,footer,img,audio,video,label.text{
         display: none;
     }
 
@@ -509,7 +494,7 @@ img[alt="arrow"]{
         text-align: center;
     }
 
-    .h1imitator{
+    .h1-imitator{
         padding: 20pt 0 !important;
         margin: 100pt -6.2pt -2pt;
         font-size: x-large;
@@ -527,7 +512,7 @@ img[alt="arrow"]{
 
 /*trick*/
 @media (max-width: 661.5pt ) {
-    .h1imitator {
+    .h1-imitator {
         padding: 90pt 0 20pt;/*+10+30*/
     }
     nav ul li{
@@ -547,7 +532,7 @@ img[alt="arrow"]{
 
 
 
-    @keyframes hehe {
+    @keyframes pic-coming-in {
         0%{
 
 
@@ -567,7 +552,7 @@ img[alt="arrow"]{
 }
 
 @media (max-width: 512pt ) {
-    .h1imitator {
+    .h1-imitator {
         padding: 110pt 0 20pt;/*+10+30*/
     }
     td{
