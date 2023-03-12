@@ -109,11 +109,11 @@ h3{
     display: none;
 }
 h4{
-    background: radial-gradient(mediumblue,turquoise);
-    color: var(--offwhite);
    text-align: center;
-
+    text-decoration: underline;
+    text-decoration-color: blue;
 }
+
 /* === Kiemelő === */
 p:not(.pkek_first,.pkek_second)::before{
     content:"";
