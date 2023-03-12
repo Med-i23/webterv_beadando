@@ -26,6 +26,7 @@ body{
 
 
 }
+
 script{
     display: none;
 }
@@ -334,6 +335,7 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 #cs-team #cs-pic, #valo-pic,#rl-pic{
     height: auto;
     width: 15%;
+    min-width: 80pt;
     align-content: center;
 }
 #cs-team img:not(#cs-pic){
