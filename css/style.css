@@ -265,6 +265,10 @@ img[alt="valorant-challengers"]{
 img[alt="csgo"]{
     animation: pic-coming-in 1s forwards ;
 }
+
+img[alt="team"]{
+    animation:pic-coming-in 1s forwards ;
+}
 /*preview::hover<-arnyek*/
 .shop-item{
     background: lightgray;
