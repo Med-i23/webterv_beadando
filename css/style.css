@@ -17,13 +17,9 @@ html{
 }
 body{
     background-color: var(--off-white);
-    /*font-family: Arial, Helvetica, sans-serif;
-       background-image: url("sources/backgroundtemp.png");
-       background-repeat: repeat;*/
     word-break: break-word;
     hyphens: auto;
     animation: fade 1s forwards ease-in;
-
 
 }
 
@@ -114,7 +110,7 @@ h4{
     text-decoration-color: blue;
 }
 
-/* === Kiemelő === */
+/* === Highlighters === */
 p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::before,p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::after{
     content:"";
     display: block;
@@ -139,22 +135,7 @@ section > h2::before, section > h2::after{
 
 }
 
-/*fix
-h2::before {
-    content: "";
-    display: block;
-    background: turquoise;
-    height: 10pt;
-}
-h2::before {
-    content: "";
-    display: block;
-    background: turquoise;
-    height: 10pt;
-}*/
-
-
-/* === Táblázat === */
+/* === Table === */
 table, th,td, tr{
     align-items: center;
     padding: 10pt;
@@ -183,7 +164,7 @@ img.table-logo{
     max-width: 40pt;
 }
 
-/*idk*/
+/* === Ids,Classes === */
 h2.main-old{
     align-content: center;
     text-align: center;
@@ -206,7 +187,6 @@ label.text{
     font-weight: bold;
 }
 
-
 #login-signup__pic-link{
     position: absolute;
     right: 170pt;
@@ -223,7 +203,7 @@ label.text{
     top: 10pt;
     right: 1%;
 }
-/* === Linkek === */
+/* === Links === */
 a {
     color: white;
     text-decoration: none;
@@ -239,7 +219,7 @@ a.new-page{
     color: blue;
 
 }
-/* === Lábléc === */
+/* === Footer === */
 footer{
     text-align: center ;
     background: lightgray;
@@ -249,7 +229,7 @@ footer{
     margin: -2pt -6pt -6pt -6pt;
     border-style: solid;
 }
-/* === Képek leginkább === */
+/* === Pictures === */
 main div.picture > img{
     width: 35%;
     margin-left: -1000pt;
@@ -269,7 +249,7 @@ img[alt="csgo"]{
 img[alt="team"]{
     animation:pic-coming-in 1s forwards ;
 }
-/*preview::hover<-arnyek*/
+
 .shop-item{
     background: lightgray;
     border-top: 2pt solid;
@@ -328,13 +308,7 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
     z-index: 19;
 
 }
-#valo-team div{
 
-
-}
-#rl-team div{
-
-}
 #cs-team #cs-pic, #valo-pic,#rl-pic{
     height: auto;
     width: 15%;
@@ -356,7 +330,7 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
     width: 30%;
 }
 
-/* === Űrlap és dolgai === */
+/* === Form === */
 #form-block{
     margin: 50pt 10% 20pt;
 }
@@ -434,7 +408,7 @@ img[alt="arrow"]{
 
 }
 
-/*Animációk*/
+/* === Animations === */
 @keyframes pic-coming-in {
     0%{
         transform:rotate(180deg);
