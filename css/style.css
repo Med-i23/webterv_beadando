@@ -289,9 +289,21 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 }
 #cs-team{
     border-top: black 1pt solid;
+    border-right: 1pt solid;
+    border-left: 1pt solid;
+}
+#valo-team{
+    border-right: 1pt solid;
+    border-left: 1pt solid;
+}
+#rl-team{
+    border-right: 1pt solid;
+    border-left: 1pt solid;
 }
 #cs-pic,#valo-pic,#rl-pic{
     margin: 20pt 0;
+
+
 }
 .flex-container{
     display: flex;
