@@ -203,6 +203,7 @@ label.ergo-icon__text{
     top: 10pt;
     right: 1%;
 }
+
 /* === Links === */
 a {
     color: white;
@@ -237,16 +238,16 @@ main div.picture > img{
     z-index: 1;
 
 }
-
-img[alt="valorant-challengers"]{
-    animation: pic-coming-in 1s forwards 1s ;
-}
 img[alt="csgo"]{
     animation: pic-coming-in 1s forwards ;
 }
 
+img[alt="valorant-challengers"]{
+    animation: pic-coming-in 1s forwards 1s ;
+}
+
 img[alt="team"]{
-    animation:pic-coming-in 1s forwards ;
+    animation: pic-coming-in 1s forwards 2s;
 }
 
 .shop-item{
