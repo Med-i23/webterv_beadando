@@ -256,7 +256,11 @@ img[alt="team"]{
     background: lightgray;
     border-top: 2pt solid;
     border-bottom: none;
+    border-left: 2pt solid;
+    border-right: 2pt solid;
     text-align: center;
+    margin-left: 2%;
+    margin-right: 2%;
 
 }
 .shop-item > img{
