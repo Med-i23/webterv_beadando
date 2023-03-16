@@ -108,10 +108,7 @@ h4{
     text-decoration: underline;
     text-decoration-color: blue;
 }
-h6{
-    margin: 0;
-    font-size: medium;
-}
+
 
 /* === Highlighters === */
 p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::before,p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::after{
