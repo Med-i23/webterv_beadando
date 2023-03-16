@@ -17,7 +17,6 @@ html{
 }
 body{
     background-color: var(--off-white);
-    word-break: break-word;
     hyphens: auto;
     animation: fade 1s forwards ease-in;
 
@@ -49,7 +48,7 @@ nav a:not(#login-signup__pic-link){
 
 nav a:not(#login-signup__pic-link):hover {
     background-color: gray;
-    transform: scale(120%);
+    transform: scale(1.2);
     border-radius: 30pt;
     display: block;
     color: turquoise;
@@ -93,7 +92,7 @@ main{
     border-style: solid;
 
 }
-article{
+article,.article-imitator{
     margin-left: 2%;
     margin-right: 2%;
     align-content: center;
@@ -108,6 +107,10 @@ h4{
    text-align: center;
     text-decoration: underline;
     text-decoration-color: blue;
+}
+h6{
+    margin: 0;
+    font-size: medium;
 }
 
 /* === Highlighters === */
@@ -127,13 +130,16 @@ p.paragraph-highlighter__second::after,p.paragraph-highlighter__first::before{
 
 }
 
-section > h2::before, section > h2::after{
+section > h2:not(#cat-division)::before, section > h2:not(#cat-division)::after{
     content:"";
     display: block;
     background:turquoise;
     height: 10pt;
-
 }
+.more-space{
+    text-align: center;
+}
+
 
 /* === Table === */
 table, th,td, tr{
@@ -160,7 +166,6 @@ td.cancelled{
 img.table-logo{
     width: 30%;
     float: left;
-    clear: top;
     max-width: 40pt;
 }
 
@@ -171,7 +176,6 @@ h2.main-old{
 }
 
 .logo{
-    alignment: left;
     position: absolute;
 
 }
@@ -181,9 +185,8 @@ h2.main-old{
     margin-right: auto;
 }
 
-label.text{
+label.ergo-icon__text{
     color: white;
-    alignment: left;
     font-weight: bold;
 }
 
@@ -224,7 +227,6 @@ footer{
     text-align: center ;
     background: lightgray;
     vertical-align: center;
-    horiz-align: center;
     padding: 0;
     margin: -2pt -6pt -6pt -6pt;
     border-style: solid;
@@ -255,6 +257,15 @@ img[alt="team"]{
     border-top: 2pt solid;
     border-bottom: none;
     text-align: center;
+
+}
+.shop-item > img{
+    width: 30%;
+    align-content: center;
+    border-radius: 10pt;
+    z-index: 1;
+    height: 100pt;
+    width: auto;
 
 }
 .shop-item:last-of-type{
@@ -304,7 +315,7 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 .card:hover{
     text-shadow: black 1pt 1pt;
     box-shadow: grey 2pt 2pt 2pt;
-    transform: scale(130%);
+    transform: scale(1.3);
     z-index: 19;
 
 }
@@ -426,9 +437,6 @@ img[alt="arrow"]{
     0%{
         transform: translateY(-200pt);
     }
-    100%{
-
-    }
 }
 @keyframes fade {
     0%{
@@ -445,7 +453,7 @@ img[alt="arrow"]{
 
 /*Nyomtatási stíluslap*/
 @media print{
-    nav,header,footer,img,audio,video,label.text{
+    nav,header,footer,img,audio,video,label.ergo-icon__text{
         display: none;
     }
 
@@ -510,10 +518,6 @@ img[alt="arrow"]{
 
 
     @keyframes pic-coming-in {
-        0%{
-
-
-        }
 
         100%{
             transform: translateX(1020pt);
@@ -531,9 +535,6 @@ img[alt="arrow"]{
 @media (max-width: 512pt ) {
     .h1-imitator {
         padding: 110pt 0 20pt;/*+10+30*/
-    }
-    td{
-
     }
 
 
