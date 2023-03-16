@@ -318,14 +318,14 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 
 }
 
-.card{
+.card,.shop-item > img{
     align-items: center;
     border: black 1pt solid;
     background-color: lightgray;
     transition: transform 1s ease-in-out;
 
 }
-.card:hover{
+.card:hover,.shop-item > img:hover{
     text-shadow: black 1pt 1pt;
     box-shadow: grey 2pt 2pt 2pt;
     transform: scale(1.3);
