@@ -8,7 +8,7 @@
 }
 *{
     font-family: ErgoDefault, serif;
-    /*outline: 1px solid #f00 !important;/*overflow debugger*/
+    outline: 1px solid #f00 !important;/*overflow debugger*/
 
 }
 
@@ -180,6 +180,10 @@ h2.main-old{
 .center {
     margin-left: auto;
     margin-right: auto;
+}
+
+.twitch{
+    word-break: break-word;
 }
 
 label.ergo-icon__text{
