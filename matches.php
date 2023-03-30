@@ -16,15 +16,15 @@
                 <label class="ergo-icon__text" >&nbsp;&nbsp;&nbsp;Ergo Inc.</label>
             </div>
             <div id="sign-os" class="upper">
-                <a href="loginregister.html" id="login">Login/Signup</a>
-                <a id="login-signup__pic-link" href="loginregister.html"><img src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40"></a>
+                <a href="loginregister.php" id="login">Login/Signup</a>
+                <a id="login-signup__pic-link" href="loginregister.php"><img src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40"></a>
             </div>
             <ul>
-                <li><a href="index.html">Main</a></li>
-                <li><a href="news.html">News</a></li>
-                <li><a href="matches.html">Matches</a></li>
-                <li><a href="shop.html">Shop</a></li>
-                <li><a href="teams.html">Teams</a></li>
+                <li><a href="index.php">Main</a></li>
+                <li><a href="news.php">News</a></li>
+                <li><a href="matches.php">Matches</a></li>
+                <li><a href="shop.php">Shop</a></li>
+                <li><a href="teams.php">Teams</a></li>
             </ul>
         </nav>
     </header>
