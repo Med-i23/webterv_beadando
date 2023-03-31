@@ -182,10 +182,6 @@ h2.main-old{
     margin-right: auto;
 }
 
-.twitch{
-    word-break: break-word;
-}
-
 label.ergo-icon__text{
     color: white;
     font-weight: bold;
@@ -218,6 +214,7 @@ a {
 
 a.twitch{
     color: blue;
+    word-break: break-word;
 }
 
 a.new-page{

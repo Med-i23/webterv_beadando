@@ -1,39 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="sources/websiteElement/favicon.ico">
-    <title>Ergo Inc.</title>
-</head>
-<body>
-    <header id="header">
-        <nav>
-            <div id="logo-er" class="upper">
-                <img class="logo" src="sources/websiteElement/logo_white.png" alt="ergo-logo" title="Ergo Inc." height="100">
-                <label class="ergo-icon__text" >&nbsp;&nbsp;&nbsp;Ergo Inc.</label>
-            </div>
-            <div id="sign-os" class="upper">
-                <a href="loginregister.php" id="login">Login/Signup</a>
-                <a id="login-signup__pic-link" href="loginregister.php"><img src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40"></a>
-            </div>
-            <ul>
-                <li><a href="index.php">Main</a></li>
-                <li><a href="news.php">News</a></li>
-                <li><a href="matches.php">Matches</a></li>
-                <li><a href="shop.php">Shop</a></li>
-                <li><a href="teams.php">Teams</a></li>
-            </ul>
-        </nav>
-    </header>
     <div class="h1-imitator">NEWS</div>
-    <a id="anchor-arrow__link" href="#header"><img src="sources/websiteElement/arrow-down.png" alt="arrow"></a>
     <main>
         <div id="cs-news">
             <div class="picture">
-            <img src="sources/csgo/csgonews.jpg" alt="csgo" title="csgo">
+            <img src="../sources/csgo/csgonews.jpg" alt="csgo" title="csgo">
             </div>
             <article>
             <h2>Team CSGO wins semi-finals against Crozhair gaming</h2>
@@ -57,7 +26,7 @@
 
         <div id="valo-news">
             <div class="picture">
-            <img src="sources/valorant/valonews.jpg" alt="valorant-challengers" title="valorant-challengers">
+            <img src="../sources/valorant/valonews.jpg" alt="valorant-challengers" title="valorant-challengers">
             </div>
 
             <article>
@@ -75,6 +44,3 @@
             </article>
         </div>
     </main>
-    <footer>©2023 Ergo Inc. All rights reserved.</footer>
-</body>
-</html>

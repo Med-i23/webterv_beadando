@@ -1,35 +1,3 @@
-<!DOCTYPE html>
-<html lang="hu">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="icon" href="sources/websiteElement/favicon.ico">
-    <title>Ergo Inc.</title>
-</head>
-<body>
-
-<header >
-    <nav>
-        <div id="logo-er" class="upper">
-            <img class="logo" src="sources/websiteElement/logo_white.png" alt="ergo-logo" title="Ergo Inc." height="100">
-            <label class="ergo-icon__text" >&nbsp;&nbsp;&nbsp;Ergo Inc.</label>
-        </div>
-        <div id="sign-os" class="upper">
-            <a href="loginregister.php" id="login">Login/Signup</a>
-            <a id="login-signup__pic-link" href="loginregister.php"><img src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40"></a>
-        </div>
-        <ul>
-            <li><a href="index.php">Main</a></li>
-            <li><a href="news.php">News</a></li>
-            <li><a href="matches.php">Matches</a></li>
-            <li><a href="shop.php">Shop</a></li>
-            <li><a href="teams.php">Teams</a></li>
-        </ul>
-    </nav>
-</header>
-
 <main>
     <section id="form-block">
         <h2 class="more-space">Login to your account / Signup for an account </h2>
@@ -71,10 +39,5 @@
                 <input type="submit" value="SignUp">
             </div>
         </form>
-
-
     </section>
 </main>
-<footer>©2023 Ergo Inc. All rights reserved.</footer>
-</body>
-</html>
