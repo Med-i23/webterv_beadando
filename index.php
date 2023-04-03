@@ -20,15 +20,15 @@
                 <label class="ergo-icon__text" >&nbsp;&nbsp;&nbsp;Ergo Inc.</label>
             </div>
             <div id="sign-os" class="upper">
-                <a href="index.php?page=loginregister" id="login">Login/Signup</a>
+                <a href="index.php?page=loginregister" id="login"  <?php echo $page === "loginregister" ? "class=active" : ""; ?>>Login/Signup</a>
                 <a id="login-signup__pic-link" href="index.php?page=loginregister"><img src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40"></a>
             </div>
             <ul>
-                <li><a href="index.php?page=main">Main</a></li>
-                <li><a href="index.php?page=news">News</a></li>
-                <li><a href="index.php?page=matches">Matches</a></li>
-                <li><a href="index.php?page=shop">Shop</a></li>
-                <li><a href="index.php?page=teams">Teams</a></li>
+                <li><a href="index.php?page=main" <?php echo $page === "main" ? "class=active" : ""; ?>>Main</a></li>
+                <li><a href="index.php?page=news" <?php echo $page === "news" ? "class=active" : ""; ?>>News</a></li>
+                <li><a href="index.php?page=matches" <?php echo $page === "matches" ? "class=active" : ""; ?>>Matches</a></li>
+                <li><a href="index.php?page=shop" <?php echo $page === "shop" ? "class=active" : ""; ?>>Shop</a></li>
+                <li><a href="index.php?page=teams" <?php echo $page === "teams" ? "class=active" : ""; ?>>Teams</a></li>
             </ul>
         </nav>
     </header>

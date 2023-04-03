@@ -45,6 +45,13 @@ nav a:not(#login-signup__pic-link){
     box-shadow: turquoise 0 0 2pt 2pt;
 
 }
+nav a.active{
+    background-color: gray;
+    transform: scale(1.2);
+    border-radius: 30pt;
+    display: block;
+    color: turquoise;
+}
 
 nav a:not(#login-signup__pic-link):hover {
     background-color: gray;

@@ -4,7 +4,7 @@
 <main>
     <section id="form-block">
         <h2 class="more-space">Login to your account / Signup for an account </h2>
-        <form>
+        <form method="post">
             <fieldset>
                 <legend><strong>Login</strong></legend>
                 <label for="login-e-mail" class="label-required">E-mail:</label>
@@ -16,7 +16,7 @@
                 <input type="submit" value="Login">
             </div>
         </form>
-        <form>
+        <form method="post">>
             <fieldset>
                 <legend><strong>SingUp</strong></legend>
                 <label for="username" class="label-required">Username:</label>
@@ -31,7 +31,6 @@
                     <li>special character</li>
                     <li>at least 8 characters</li>
                 </ul>
-
                 <input type="password" name="sign-up-password" id="sign-up-password" placeholder="Password$541" minlength="8" maxlength="20" autocomplete="on" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\|\]\[\(\)\-<>]).{8,}" required>
                 <label for="sign-up-password-again" class="label-required">Password again</label>
                 <input type="password" name="sign-up-password-again" id="sign-up-password-again" placeholder="Password$541" minlength="8" maxlength="20" autocomplete="on" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\|\]\[\(\)\-<>]).{8,}" required>
@@ -41,6 +40,6 @@
                 <input type="reset" value="Reset">
                 <input type="submit" value="SignUp">
             </div>
-        </form>
+        </>
     </section>
 </main>
