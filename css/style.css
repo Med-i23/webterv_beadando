@@ -8,7 +8,7 @@
 }
 *{
     font-family: ErgoDefault, serif;
-    outline: 1px solid #f00 !important;/*overflow debugger*/
+    /*outline: 1px solid #f00 !important;/*overflow debugger*/
 
 }
 
@@ -46,9 +46,6 @@ nav a:not(#login-signup__pic-link){
 
 }
 nav a.active{
-    background-color: gray;
-    transform: scale(1.2);
-    border-radius: 30pt;
     display: block;
     color: turquoise;
 }

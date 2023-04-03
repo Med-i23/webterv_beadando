@@ -40,14 +40,14 @@
             <input type="button" value="Add to cart">
         </div>
 
-        <div class="shop-item">
+        <div class="shop-item" id="hoodie_black">
             <img src="../sources/shop/blackhoodie.png" alt="blackhoodie"><br>
             Black Hoodie <br>
             $35 <br>
             <input type="button" value="Add to cart">
         </div>
 
-        <div class="shop-item">
+        <div class="shop-item" id="hoodie_white">
             <img src="../sources/shop/whitehoodie.png" alt="whitehoodie"><br>
             White Hoodie <br>
             $35 <br>
