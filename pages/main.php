@@ -39,7 +39,7 @@
                        </tr>
                        </tbody>
                    </table>
-                   <a href="matches.php" class="new-page">more ></a>
+                   <a href="index.php?page=matches" class="new-page">more ></a>
                </section>
 
         <section>
@@ -53,7 +53,7 @@
 
                         Our national csgo team was successfull in competing in the Cherubaka 2023 Spring-Cup semi-finals and winning against the competition.
             </article>
-            <a href="news.php" class="new-page">more ></a>
+            <a href="index.php?page=news" class="new-page">more ></a>
         </section>
 
         <section>
@@ -63,14 +63,14 @@
                 <img src="../sources/shop/blackhoodie.png" alt="blackhoodie"><br>
                 Black Hoodie<br>
                 $35 <br>
-                <a href="shop.php" class="new-page">Check out</a>
+                <a href="index.php?page=shop" class="new-page">Check out</a>
             </div>
 
             <div class="shop-item">
                 <img src="../sources/shop/whitehoodie.png" alt="whitehoodie"><br>
                 White Hoodie <br>
                 $35 <br>
-                <a href="shop.php" class="new-page">Check out</a>
+                <a href="index.php?page=shop" class="new-page">Check out</a>
             </div>
         </section>
         <section>

@@ -1,6 +1,5 @@
 <?php
     $page = $_GET["page"] ?? "main";
-
 ?>
 <!DOCTYPE html>
 <html lang="hu">
@@ -36,7 +35,6 @@
         <a id="anchor-arrow__link" href="#header"><img src="sources/websiteElement/arrow-down.png" alt="arrow"></a>
         <?php
             include_once "pages/$page.php";
-
         ?>
 
     <footer>©2023 Ergo Inc. All rights reserved.</footer>
