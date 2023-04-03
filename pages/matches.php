@@ -1,3 +1,6 @@
+<?php
+
+?>
     <div class="h1-imitator">MATCHES</div>
     <main>
         <section class="article-imitator">

@@ -1,3 +1,6 @@
+<?php
+
+?>
 <main>
     <section id="form-block">
         <h2 class="more-space">Login to your account / Signup for an account </h2>

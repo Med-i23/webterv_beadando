@@ -1,3 +1,6 @@
+<?php
+
+?>
     <div class="h1-imitator">NEWS</div>
     <main>
         <div id="cs-news">

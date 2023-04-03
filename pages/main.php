@@ -1,4 +1,6 @@
+<?php
 
+?>
     <div class="h1-imitator">Welcome to Ergo!</div>
     <main>
             <section>

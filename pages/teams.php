@@ -1,3 +1,6 @@
+<?php
+
+?>
     <div id="header" class="h1-imitator">TEAMS</div>
     <main>
         <section class="article-imitator" id="cs-team">
