@@ -1,7 +1,7 @@
 <?php
 
 ?>
-    <div id="header" class="h1-imitator">TEAMS</div>
+    <div class="h1-imitator">TEAMS</div>
     <main>
         <section class="article-imitator" id="cs-team">
             <img src="../sources/csgo/csgo_minilogo.png" id="cs-pic" alt="csgo logo">

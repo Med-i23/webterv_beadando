@@ -1,7 +1,7 @@
 <?php
 
 ?>
-    <div id="header" class="h1-imitator">SHOP</div>
+    <div class="h1-imitator">SHOP</div>
     <main>
         <p class="article-imitator">Dont forget to set the mood with our favorite shopping song:</p>
         <audio class="article-imitator" controls loop id="music">
