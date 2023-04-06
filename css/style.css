@@ -180,6 +180,9 @@ h2.main-old{
     position: absolute;
 
 }
+.success{
+    color: green;
+}
 .error{
     color: red;
     display: block;
@@ -196,7 +199,9 @@ label.ergo-icon__text{
     color: white;
     font-weight: bold;
 }
-
+#agree_terms-of-use{
+    margin-top: -20pt;
+}
 #login-signup__pic-link{
     position: absolute;
     right: 170pt;
