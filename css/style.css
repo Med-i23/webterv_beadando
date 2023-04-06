@@ -213,7 +213,7 @@ label.ergo-icon__text{
     height: auto;
 }
 
-#login{
+.login{
     position: fixed;
     top: 10pt;
     right: 1%;
