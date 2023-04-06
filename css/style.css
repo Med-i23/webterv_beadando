@@ -322,6 +322,9 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 
 
 }
+.card > a{
+    color: black;
+}
 .flex-box{
     display: flex;
     flex-direction: column;
@@ -331,7 +334,7 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 .flex-box > .card{
     display: flex;
     flex-direction: row;
-    flex: 1 1 10pt;
+    flex: 1 1 20pt;
 }
 
 .flex-container{
