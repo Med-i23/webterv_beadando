@@ -31,7 +31,7 @@ if (isset($_POST["signup"])) {
     }else{
         array_push($errors,"does_not_agree_terms_of_use");
     }
-    $subscribe = $_POST["subscribe"] ?? false;
+    $subscribe = $_POST["subscribe"] ?? "off";
     $users = load_data("data/fan_data.json");
 
     foreach ($users["users"] as $user) {
@@ -84,19 +84,23 @@ if (isset($_POST["signup"])) {
 
 }
 
+
 if (isset($_POST["login"])) {
     $login_email = $_POST["login-e-mail"];
     $login_password = $_POST["login-password"];
 
     $users = load_data("data/fan_data.json");
     foreach ($users["users"] as $user){
+
         if ($user["email"] === $login_email && password_verify($login_password,$user["password"])){
-            $_SESSION["username"] = $username;
+
+            $_SESSION["username"] = $user["username"];
             header("Location: index.php?page=main");
         }else{
             array_push($errors, "login_email_or_password_not_valid");
         }
     }
+
 }
 
 ?>

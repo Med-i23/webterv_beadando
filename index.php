@@ -7,11 +7,7 @@ if (isset($_GET["logout"])) {
 }
 
 $page = $_GET["page"] ?? "main";
-if (isset($_SESSION["username"])){
-    echo $_SESSION["username"];
-}else{
-    echo "Rosszám";
-}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
