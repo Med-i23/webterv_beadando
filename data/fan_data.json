@@ -3,7 +3,22 @@
         {
             "username": "Kekszharcos",
             "email": "b.enedek670@gmail.com",
-            "password": "$2y$10$lYoTwleyVWGMryt.17Dvzu32R5Zzdv5VECn1PGpVsVeLKsWGFfrue",
+            "password": "$2y$10$DBDHCbumq0OT6Vd7A.WJ8OnJXSSjtFuhYH49VjnCGV6gfcXgh6aAW",
+            "agree_terms_of_use": "on",
+            "subscribe": null
+        },
+        {
+            "username": "KekszharcosUr",
+            "email": "texafa2544@cyclesat.com",
+            "password": "$2y$10$91u75XkJw01llv.m12O3k.eW9Q8zCYYDan9WTjJ3vrMRFiJ3.UKEi",
+            "agree_terms_of_use": "on",
+            "subscribe": "on"
+        },
+        {
+            "username": "Kok\u00f3B\u00e1csi",
+            "email": "kexakel545@dogemn.com",
+            "password": "$2y$10$ZKgh21In5UVXfmqBzXXJ2OWd4NP15QslhotEE\/A\/EWGomBsYXFzWG",
+            "agree_terms_of_use": "on",
             "subscribe": "on"
         }
     ]

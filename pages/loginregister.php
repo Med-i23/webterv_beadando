@@ -18,6 +18,7 @@ function load_data(string $filename): array
 
 
 $errors = [];
+global $username, $email, $password, $password_check, $agree_terms_of_use, $subscribe;
 if (isset($_POST["signup"])) {
     $username = $_POST["username"];
     $email = $_POST["signup-e-mail"];
@@ -25,20 +26,20 @@ if (isset($_POST["signup"])) {
     $password_check = $_POST["sign-up-password-again"];
 
 
-    if (isset($_POST["confirmations[]"])){
-        $confirmations = $_POST["confirmations[]"];
+    if (isset($_POST["agree_terms_of_use"])) {
+        $agree_terms_of_use = $_POST["agree_terms_of_use"];
+    }else{
+        array_push($errors,"does_not_agree_terms_of_use");
     }
-    if (isset($_POST["subscribe"])){
-        $subscribe = $_POST["subscribe"];
-    }
+    $subscribe = $_POST["subscribe"] ?? false;
     $users = load_data("data/fan_data.json");
 
     foreach ($users["users"] as $user) {
         if ($user["email"] === $email) {
-            array_push($errors, "email_already_in use");
+            array_push($errors, "email_already_in_use");
         }
         if ($user["username"] === $username) {
-            array_push($errors, "username_already_in use");
+            array_push($errors, "username_already_in_use");
         }
     }
     if (trim($username) === "") {
@@ -69,11 +70,13 @@ if (isset($_POST["signup"])) {
         array_push($errors, "passwords_not_match");
     }
     if (count($errors) === 0) {
+
         $password = password_hash($password, PASSWORD_DEFAULT);
         $user = [
             "username" => $username,
             "email" => $email,
             "password" => $password,
+            "agree_terms_of_use" => $agree_terms_of_use,
             "subscribe" => $subscribe
         ];
         save_data("data/fan_data.json", $user);
@@ -84,8 +87,15 @@ if (isset($_POST["signup"])) {
 if (isset($_POST["login"])) {
     $login_email = $_POST["login-e-mail"];
     $login_password = $_POST["login-password"];
-    if (trim($login_email) === "" || ($login_email !== "" && !filter_var($login_email, FILTER_VALIDATE_EMAIL))) {
-        array_push($errors, "login_email_or_password_not_valid");
+
+    $users = load_data("data/fan_data.json");
+    foreach ($users["users"] as $user){
+        if ($user["email"] === $login_email && password_verify($login_password,$user["password"])){
+            $_SESSION["username"] = $username;
+            header("Location: index.php?page=main");
+        }else{
+            array_push($errors, "login_email_or_password_not_valid");
+        }
     }
 }
 
@@ -99,21 +109,26 @@ if (isset($_POST["login"])) {
                 <label for="login-e-mail" class="label-required">E-mail:</label>
                 <input type="email" name="login-e-mail" id="login-e-mail" placeholder="Email address" maxlength="40"
                        required>
-                <div <?php ?>>
+                <div <?php echo in_array("login_email_or_password_not_valid",$errors) ? "class=error" : "hidden" ?>>
+                    <?php
+                    if (in_array("login_email_or_password_not_valid",$errors)) echo "Email or password not valid!";
 
+                    ?>
                 </div>
                 <label for="login-password" class="label-required">Password:</label>
                 <input type="password" name="login-password" id="login-password" placeholder="Password" minlength="8"
                        maxlength="20" required>
-                <div <?php ?>>
-
+                <div <?php echo in_array("login_email_or_password_not_valid",$errors) ? "class=error" : "hidden" ?>>
+                    <?php
+                    if (in_array("login_email_or_password_not_valid",$errors)) echo "Email or password not valid!"
+                    ?>
                 </div>
             </fieldset>
             <div class="buttons">
-                <input type="submit" value="Login">
+                <input type="submit" name="login" value="Login">
             </div>
         </form>
-        <div <?php echo count($errors) === 0 ? "class=success" : "hidden" ?>>
+        <div <?php echo count($errors) === 0 && isset($_POST["signup"]) ? "class=success" : "hidden" ?>>
             You signed up successfully!
         </div>
         <form method="post" id="form_register" autocomplete="on">
@@ -127,7 +142,7 @@ if (isset($_POST["login"])) {
                     <?php
                     if (in_array("long_username", $errors)) echo "The username can not be longer that 20 characters!";
                     if (in_array("empty_username", $errors)) echo "You must fill this field!";
-                    if (in_array("username_already_in use", $errors) && !in_array("empty_username", $errors) && !in_array("long_username", $errors)) echo "This username is already in use!";
+                    if (in_array("username_already_in_use", $errors)) echo "This username is already in use!";
                     ?>
                 </div>
                 <label for="signup-e-mail" class="label-required">E-mail:</label>
@@ -166,13 +181,14 @@ if (isset($_POST["login"])) {
                     if (in_array("passwords_not_match", $errors)) echo "Passwords does not match!";
                     ?>
                 </div>
-                <label for="agree_terms-of-use" class="label-required" >I accept the terms of use:  </label>
-                    <input type="checkbox" name="agree_terms-of-use[]" id="agree_terms-of-use" required <?php if (isset($_POST["agree_terms-of-use"])) echo "checked" ?>>
-                    <div <?php echo in_array("does_not_agree_terms_of_use", $errors) ? "class=error" : "hidden"; ?>>
+                <label for="agree_terms_of_use" class="label-required">I accept the terms of use: </label>
+                <input type="checkbox" name="agree_terms_of_use" id="agree_terms_of_use"
+                       required <?php if (isset($_POST["agree_terms-of-use"])) echo "checked" ?>>
+                <div <?php echo in_array("does_not_agree_terms_of_use", $errors) ? "class=error" : "hidden"; ?>>
                     <?php
                     if (in_array("does_not_agree_terms_of_use", $errors)) echo "You must check this checkbox!";
                     ?>
-                    </div>
+                </div>
 
                 <label for="subscribe">Subscribe to our newsletter:<input type="checkbox" name="subscribe"
                                                                           id="subscribe" <?php if (isset($_POST["subscribe"])) echo "checked" ?>></label>
