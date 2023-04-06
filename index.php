@@ -7,6 +7,11 @@ if (isset($_GET["logout"])) {
 }
 
 $page = $_GET["page"] ?? "main";
+if (isset($_SESSION["username"])){
+    echo $_SESSION["username"];
+}else{
+    echo "Rosszám";
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -27,21 +32,21 @@ $page = $_GET["page"] ?? "main";
             <label class="ergo-icon__text">&nbsp;&nbsp;&nbsp;Ergo Inc.</label>
         </div>
         <div id="sign-os" class="upper">
-                <a href="index.php?page=loginregister"
-                   class=" <?php if ($page === "loginregister" && !isset($_SESSION["username"])) {
-                       echo "active login";
-                   }else{
-                       echo "hidden";
-                   }
-                   ?>">Login/Signup</a>
 
-                <a href="index.php?logout" class="<?php if (isset($_SESSION["username"])){
-                    echo "login active";
-                }else {
-                    echo "hidden";
-                }
-                ?>">Log out</a>
+            <?php
+                if (!isset($_SESSION["username"])){
+                    ?>
+            <a href="index.php?page=loginregister" id="login"
+               class=" <?php echo $page === "loginregister" ? "active" : ""; ?>">
+                Login/Signup</a>
 
+            <?php
+             }else{
+            ?>
+            <a href="index.php?logout" id="login">Log out</a>
+            <?php
+            }
+            ?>
 
             <a id="login-signup__pic-link" href="index.php?page=loginregister"><img
                         src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40"></a>
