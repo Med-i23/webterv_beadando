@@ -103,8 +103,8 @@
 
         Changes to this Privacy Policy
         6.1. We may update this Privacy Policy from time to time by posting a new version on our website. The new version will become effective on the date it is posted. Your continued use of our website or webshop after the effective date of any changes to this Privacy Policy constitutes your acceptance of the changes.
-
-
+        </section>
+        <section>
         CONTACT US
         In order to resolve a complaint regarding the Services or to recive further information regarding use of the Services, please contact us at:
 
