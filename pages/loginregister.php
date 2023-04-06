@@ -103,7 +103,7 @@ if (isset($_POST["login"])) {
 <main>
     <section id="form-block">
         <h2 class="more-space">Login to your account / Signup for an account </h2>
-        <form method="post" id="form_login" autocomplete="on">
+        <form method="post" id="form_login" enctype="multipart/form-data" autocomplete="on">
             <fieldset>
                 <legend><strong>Login</strong></legend>
                 <label for="login-e-mail" class="label-required">E-mail:</label>
