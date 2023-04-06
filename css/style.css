@@ -182,6 +182,10 @@ h2.main-old{
 }
 .error{
     color: red;
+    display: block;
+}
+.hidden{
+    display: none;
 }
 .center {
     margin-left: auto;

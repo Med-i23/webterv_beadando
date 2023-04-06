@@ -1,4 +1,13 @@
 <?php
+function save_data(){
+
+}
+
+function load_data(){
+
+}
+
+
 $errors = [];
 if (isset($_POST["signup"])) {
     $username = $_POST["username"];
@@ -45,6 +54,14 @@ if (isset($_POST["signup"])) {
 
 }
 
+if (isset($_POST["login"])) {
+    $login_email = $_POST["login-e-mail"];
+    $login_password = $_POST["login-password"];
+    if (trim($login_email) === "" || trim($login_email) === "" || ($login_email !== "" && !filter_var($login_email,FILTER_VALIDATE_EMAIL))) {
+        array_push($errors, "login_email_or_password_not_valid");
+    }
+}
+
 ?>
 <main>
     <section id="form-block">
@@ -55,13 +72,13 @@ if (isset($_POST["signup"])) {
                 <label for="login-e-mail" class="label-required">E-mail:</label>
                 <input type="email" name="login-e-mail" id="login-e-mail" placeholder="Email address" maxlength="40"
                        required>
-                <div class="error">
+                <div <?php ?>>
 
                 </div>
                 <label for="login-password" class="label-required">Password:</label>
                 <input type="password" name="login-password" id="login-password" placeholder="Password" minlength="8"
                        maxlength="20" required>
-                <div class="error">
+                <div <?php ?>>
 
                 </div>
             </fieldset>
@@ -73,18 +90,18 @@ if (isset($_POST["signup"])) {
             <fieldset>
                 <legend><strong>SingUp</strong></legend>
                 <label for="username" class="label-required">Username:</label>
-                <input type="text" name="username" id="username" placeholder="TheBigUserName54" maxlength="30" value=""
+                <input type="text" name="username" id="username" placeholder="TheBigUserName54" maxlength="30" value="<?php if (isset($_POST["username"])) echo $_POST["username"];?>"
                        required>
-                <div class="error">
+                <div <?php echo in_array("long_username", $errors) || in_array("empty_username", $errors) ? "class=error" : "hidden"; ?> >
                     <?php
                     if (in_array("long_username", $errors)) echo "The username can not be longer that 20 characters!";
                     if (in_array("empty_username", $errors)) echo "You must fill this field!";
                     ?>
                 </div>
                 <label for="signup-e-mail" class="label-required">E-mail:</label>
-                <input type="email" name="signup-e-mail" id="signup-e-mail" placeholder="kittens@garden.meow" value=""
+                <input type="email" name="signup-e-mail" id="signup-e-mail" placeholder="kittens@garden.meow" value="<?php if (isset($_POST["email"])) echo $_POST["email"];?>"
                        required>
-                <div class="error">
+                <div <?php echo in_array("empty_email", $errors) || in_array("invalid_email", $errors) ? "class=error" : "hidden"; ?>>
                     <?php
                     if (in_array("empty_email", $errors)) echo "You must fill this field!";
                     if (in_array("invalid_email", $errors)) echo "This email is not valid!";
@@ -100,7 +117,7 @@ if (isset($_POST["signup"])) {
                 </ul>
                 <input type="password" name="sign-up-password" id="sign-up-password" placeholder="Password$541"
                        minlength="8" maxlength="20" required>
-                <div class="error">
+                <div <?php echo in_array("empty_password", $errors) || in_array("does_not_met_requirements", $errors) || in_array("passwords_not_match", $errors) && !in_array("does_not_met_requirements", $errors) ? "class=error" : "hidden"; ?>>
                     <?php
                     if (in_array("empty_password", $errors)) echo "You must fill this field!";
                     if (in_array("does_not_met_requirements", $errors)) echo "The password not matches the requirements!";
@@ -110,16 +127,15 @@ if (isset($_POST["signup"])) {
                 <label for="sign-up-password-again" class="label-required">Password again</label>
                 <input type="password" name="sign-up-password-again" id="sign-up-password-again"
                        placeholder="Password$541" minlength="8" maxlength="20" required>
-                <div class="error">
+                <div <?php echo in_array("passwords_not_match", $errors) ? "class=error" : "hidden"; ?> >
                     <?php
                     if (in_array("passwords_not_match", $errors)) echo "Passwords does not match!";
                     ?>
                 </div>
-                <label for="subscribe">Subscribe to our newsletter:<input type="checkbox" name="subscribe"
-                                                                          id="subscribe"></label>
+                <label for="subscribe">Subscribe to our newsletter:<input type="checkbox" name="subscribe" id="subscribe"  <?php if (isset($_POST["subscribe"])) echo "checked" ?>></label>
             </fieldset>
             <div class="buttons">
-                <input type="reset" name="login" value="Reset">
+                <input type="reset" name="reset" value="Reset">
                 <input type="submit" name="signup" value="SignUp">
             </div>
         </form>
