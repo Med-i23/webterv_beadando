@@ -7,7 +7,6 @@ if (isset($_GET["logout"])) {
 }
 
 $page = $_GET["page"] ?? "main";
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -32,6 +31,7 @@ $page = $_GET["page"] ?? "main";
             <?php
                 if (!isset($_SESSION["username"])){
                     ?>
+                    <a id="login-signup__pic-link" href="index.php?page=loginregister"><img src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40"></a>
             <a href="index.php?page=loginregister" id="login"
                class=" <?php echo $page === "loginregister" ? "active" : ""; ?>">
                 Login/Signup</a>
@@ -39,13 +39,12 @@ $page = $_GET["page"] ?? "main";
             <?php
              }else{
             ?>
+            <a id="login-signup__pic-link" href="index.php?page=account"><img src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40"></a>
             <a href="index.php?logout" id="login">Log out</a>
             <?php
             }
             ?>
 
-            <a id="login-signup__pic-link" href="index.php?page=loginregister"><img
-                        src="sources/websiteElement/account.png" alt="account" id="login-signup__pic" width="40"></a>
         </div>
         <ul>
             <li><a href="index.php?page=main" <?php echo $page === "main" ? "class=active" : ""; ?>>Main</a></li>

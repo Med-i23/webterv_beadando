@@ -322,6 +322,18 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 
 
 }
+.flex-box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+
+}
+.flex-box > .card{
+    display: flex;
+    flex-direction: row;
+    flex: 1 1 10pt;
+}
+
 .flex-container{
     display: flex;
     flex-direction: row;
@@ -335,14 +347,14 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 
 }
 
-.card,.shop-item > img{
+.flex-container > .card,.shop-item > img{
     align-items: center;
     border: black 1pt solid;
     background-color: lightgray;
     transition: transform 1s ease-in-out;
 
 }
-.card:hover,.shop-item > img:hover{
+.flex-container > .card:hover,.shop-item > img:hover{
     text-shadow: black 1pt 1pt;
     box-shadow: grey 2pt 2pt 2pt;
     transform: scale(1.3);

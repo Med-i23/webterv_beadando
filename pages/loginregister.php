@@ -1,22 +1,5 @@
 <?php
-function save_data(string $filename, array $data): void
-{
-    $users = load_data($filename);
-    $users["users"][] = $data;
-    file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
-}
-
-function load_data(string $filename): array
-{
-    if (!file_exists($filename)) {
-        die("Nem létezik ilyen fájl!");
-    }
-    $json = file_get_contents($filename);
-
-    return json_decode($json, true);
-}
-
-
+include_once "common/functions.php";
 $errors = [];
 global $username, $email, $password, $password_check, $agree_terms_of_use, $subscribe;
 if (isset($_POST["signup"])) {
@@ -24,6 +7,7 @@ if (isset($_POST["signup"])) {
     $email = $_POST["signup-e-mail"];
     $password = $_POST["sign-up-password"];
     $password_check = $_POST["sign-up-password-again"];
+    $privilege = "normal";
 
 
     if (isset($_POST["agree_terms_of_use"])) {
@@ -77,7 +61,8 @@ if (isset($_POST["signup"])) {
             "email" => $email,
             "password" => $password,
             "agree_terms_of_use" => $agree_terms_of_use,
-            "subscribe" => $subscribe
+            "subscribe" => $subscribe,
+            "privilege" => $privilege
         ];
         save_data("data/fan_data.json", $user);
     }
