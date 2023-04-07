@@ -325,6 +325,11 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 .card > a{
     color: black;
 }
+a.terms{
+    color: black;
+    text-decoration: underline double;
+    padding: 0;
+}
 #cookies{
     border: 1pt solid;
     position: fixed;
@@ -333,8 +338,6 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
     width: 99.9%;
     text-align: center;
     margin-left: -6pt;
-
-
 
 }
 

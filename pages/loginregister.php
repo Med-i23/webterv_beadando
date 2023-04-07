@@ -170,9 +170,9 @@ if (isset($_POST["login"])) {
                     if (in_array("passwords_not_match", $errors)) echo "Passwords does not match!";
                     ?>
                 </div>
-                <label for="agree_terms_of_use" class="label-required">I accept the terms of use: </label>
-                <input type="checkbox" name="agree_terms_of_use" id="agree_terms_of_use"
-                       required <?php if (isset($_POST["agree_terms-of-use"])) echo "checked" ?>>
+                <label for="agree_terms_of_use" class="label-required">I accept the <a class="terms" href="index.php?page=termsofservice">Terms of Use</a>:<input type="checkbox" name="agree_terms_of_use" id="agree_terms_of_use"
+                                                                                                                                                                  required <?php if (isset($_POST["agree_terms-of-use"])) echo "checked" ?>> </label>
+
                 <div <?php echo in_array("does_not_agree_terms_of_use", $errors) ? "class=error" : "hidden"; ?>>
                     <?php
                     if (in_array("does_not_agree_terms_of_use", $errors)) echo "You must check this checkbox!";
