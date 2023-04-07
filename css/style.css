@@ -325,6 +325,19 @@ section > img:not(#cs-pic,#valo-pic,#rl-pic) {
 .card > a{
     color: black;
 }
+#cookies{
+    border: 1pt solid;
+    position: fixed;
+    background-color: turquoise;
+    margin-top: 80pt;
+    width: 99.9%;
+    text-align: center;
+    margin-left: -6pt;
+
+
+
+}
+
 .flex-box{
     display: flex;
     flex-direction: column;

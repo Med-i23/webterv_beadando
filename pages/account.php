@@ -26,10 +26,10 @@ foreach ($users["users"] as $user){
                 <a>Settings</a>
             </div>
             <div class="card">
-                <a>Niffer</a>
+                <a>Messages</a>
             </div>
             <div class="card">
-                <a>Buffer</a>
+                <a>Find user</a>
             </div>
             <div class="card">
                 <a>Filler</a>

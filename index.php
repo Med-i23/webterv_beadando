@@ -1,5 +1,10 @@
 <?php
 session_start();
+
+if (isset($_POST["accept_cookies"])){
+    setcookie("use_cookies", "accepted", time() + (60*60*24*10));
+    header("Refresh: 0");
+}
 if (isset($_GET["logout"])) {
     session_unset();
     session_destroy();
@@ -56,6 +61,16 @@ $page = $_GET["page"] ?? "main";
         </ul>
     </nav>
 </header>
+<?php
+if (!isset($_COOKIE["use_cookies"])){
+?>
+
+    <div id="cookies">
+        <form method="post">
+            This website uses cookies you must accept them. <button  name="accept_cookies">Accept</button>
+        </form>
+    </div>
+<?php }?>
 
 <a id="anchor-arrow__link" href="#header"><img src="sources/websiteElement/arrow-down.png" alt="arrow"></a>
 <?php
