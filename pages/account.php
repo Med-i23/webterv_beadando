@@ -26,19 +26,19 @@ foreach ($users["users"] as $user){
                 <a>Settings</a>
             </div>
             <div class="card">
-                <a>Messages</a>
-            </div>
-            <div class="card">
                 <a>Find user</a>
             </div>
             <div class="card">
-                <a>Filler</a>
+                <a>Add friend</a>
             </div>
             <div class="card">
-                <a>Tiller</a>
+                <a>Remove friend</a>
             </div>
             <div class="card">
-                <a>Siller</a>
+                <a>Messages</a>
+            </div>
+            <div class="card">
+                <a>Send message</a>
             </div>
             <div class="card">
                 <a>Kill</a>
