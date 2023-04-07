@@ -1,5 +1,8 @@
 <?php
 include_once "common/functions.php";
+if (isset($_SESSION["username"])){
+    header("Location: index.php?page=main");
+}
 $errors = [];
 global $username, $email, $password, $password_check, $agree_terms_of_use, $subscribe;
 if (isset($_POST["signup"])) {
@@ -13,45 +16,45 @@ if (isset($_POST["signup"])) {
     if (isset($_POST["agree_terms_of_use"])) {
         $agree_terms_of_use = $_POST["agree_terms_of_use"];
     }else{
-        array_push($errors,"does_not_agree_terms_of_use");
+        $errors[] = "does_not_agree_terms_of_use";
     }
     $subscribe = $_POST["subscribe"] ?? "off";
     $users = load_data("data/fan_data.json");
 
     foreach ($users["users"] as $user) {
         if ($user["email"] === $email) {
-            array_push($errors, "email_already_in_use");
+            $errors[] = "email_already_in_use";
         }
         if ($user["username"] === $username) {
-            array_push($errors, "username_already_in_use");
+            $errors[] = "username_already_in_use";
         }
     }
     if (trim($username) === "") {
-        array_push($errors, "empty_username");
+        $errors[] = "empty_username";
     }
     if (strlen($username) > 30) {
-        array_push($errors, "long_username");
+        $errors[] = "long_username";
     }
     if (trim($email) === "") {
-        array_push($errors, "empty_email");
+        $errors[] = "empty_email";
     }
     if ($email !== "" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        array_push($errors, "invalid_email");
+        $errors[] = "invalid_email";
     }
     if (trim($password) === "") {
-        array_push($errors, "empty_password");
+        $errors[] = "empty_password";
     }
     if (trim($password_check) === "") {
-        array_push($errors, "empty_password_check");
+        $errors[] = "empty_password_check";
     }
     if (($password !== "" && strlen($password) < 8) || ($password !== "" && strlen($password) > 20)) {
-        array_push($errors, "does_not_met_requirements");
+        $errors[] = "does_not_met_requirements";
     }
     if ($password !== "" && (strlen($password) >= 8 && strlen($password) <= 20) && (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\]\[\-<>]).{8,}/", $password))) {
-        array_push($errors, "does_not_met_requirements");
+        $errors[] = "does_not_met_requirements";
     }
     if ($password_check !== "" && $password !== $password_check) {
-        array_push($errors, "passwords_not_match");
+        $errors[] = "passwords_not_match";
     }
     if (count($errors) === 0) {
 
@@ -82,7 +85,7 @@ if (isset($_POST["login"])) {
             $_SESSION["username"] = $user["username"];
             header("Location: index.php?page=main");
         }else{
-            array_push($errors, "login_email_or_password_not_valid");
+            $errors[] = "login_email_or_password_not_valid";
         }
     }
 
@@ -123,7 +126,7 @@ if (isset($_POST["login"])) {
         <form method="post" id="form_register" autocomplete="on">
             <fieldset>
                 <legend><strong>SingUp</strong></legend>
-                <label for="username" class="label-required">Username:</label>
+                <label for="username" class="label-required">Username (max 30 characters):</label>
                 <input type="text" name="username" id="username" placeholder="TheBigUserName54" maxlength="30"
                        value="<?php if (isset($_POST["username"])) echo $_POST["username"]; ?>"
                        required>
@@ -152,6 +155,7 @@ if (isset($_POST["login"])) {
                     <li>number</li>
                     <li>special character</li>
                     <li>at least 8 characters</li>
+                    <li>max 20 characters</li>
                 </ul>
                 <input type="password" name="sign-up-password" id="sign-up-password" placeholder="Password$541"
                        minlength="8" maxlength="20" required>

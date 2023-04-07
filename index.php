@@ -67,7 +67,7 @@ if (!isset($_COOKIE["use_cookies"])){
 
     <div id="cookies">
         <form method="post">
-            This website uses cookies you must accept them. <button  name="accept_cookies">Accept</button>
+            This website uses cookies you must accept them for your own benefits. <button  name="accept_cookies">Accept</button>
         </form>
     </div>
 <?php }?>
