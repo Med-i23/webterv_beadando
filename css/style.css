@@ -8,7 +8,7 @@
 }
 *{
     font-family: ErgoDefault, serif;
-    /*outline: 1px solid #f00 !important;/*overflow debugger*/
+    outline: 1px solid #f00 !important;/*overflow debugger*/
 
 }
 
@@ -343,14 +343,22 @@ a.terms{
 
 .flex-box{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-
-}
-.flex-box > .card{
-    display: flex;
     flex-direction: row;
-    flex: 1 1 20pt;
+    flex-wrap: wrap;
+    right: 450pt;
+    top: 300pt;
+}
+
+.flex-box > .card_1{
+    display: flex;
+    flex-direction: column;
+
+    width: 20%;
+}
+.flex-box > .card_2{
+
+
+    width: 80%;
 }
 
 .flex-container{

@@ -3,10 +3,13 @@
         {
             "username": "Kekszharcos",
             "email": "b.enedek670@gmail.com",
-            "password": "$2y$10$GDf2FMhF0rv7.szJitRRhus9E7OKQr6PkpDhTHVrlVOauSMMr.d7K",
+            "password": "$2y$10$no2duum9f.1pEFmeZVNgPuHPuevGT9L1nIFXuDt0MJlEOVAE29T76",
             "agree_terms_of_use": "on",
             "subscribe": "on",
-            "privilege": "admin"
+            "privilege": "admin",
+            "friends": [],
+            "messages": [],
+            "cart": []
         }
     ]
 }

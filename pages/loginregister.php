@@ -1,8 +1,6 @@
 <?php
 include_once "common/functions.php";
-if (isset($_SESSION["username"])){
-    header("Location: index.php?page=main");
-}
+why_are_you_here();
 $errors = [];
 global $username, $email, $password, $password_check, $agree_terms_of_use, $subscribe;
 if (isset($_POST["signup"])) {
@@ -19,28 +17,13 @@ if (isset($_POST["signup"])) {
         $errors[] = "does_not_agree_terms_of_use";
     }
     $subscribe = $_POST["subscribe"] ?? "off";
-    $users = load_data("data/fan_data.json");
 
-    foreach ($users["users"] as $user) {
-        if ($user["email"] === $email) {
-            $errors[] = "email_already_in_use";
-        }
-        if ($user["username"] === $username) {
-            $errors[] = "username_already_in_use";
-        }
-    }
-    if (trim($username) === "") {
-        $errors[] = "empty_username";
-    }
-    if (strlen($username) > 30) {
-        $errors[] = "long_username";
-    }
-    if (trim($email) === "") {
-        $errors[] = "empty_email";
-    }
-    if ($email !== "" && !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $errors[] = "invalid_email";
-    }
+    $errors[] = duplicate_username_check($username);
+    $errors[] = duplicate_email_check($email);
+    $errors[] = empty_username_check($username);
+    $errors[] = username_longness($username);
+    $errors[] = empty_email_check($email);
+
     if (trim($password) === "") {
         $errors[] = "empty_password";
     }
@@ -56,8 +39,9 @@ if (isset($_POST["signup"])) {
     if ($password_check !== "" && $password !== $password_check) {
         $errors[] = "passwords_not_match";
     }
-    if (count($errors) === 0) {
+    $errors = array_values(array_filter($errors));
 
+    if (count($errors) === 0) {
         $password = password_hash($password, PASSWORD_DEFAULT);
         $user = [
             "username" => $username,
@@ -65,7 +49,10 @@ if (isset($_POST["signup"])) {
             "password" => $password,
             "agree_terms_of_use" => $agree_terms_of_use,
             "subscribe" => $subscribe,
-            "privilege" => $privilege
+            "privilege" => $privilege,
+            "friends" => $friends = [],
+            "messages" => $messages = [],
+            "cart" => $cart = []
         ];
         save_data("data/fan_data.json", $user);
     }
