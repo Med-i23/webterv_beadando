@@ -133,12 +133,6 @@ h4{
     transform: translate(-50%,-50%) scale(1);
 }
 
-.popup form label{
-    display: block;
-    margin-bottom: 10px;
-}
-
-
 /* === Highlighters === */
 p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::before,p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::after{
     content:"";

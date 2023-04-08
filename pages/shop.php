@@ -73,15 +73,16 @@
             $35 <br>
             <button type="submit" onclick="openPopup()">Buy now</button>
         </div>
-
            <script>
                let popup = document.getElementById("popup");
 
                function openPopup(){
                     popup.classList.add("open-popup");
+
                }
                function closePopup(){
                    popup.classList.remove("open-popup");
                }
            </script>
+
     </main>
