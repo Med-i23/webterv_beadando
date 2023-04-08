@@ -31,9 +31,6 @@ $page = $_GET["page"] ?? "main";
                  height="100">
             <label class="ergo-icon__text">&nbsp;&nbsp;&nbsp;Ergo Inc.</label>
         </div>
-        <div>
-            <a id="login-signup__pic-link" href="index.php?page=cart"><img src="sources/websiteElement/cart.jpg" alt="account" id="cart_pic" width="90"></a>
-        </div>
         <div id="sign-os" class="upper">
             <?php
                 if (!isset($_SESSION["username"])){
