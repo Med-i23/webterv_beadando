@@ -1,5 +1,6 @@
 <?php
 include_once "common/functions.php";
+
 $users = load_data("data/fan_data.json");
 $admin = false;
 foreach ($users["users"] as $user) {
@@ -13,12 +14,16 @@ foreach ($users["users"] as $user) {
 
 <div class="h1-imitator">Account management</div>
 <main>
+    <h4>You are <?php echo $_SESSION["username"];
+        if ($admin){
+            echo " (Administrator)";
+        }?><br></h4>
     <section class="article-imitator">
         <form method="post">
             <div class="flex-box">
                 <div class="card_1">
                     <?php
-                    if (isset($_SESSION["username"]) && $admin) {
+                    if ($admin) {
                         ?>
                         <button name="manage_users_b">Manage users</button>
 
