@@ -23,22 +23,10 @@ if (isset($_POST["signup"])) {
     $errors[] = empty_username_check($username);
     $errors[] = username_longness($username);
     $errors[] = empty_email_check($email);
-
-    if (trim($password) === "") {
-        $errors[] = "empty_password";
-    }
-    if (trim($password_check) === "") {
-        $errors[] = "empty_password_check";
-    }
-    if (($password !== "" && strlen($password) < 8) || ($password !== "" && strlen($password) > 20)) {
-        $errors[] = "does_not_met_requirements";
-    }
-    if ($password !== "" && (strlen($password) >= 8 && strlen($password) <= 20) && (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\]\[\-<>]).{8,}/", $password))) {
-        $errors[] = "does_not_met_requirements";
-    }
-    if ($password_check !== "" && $password !== $password_check) {
-        $errors[] = "passwords_not_match";
-    }
+    $errors[] = empty_password_check($password);
+    $errors[] = empty_password_check($password_check);
+    $errors[] = password_acceptance($password);
+    $errors[] = password_match($password_check, $password);
     $errors = array_values(array_filter($errors));
 
     if (count($errors) === 0) {
@@ -47,13 +35,14 @@ if (isset($_POST["signup"])) {
             "username" => $username,
             "email" => $email,
             "password" => $password,
+            "privilege" => $privilege,
+            "status" => "available",
             "agree_terms_of_use" => $agree_terms_of_use,
             "subscribe" => $subscribe,
-            "privilege" => $privilege,
             "friends" => $friends = [],
             "messages" => $messages = [],
             "cart" => $cart = [],
-            "status" => "avaliable"
+
         ];
         save_data("data/fan_data.json", $user);
     }
@@ -68,7 +57,7 @@ if (isset($_POST["login"])) {
     $users = load_data("data/fan_data.json");
     foreach ($users["users"] as $user){
 
-        if ($user["email"] === $login_email && password_verify($login_password,$user["password"]) && $user["username"] !== "banned"){
+        if ($user["email"] === $login_email && password_verify($login_password,$user["password"]) && $user["status"] !== "banned"){
             $_SESSION["username"] = $user["username"];
             header("Location: index.php?page=main");
         }else{

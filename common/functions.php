@@ -16,27 +16,31 @@ function load_data(string $filename): array
     return json_decode($json, true);
 }
 
-function why_are_you_here() : void{
-    if (isset($_SESSION["username"])){
+function why_are_you_here(): void
+{
+    if (isset($_SESSION["username"])) {
         header("Location: index.php?page=main");
     }
 }
 
-function empty_username_check($username) : string{
+function empty_username_check($username): string
+{
     if (trim($username) === "") {
         return "empty_username";
     }
     return "";
 }
 
-function username_longness($username) : string{
+function username_longness($username): string
+{
     if (strlen($username) > 30) {
         return "long_username";
     }
     return "";
 }
 
-function duplicate_username_check($username) : string{
+function duplicate_username_check($username): string
+{
     $users = load_data("data/fan_data.json");
     foreach ($users["users"] as $user) {
         if ($user["username"] === $username) {
@@ -46,7 +50,8 @@ function duplicate_username_check($username) : string{
     return "";
 }
 
-function duplicate_email_check($email) : string{
+function duplicate_email_check($email): string
+{
     $users = load_data("data/fan_data.json");
     foreach ($users["users"] as $user) {
         if ($user["email"] === $email) {
@@ -56,25 +61,62 @@ function duplicate_email_check($email) : string{
     return "";
 }
 
-function empty_email_check($email) : string{
+function empty_email_check($email): string
+{
     if (trim($email) === "") {
         return "empty_email";
     }
     return "";
 }
-
-function changer($filename, $data){
-    $users = load_data($filename);
-    $users =  array_values(array_filter($users, function ($thename){ return $thename === $_SESSION["username"];}));
-    $users["users"][] = $data;
-    file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
+function empty_password_check($password): string
+{
+    if (trim($password) === "") {
+        return "empty_password";
+    }
+    return "";
 }
 
-function bann_user($filename, $data, $wannaBann){
-    $users = load_data($filename);
-    $users =  array_values(array_filter($users, function ($thename) use ($wannaBann) { return $thename === $wannaBann;}));
-    $users["users"][] = $data;
-    file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
+function password_acceptance($password): string
+{
+    if (($password !== "" && strlen($password) < 8) || ($password !== "" && strlen($password) > 20) || (!preg_match("/(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*?[0-9])(?=.*?[!@#$%^&*+`~'=?\]\[\-<>]).{8,}/", $password))) {
+        return "does_not_met_requirements";
+    }
+    return "";
 }
 
+function password_match($password_check,$password): string
+{
+    if ($password_check !== "" && $password !== $password_check) {
+        return "passwords_not_match";
+    }
+    return "";
+}
+function changer($filename, $data, $given): void
+{
+    $users = load_data($filename);
+    foreach ($users["users"] as $index => $user) {
+        if ($user["username"] === $_SESSION["username"]) {
+            switch ($data) {
+                case "username" :
+                    $users["users"][$index]["username"] = $given;
+                    break;
+                case "password" :
+                    $users["users"][$index]["password"] = password_hash($given, PASSWORD_DEFAULT);
+                    break;
+                case "email" :
+                    $users["users"][$index]["email"] = $given;
+                    break;
 
+                case "bann" :
+                    $users["users"][$index]["status"] = "banned";
+                    break;
+                case "pardon" :
+                    $users["users"][$index]["status"] = "available";
+                    break;
+            }
+            break;
+        }
+    }
+
+    file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
+}
