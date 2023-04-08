@@ -18,6 +18,7 @@
         <div class="popup" id="popup">
             <h2>Please enter the following information</h2>
             <form method="post" id="form_login" enctype="multipart/form-data" autocomplete="on">
+                <fieldset>
                 <label for="card-number">Card Number:</label>
                 <input type="text" id="card-number" name="card-number">
                 <label for="expiry-date">Expiry Date:</label>
@@ -28,6 +29,7 @@
                 <input type="text" id="name" name="name">
                 <label for="address">Address:</label>
                 <textarea id="address" name="address"></textarea>
+                </fieldset>
             </form>
             <button onclick="closePopup()">Proceed</button>
         </div>
