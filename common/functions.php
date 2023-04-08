@@ -70,4 +70,11 @@ function changer($filename, $data){
     file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
 }
 
+function bann_user($filename, $data, $wannaBann){
+    $users = load_data($filename);
+    $users =  array_values(array_filter($users, function ($thename) use ($wannaBann) { return $thename === $wannaBann;}));
+    $users["users"][] = $data;
+    file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
+}
+
 

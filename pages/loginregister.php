@@ -52,7 +52,8 @@ if (isset($_POST["signup"])) {
             "privilege" => $privilege,
             "friends" => $friends = [],
             "messages" => $messages = [],
-            "cart" => $cart = []
+            "cart" => $cart = [],
+            "status" => "avaliable"
         ];
         save_data("data/fan_data.json", $user);
     }
@@ -67,8 +68,7 @@ if (isset($_POST["login"])) {
     $users = load_data("data/fan_data.json");
     foreach ($users["users"] as $user){
 
-        if ($user["email"] === $login_email && password_verify($login_password,$user["password"])){
-
+        if ($user["email"] === $login_email && password_verify($login_password,$user["password"]) && $user["username"] !== "banned"){
             $_SESSION["username"] = $user["username"];
             header("Location: index.php?page=main");
         }else{
