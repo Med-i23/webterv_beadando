@@ -63,4 +63,11 @@ function empty_email_check($email) : string{
     return "";
 }
 
+function changer($filename, $data){
+    $users = load_data($filename);
+    $users =  array_values(array_filter($users, function ($thename){ return $thename === $_SESSION["username"];}));
+    $users["users"][] = $data;
+    file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
+}
+
 
