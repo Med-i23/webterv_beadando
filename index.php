@@ -32,7 +32,6 @@ $page = $_GET["page"] ?? "main";
             <label class="ergo-icon__text">&nbsp;&nbsp;&nbsp;Ergo Inc.</label>
         </div>
         <div id="sign-os" class="upper">
-
             <?php
                 if (!isset($_SESSION["username"])){
                     ?>
