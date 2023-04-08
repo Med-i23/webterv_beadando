@@ -29,7 +29,7 @@
                 <input type="text" id="name" name="name">
                 <label for="address">Address:</label>
                 <textarea id="address" name="address"></textarea>
-                </fieldset>
+                </fieldset >
             </form>
             <button onclick="closePopup()">Proceed</button>
         </div>
