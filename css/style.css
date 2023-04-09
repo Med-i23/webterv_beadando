@@ -378,6 +378,9 @@ a.terms{
     flex-direction: column;
     width: 80%;
 }
+.card_2 > div{
+    width: 80%;
+}
 
 
 .flex-container{
