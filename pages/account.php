@@ -62,17 +62,43 @@ foreach ($users["users"] as $user) {
                     <button name="idk">Felis</button>
                 </div>
                 <div class="card_2">
+
+                        <?php
+                        $user_data = [];
+                        $usernames = [];
+                        $friends = [];
+                        $messages = [];
+                        $cart = [];
+                        $username_errors = [];
+                        if ($admin && isset($_POST["manage_users_b"])){
+                        foreach ($users["users"] as $user) {
+                        echo "<div><form method='post'><input type='text' name='the_managable' value='" . $user["username"] . "' >";
+                        echo "</label>
+                                <button class='error' name='bann'>Bann</button>
+                                <button class='success' name='pardon'>Pardon</button>
+                                </form></div>
+                            ";
+                        ?>
+
+
                     <?php
+                    }
+                    }
+                    if (isset($_POST["bann"])) {
+                        foreach ($users["users"] as $user) {
+                            if ($_POST["the_managable"] === $user["username"]) {
+                                changer("data/fan_data.json", "bann", $_POST["the_managable"], $_POST["the_managable"]);
+                            }
 
-                    $user_data = [];
-                    $usernames = [];
-                    $friends = [];
-                    $messages = [];
-                    $cart = [];
-                    $username_errors = [];
+                        }
+                    }
+                    if (isset($_POST["pardon"])) {
+                        foreach ($users["users"] as $user) {
+                            if ($_POST["the_managable"] === $user["username"]) {
+                                changer("data/fan_data.json", "pardon", $_POST["the_managable"], $_POST["the_managable"]);
+                            }
 
-                    foreach ($users["users"] as $user) {
-                        array_push($usernames, $user["username"]);
+                        }
                     }
                     foreach ($users["users"] as $user) {
                         if ($_SESSION["username"] === $user["username"])
@@ -82,7 +108,7 @@ foreach ($users["users"] as $user) {
                         if (username_longness($_POST["username_changed"]) === "" && empty_username_check($_POST["username_changed"]) === "" && duplicate_username_check($_POST["username_changed"]) === "") {
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
-                                    changer("data/fan_data.json", "username", $_POST["username_changed"]);
+                                    changer("data/fan_data.json", "username", $_POST["username_changed"], $_SESSION["username"]);
                                     $_SESSION["username"] = $_POST["username_changed"];
                                     header("Refresh: 0");
                                     break;
@@ -96,42 +122,40 @@ foreach ($users["users"] as $user) {
                             <?php
                         }
 
-                    }else if (isset($_POST["change_password"])) {
+                    } else if (isset($_POST["change_password"])) {
                         if (password_acceptance($_POST["password_changed"]) === "" && password_match($_POST["password_changed"], $_POST["password_changed_check"]) === "" && empty_password_check($_POST["password_changed"]) === "") {
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
-                                    changer("data/fan_data.json", "password", $_POST["password_changed"]);
+                                    changer("data/fan_data.json", "password", $_POST["password_changed"], $_SESSION["username"]);
                                     echo "Your password has been succsessfully changed!";
                                     break;
                                 }
                             }
                         }
-                    }else if (isset($_POST["change_email"])){
-                        if (empty_email_check($_POST["email_changed"]) === "" && duplicate_email_check($_POST["email_changed"]) === ""){
+                    } else if (isset($_POST["change_email"])) {
+                        if (empty_email_check($_POST["email_changed"]) === "" && duplicate_email_check($_POST["email_changed"]) === "") {
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
-                                    changer("data/fan_data.json", "email", $_POST["email_changed"]);
+                                    changer("data/fan_data.json", "email", $_POST["email_changed"], $_SESSION["username"]);
                                     echo "Your email has been succsessfully changed!";
+                                    $did = true;
                                     break;
                                 }
                             }
+                        } else {
+                            echo "Your email might have been occupied or you did not filled this field!";
                         }
 
                     }
 
                     switch (true) {
-                        case isset($_POST["manage_users_b"]):
-                            foreach ($usernames as $username) {
-                                echo $username;
-                            }
-                            break;
                         case isset($_POST["change_username_b"]):
 
                             ?>
                             <form method="post" enctype="multipart/form-data">
                                 <label for="username_changed" class="label-required">
                                     The new username:
-                                    <input type="text" maxlength="30" name="username_changed" required>
+                                    <input type="text" maxlength="30" name="username_changed">
                                 </label>
                                 <button name="change_username">Change username</button>
                             </form>
@@ -142,12 +166,12 @@ foreach ($users["users"] as $user) {
                             <form method="post" enctype="multipart/form-data">
                                 <label for="password_changed" class="label-required">
                                     The new password:
-                                    <input type="password" maxlength="20" name="password_changed" required>
+                                    <input type="password" maxlength="20" name="password_changed">
                                 </label>
                                 <br>
                                 <label for="password_changed_check" class="label-required">
                                     The new password again:
-                                    <input type="password" maxlength="20" name="password_changed_check" required>
+                                    <input type="password" maxlength="20" name="password_changed_check">
                                 </label>
                                 <br>
                                 <button name="change_password">Change password</button>
@@ -159,11 +183,11 @@ foreach ($users["users"] as $user) {
                             <form method="post" enctype="multipart/form-data">
                                 <label for="email_changed" class="label-required">
                                     The new email:
-                                    <input type="email"  name="email_changed" required>
+                                    <input type="email" name="email_changed">
                                 </label>
                                 <button name="change_email">Change email</button>
                             </form>
-                    <?php
+                            <?php
                             break;
                         case isset($_POST["find_user_b"]):
 

@@ -91,11 +91,11 @@ function password_match($password_check,$password): string
     }
     return "";
 }
-function changer($filename, $data, $given): void
+function changer($filename, $data, $given, $who): void
 {
     $users = load_data($filename);
     foreach ($users["users"] as $index => $user) {
-        if ($user["username"] === $_SESSION["username"]) {
+        if ($user["username"] === $who) {
             switch ($data) {
                 case "username" :
                     $users["users"][$index]["username"] = $given;
@@ -113,6 +113,7 @@ function changer($filename, $data, $given): void
                 case "pardon" :
                     $users["users"][$index]["status"] = "available";
                     break;
+                case "" :
             }
             break;
         }
