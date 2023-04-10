@@ -132,6 +132,16 @@ h4{
     top: 50%;
     transform: translate(-50%,-50%) scale(1);
 }
+.overlay-open {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    display: block;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.75);
+    z-index: 100;
+}
 
 /* === Highlighters === */
 p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::before,p:not(.paragraph-highlighter__first,.paragraph-highlighter__second)::after{
