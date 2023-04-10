@@ -21,20 +21,23 @@
                 <fieldset>
                 <label for="payment">Payment</label>
                 <label for="card-number">Card Number:</label>
-                <input type="text" id="card-number" name="card-number">
+                <input type="text" id="card-number" name="card-number" minlength="16" maxlength="16" placeholder="1111222233334444">
                 <label for="expiry-date">Expiry Date:</label>
-                <input type="text" id="expiry-date" name="expiry-date">
+                    <div>
+                <input type="text" id="expiry-date" name="expiry-date" maxlength="2" size="2" placeholder="00"> /
+                    <input type="text" id="expiry-date" name="expiry-date" maxlength="2" size="2" placeholder="00">
+                    </div>
                 <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv">
+                <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123">
                 <label for="name">Cardholer Name:</label>
-                <input type="text" id="name" name="name">
+                <input type="text" id="name" name="name" placeholder="Your Name" minlength="1">
                 <label for="address">Address</label>
                     <label for="address">Zip code:</label>
-                    <input type="text" id="zip" name="zip">
+                    <input type="text" id="zip" name="zip" placeholder="1234">
                     <label for="address">City:</label>
-                    <input type="text" id="city" name="city">
+                    <input type="text" id="city" name="city" placeholder="City name">
                     <label for="address">Street and house number:</label>
-                    <input type="text" id="street" name="street">
+                    <input type="text" id="street" name="street" placeholder="Example Street. 15.">
                 </fieldset>
             </form>
             <button onclick="closePopup()">Proceed</button>
