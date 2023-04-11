@@ -48,6 +48,7 @@
 
         </div>
             <div class="thanks" id="thanks">
+                <img src="sources/websiteElement/checkmark.png" alt="checkmark" width="60">
                 <h2>Thank you for your purchase!</h2>
                 <div>We will send will you an email with the necessary information.</div>
                 <button onclick="closeThanks()">Close</button>
