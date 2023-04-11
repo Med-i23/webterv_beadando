@@ -113,8 +113,8 @@ h4{
     text-decoration-color: blue;
 }
 
-.popup{
-    width: 600px;
+.popup,.thanks{
+    width: 500px;
     background: #FAF9F6;
     border-radius: 6px;
     position: fixed;
@@ -127,11 +127,12 @@ h4{
     transition: transform 0.4s, top 0.4s;
 }
 
-.open-popup{
+.open-popup,.open-thanks{
     visibility: visible;
     top: 50%;
     transform: translate(-50%,-50%) scale(1);
 }
+
 .overlay-open {
     position: fixed;
     width: 100%;

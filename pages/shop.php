@@ -16,6 +16,7 @@
 
         <div class="overlay" id="overlay">
         <div class="popup" id="popup">
+            <div class="X" onclick="closePopup()">X</div>
             <h2>Please enter the following information</h2>
             <form method="post" id="form_login" enctype="multipart/form-data" autocomplete="on">
                 <fieldset>
@@ -29,7 +30,7 @@
                     </div>
                 <label for="cvv">CVV:</label>
                 <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123">
-                <label for="name">Cardholer Name:</label>
+                <label for="name">Cardholder Name:</label>
                 <input type="text" id="name" name="name" placeholder="Your Name" minlength="1">
                 <label for="address">Address</label>
                     <label for="address">Zip code:</label>
@@ -38,10 +39,19 @@
                     <input type="text" id="city" name="city" placeholder="City name">
                     <label for="address">Street and house number:</label>
                     <input type="text" id="street" name="street" placeholder="Example Street. 15.">
+                    <label for="address">Email:</label>
+                    <input type="text" id="email" name="email" placeholder="youremail@mail.com">
                 </fieldset>
             </form>
-            <button onclick="closePopup()">Proceed</button>
+            <button onclick="closePopup(); openThanks()">Proceed</button>
+
+
         </div>
+            <div class="thanks" id="thanks">
+                <h2>Thank you for your purchase!</h2>
+                <div>We will send will you an email with the necessary information.</div>
+                <button onclick="closeThanks()">Close</button>
+            </div>
         </div>
 
         <div class="shop-item">
@@ -86,7 +96,8 @@
         </div>
            <script>
                let popup = document.getElementById("popup");
-               let overlay = document.getElementById("overlay")
+               let overlay = document.getElementById("overlay");
+               let thanks = document.getElementById("thanks");
 
                function openPopup(){
                     popup.classList.add("open-popup");
@@ -94,6 +105,14 @@
                }
                function closePopup(){
                    popup.classList.remove("open-popup");
+                   overlay.classList.remove("overlay-open");
+               }
+               function openThanks(){
+                   thanks.classList.add("open-thanks");
+                   overlay.classList.add("overlay-open");
+               }
+               function closeThanks(){
+                   thanks.classList.remove("open-thanks");
                    overlay.classList.remove("overlay-open");
                }
            </script>
