@@ -136,7 +136,7 @@ if (isset($_POST["login"])) {
         <div <?php echo count($errors) === 0 && isset($_POST["signup"]) ? "class=success" : "hidden" ?>>
             You signed up successfully!
         </div>
-        <form method="post" id="form_register" autocomplete="on">
+        <form method="post" id="form_register" enctype="multipart/form-data" autocomplete="on">
             <fieldset>
                 <legend><strong>SingUp</strong></legend>
                 <label for="username" class="label-required">Username (max 30 characters):</label>
