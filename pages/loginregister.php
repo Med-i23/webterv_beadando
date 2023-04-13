@@ -39,9 +39,10 @@ if (isset($_POST["signup"])) {
             "status" => "available",
             "agree_terms_of_use" => $agree_terms_of_use,
             "subscribe" => $subscribe,
+            "remember" => "off",
             "friends" => $friends = [],
             "messages" => $messages = [],
-            "cart" => $cart = [],
+            "cart" => $cart = []
 
         ];
         save_data("data/fan_data.json", $user);

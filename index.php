@@ -2,7 +2,7 @@
 session_start();
 
 if (isset($_POST["accept_cookies"])){
-    setcookie("use_cookies", "accepted", time() + (60*60*24*10));
+    setcookie("use_cookies", "accepted", time() + (60*60*24*30));
     header("Refresh: 0");
 }
 if (isset($_GET["logout"])) {
