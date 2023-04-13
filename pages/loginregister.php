@@ -13,7 +13,7 @@ if (isset($_POST["signup"])) {
 
     if (isset($_POST["agree_terms_of_use"])) {
         $agree_terms_of_use = $_POST["agree_terms_of_use"];
-    }else{
+    } else {
         $errors[] = "does_not_agree_terms_of_use";
     }
     $subscribe = $_POST["subscribe"] ?? "off";
@@ -57,16 +57,16 @@ if (isset($_POST["login"])) {
     $login_password = $_POST["login-password"];
 
     $users = load_data("data/fan_data.json");
-    foreach ($users["users"] as $user){
-
-        if ($user["email"] === $login_email && password_verify($login_password,$user["password"]) && $user["status"] !== "banned"){
+    foreach ($users["users"] as $user) {
+        if ($user["email"] === $login_email && password_verify($login_password, $user["password"]) && $user["status"] !== "banned") {
             $_SESSION["username"] = $user["username"];
-            if (isset($_COOKIE["use_cookies"]) && isset($_POST["remember_me"])){
-                setcookie("login_email",$login_email, time()+60*60*24*15);
-                setcookie("login_password",$login_password, time()+60*60*24*15);
+            if (isset($_COOKIE["use_cookies"]) && isset($_POST["remember_me"])) {
+                setcookie("login_email", $login_email, time() + 60 * 60 * 24 * 15);
+                setcookie("login_password", $login_password, time() + 60 * 60 * 24 * 15);
+
             }
             header("Location: index.php?page=main");
-        }else{
+        } else {
             $errors[] = "login_email_or_password_not_valid";
         }
     }
@@ -83,23 +83,29 @@ if (isset($_POST["login"])) {
             <fieldset>
                 <legend><strong>Login</strong></legend>
                 <label for="login-e-mail" class="label-required">E-mail:</label>
-                <input type="email" name="login-e-mail" id="login-e-mail" placeholder="Email address" value="<?php if (isset($_COOKIE["login_email"])) echo $_COOKIE["login_email"]; ?>" maxlength="40"
+                <input type="email" name="login-e-mail" id="login-e-mail" placeholder="Email address"
+                       value="<?php if (isset($_COOKIE["login_email"])) echo $_COOKIE["login_email"]; ?>" maxlength="40"
                        required>
-                <div <?php echo in_array("login_email_or_password_not_valid",$errors) ? "class=error" : "hidden" ?>>
+                <div <?php echo in_array("login_email_or_password_not_valid", $errors) ? "class=error" : "hidden" ?>>
                     <?php
-                    if (in_array("login_email_or_password_not_valid",$errors)) echo "Email or password not valid!";
+                    if (in_array("login_email_or_password_not_valid", $errors)) echo "Email or password not valid!";
 
                     ?>
                 </div>
                 <label for="login-password" class="label-required">Password:</label>
-                <input type="password" name="login-password" id="login-password" placeholder="Password" value="<?php if (isset($_COOKIE["login_password"])) echo $_COOKIE["login_password"];?>" minlength="8"
+                <input type="password" name="login-password" id="login-password" placeholder="Password"
+                       value="<?php if (isset($_COOKIE["login_password"])) echo $_COOKIE["login_password"]; ?>"
+                       minlength="8"
                        maxlength="20" required>
-                <div <?php echo in_array("login_email_or_password_not_valid",$errors) ? "class=error" : "hidden" ?>>
+                <div <?php echo in_array("login_email_or_password_not_valid", $errors) ? "class=error" : "hidden" ?>>
                     <?php
-                    if (in_array("login_email_or_password_not_valid",$errors)) echo "Email or password not valid!"
+                    if (in_array("login_email_or_password_not_valid", $errors)) echo "Email or password not valid!"
                     ?>
                 </div>
-                <label for="remember_me">Remember me (You must accept cookies before use): <input type="checkbox" name="remember_me" id="remember_me" <?php  ?>> </label>
+                <label for="remember_me">Remember me (You must accept cookies before use): <input type="checkbox"
+                                                                                                  name="remember_me"
+                                                                                                  id="remember_me" <?php ?>>
+                </label>
 
             </fieldset>
             <div class="buttons">
@@ -160,8 +166,11 @@ if (isset($_POST["login"])) {
                     if (in_array("passwords_not_match", $errors)) echo "Passwords does not match!";
                     ?>
                 </div>
-                <label for="agree_terms_of_use" class="label-required">I accept the <a class="terms" href="index.php?page=termsofservice">Terms of Use</a>:<input type="checkbox" name="agree_terms_of_use" id="agree_terms_of_use"
-                                                                                                                                                                  required <?php if (isset($_POST["agree_terms-of-use"])) echo "checked" ?>> </label>
+                <label for="agree_terms_of_use" class="label-required">I accept the <a class="terms"
+                                                                                       href="index.php?page=termsofservice">Terms
+                        of Use</a>:<input type="checkbox" name="agree_terms_of_use" id="agree_terms_of_use"
+                                          required <?php if (isset($_POST["agree_terms-of-use"])) echo "checked" ?>>
+                </label>
 
                 <div <?php echo in_array("does_not_agree_terms_of_use", $errors) ? "class=error" : "hidden"; ?>>
                     <?php

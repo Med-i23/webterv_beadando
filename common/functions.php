@@ -68,6 +68,7 @@ function empty_email_check($email): string
     }
     return "";
 }
+
 function empty_password_check($password): string
 {
     if (trim($password) === "") {
@@ -84,13 +85,14 @@ function password_acceptance($password): string
     return "";
 }
 
-function password_match($password_check,$password): string
+function password_match($password_check, $password): string
 {
     if ($password_check !== "" && $password !== $password_check) {
         return "passwords_not_match";
     }
     return "";
 }
+
 function changer($filename, $data, $given, $who): void
 {
     $users = load_data($filename);
@@ -106,12 +108,17 @@ function changer($filename, $data, $given, $who): void
                 case "email" :
                     $users["users"][$index]["email"] = $given;
                     break;
-
                 case "bann" :
                     $users["users"][$index]["status"] = "banned";
                     break;
                 case "pardon" :
                     $users["users"][$index]["status"] = "available";
+                    break;
+                case "remember_on" :
+                    $users["users"][$index]["remember"] = "on";
+                    break;
+                case "remember_off" :
+                    $users["users"][$index]["remember"] = "off";
                     break;
                 case "" :
             }
