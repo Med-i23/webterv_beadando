@@ -87,35 +87,35 @@ if (isset($_SESSION["username"])){
             <img src="../sources/shop/blackshirt_woman.png" alt="blackshirt_woman"><br>
             Black T-shirt (woman) <br>
             $20 <br>
-            <button type="submit" name="woman_t-shirt_black" onclick="openPopup()"><?php is_someone_logged(); ?></button>
+            <button type="submit" name="woman_t-shirt_black"><?php is_someone_logged(); ?></button>
         </div>
 
         <div class="shop-item">
             <img src="../sources/shop/whiteshirt.png" alt="whiteshirt"><br>
             White T-shirt (men) <br>
             $20. <br>
-            <button type="submit" name="men_t-shirt_white" onclick="openPopup()"><?php is_someone_logged(); ?></button>
+            <button type="submit" name="men_t-shirt_white"><?php is_someone_logged(); ?></button>
         </div>
 
         <div class="shop-item">
             <img src="../sources/shop/whiteshirt_woman.png" alt="whiteshirt_woman"><br>
             White T-shirt (woman) <br>
             $20 <br>
-            <button type="submit" name="woman_t-shirt_white" onclick="openPopup()"><?php is_someone_logged(); ?></button>
+            <button type="submit" name="woman_t-shirt_white"><?php is_someone_logged(); ?></button>
         </div>
 
         <div class="shop-item" id="hoodie_black">
             <img src="../sources/shop/blackhoodie.png" alt="blackhoodie"><br>
             Black Hoodie <br>
             $35 <br>
-            <button type="submit" name="hoodie_black" onclick="openPopup()"><?php is_someone_logged(); ?></button>
+            <button type="submit" name="hoodie_black"><?php is_someone_logged(); ?></button>
         </div>
 
         <div class="shop-item" id="hoodie_white">
             <img src="../sources/shop/whitehoodie.png" alt="whitehoodie"><br>
             White Hoodie <br>
             $35 <br>
-            <button type="submit" name="hoodie_white" onclick="openPopup()"><?php is_someone_logged(); ?></button>
+            <button type="submit" name="hoodie_white"><?php is_someone_logged(); ?></button>
         </div>
         </form>
            <script>
