@@ -27,21 +27,7 @@
             "friends": [],
             "messages": [],
             "cart": [
-                "men_t-shirt_black;20",
-                "woman_t-shirt_white;20",
-                "hoodie_black;35",
-                "men_t-shirt_black;20",
-                "men_t-shirt_white;20",
-                "men_t-shirt_white;20",
-                "men_t-shirt_white;20",
-                "men_t-shirt_black;20",
-                "woman_t-shirt_black;20",
-                "woman_t-shirt_black;20",
-                "woman_t-shirt_black;20",
-                "men_t-shirt_white;20",
-                "woman_t-shirt_white;20",
-                "hoodie_black;35",
-                "hoodie_white;35"
+
             ]
         },
         {
@@ -62,7 +48,7 @@
             "username": "Medi23",
             "email": "csetemedard@gmail.com",
             "password": "$2y$10$GxkD2kPo8BwqBLPpCUhLDOY56NOa4Fc7F1UUIWc1ifCzowZHaLGYu",
-            "privilege": "normal",
+            "privilege": "admin",
             "status": "available",
             "agree_terms_of_use": "on",
             "subscribe": "on",
