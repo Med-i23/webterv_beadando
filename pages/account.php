@@ -106,8 +106,7 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                                     echo "<div class='success'>
                                     Username changed successfully!
                                     </div>";
-                                    $found = true;
-                                    break;
+
                                 }
                             }
 
@@ -116,9 +115,7 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                             Username might have been occupied, or has too many characters!
                             </div>";
                         }
-                        if ($found){
 
-                        }
 
                     } else if (isset($_POST["change_password"])) {
                         if (password_acceptance($_POST["password_changed"]) === "" && password_match($_POST["password_changed"], $_POST["password_changed_check"]) === "" && empty_password_check($_POST["password_changed"]) === "") {
@@ -158,6 +155,7 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                             echo "<div class='error'>This user does not exist!</div>";
                         }
                     }
+
 
                     switch (true) {
                         case isset($_POST["change_username_b"]):
@@ -225,7 +223,26 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
 
                             break;
                         case isset($_POST["shopping_cart_b"]):
+                            echo "<div>";
+                            $every_item = [];
+                            $sum = 0;
+                            foreach ($users["users"] as $user){
+                                if ($_SESSION["username"] === $user["username"]){
+                                    foreach ($user["cart"] as $item){
+                                        $every_item[] = explode(";",$item);
+                                    }
+                                }
+                            }
+                            foreach ($every_item as $index => $item) {
+                                echo "<div><form method='post'>".$item[0]."<button name='remove'>Remove</button></form></div>";
+                                $sum+=$item[1];
+                            }
+                            echo "Your total is: $".$sum;
+                            echo "</div>";
+                            echo "";?>
+                        """"""""""""poup helye"""""""""""""""
 
+<?php
                             break;
                     }
 

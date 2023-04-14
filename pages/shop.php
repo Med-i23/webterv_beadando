@@ -1,5 +1,26 @@
 <?php
 include_once "common/functions.php";
+if (isset($_SESSION["username"])){
+    switch (true){
+        case isset($_POST["men_t-shirt_black"]):
+            changer("data/fan_data.json","add_to_cart","men_t-shirt_black;20",$_SESSION["username"]);
+            break;
+        case isset($_POST["men_t-shirt_white"]):
+            changer("data/fan_data.json","add_to_cart","men_t-shirt_white;20",$_SESSION["username"]);
+            break;
+        case isset($_POST["woman_t-shirt_black"]):
+            changer("data/fan_data.json","add_to_cart","woman_t-shirt_black;20",$_SESSION["username"]);
+            break;
+        case isset($_POST["woman_t-shirt_white"]):
+            changer("data/fan_data.json","add_to_cart","woman_t-shirt_white;20",$_SESSION["username"]);
+            break;
+        case isset($_POST["hoodie_black"]):
+            changer("data/fan_data.json","add_to_cart","hoodie_black;35",$_SESSION["username"]);
+            break;
+        case isset($_POST["hoodie_white"]):
+            changer("data/fan_data.json","add_to_cart","hoodie_white;35",$_SESSION["username"]);
+    }
+}
 ?>
 
     <div class="h1-imitator">SHOP</div>
@@ -33,13 +54,13 @@ include_once "common/functions.php";
                 <label for="name">Cardholder Name:</label>
                 <input type="text" id="name" name="name" placeholder="Your Name" minlength="1">
                 <label for="address">Address</label>
-                    <label for="address">Zip code:</label>
+                    <label for="zip">Zip code:</label>
                     <input type="text" id="zip" name="zip" placeholder="1234">
-                    <label for="address">City:</label>
+                    <label for="city">City:</label>
                     <input type="text" id="city" name="city" placeholder="City name">
-                    <label for="address">Street and house number:</label>
+                    <label for="street">Street and house number:</label>
                     <input type="text" id="street" name="street" placeholder="Example Street. 15.">
-                    <label for="address">Email:</label>
+                    <label for="email">Email:</label>
                     <input type="text" id="email" name="email" placeholder="youremail@mail.com">
                 </fieldset>
             </form>
@@ -54,12 +75,13 @@ include_once "common/functions.php";
                 <button onclick="closeThanks()">Close</button>
             </div>
         </div>
-
+        <form method="post" enctype="multipart/form-data">
         <div class="shop-item">
             <img src="../sources/shop/blackshirt.png" alt="blackshirt"><br>
             Black T-shirt (men) <br>
             $20 <br>
-            <button type="submit" name="men_t-shirt_black" onclick="openPopup()"><?php is_someone_logged(); ?></button>
+            <button type="submit" name="men_t-shirt_black" ><?php is_someone_logged(); ?></button>
+        </div>
 
         <div class="shop-item">
             <img src="../sources/shop/blackshirt_woman.png" alt="blackshirt_woman"><br>
@@ -95,6 +117,7 @@ include_once "common/functions.php";
             $35 <br>
             <button type="submit" name="hoodie_white" onclick="openPopup()"><?php is_someone_logged(); ?></button>
         </div>
+        </form>
            <script>
                let popup = document.getElementById("popup");
                let overlay = document.getElementById("overlay");
