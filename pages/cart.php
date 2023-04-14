@@ -44,8 +44,6 @@ why_are_you_here();
                 <button name="process" onclick="openPopup()">Cash out</button>
             </div>
 
-
-
         <div class="overlay" id="overlay">
             <div class="popup" id="popup">
                 <div class="X" onclick="closePopup()">X</div>

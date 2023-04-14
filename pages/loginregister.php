@@ -9,7 +9,6 @@ if (isset($_POST["signup"])) {
     $password_check = $_POST["sign-up-password-again"];
     $privilege = "normal";
 
-
     if (isset($_POST["agree_terms_of_use"])) {
         $agree_terms_of_use = $_POST["agree_terms_of_use"];
     } else {
