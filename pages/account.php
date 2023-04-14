@@ -40,9 +40,9 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
 
                     <button name="find_user_b">Find user</button>
 
-                    <button name="add_friend_b">Add friend</button>
+                    <button name="friends_b">Friends</button>
 
-                    <button name="remove_friend_b">Remove friend</button>
+                    <button name="add_friend_b">Add friend</button>
 
                     <button name="received_messages_b">Messages</button>
 
