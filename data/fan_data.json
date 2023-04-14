@@ -26,7 +26,10 @@
             "notifications": [],
             "friends": [],
             "messages": [],
-            "cart": []
+            "cart": [
+                "men_t-shirt_black;20",
+                "hoodie_white;35"
+            ]
         },
         {
             "username": "kollupo",

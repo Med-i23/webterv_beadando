@@ -7,13 +7,13 @@ why_are_you_here();
 <div class="h1-imitator">Shopping Cart</div>
 <main>
     <section>
-            <div class="card_3">
-                <ul>
+        <div class="card_3">
+            <ul>
                 <?php
                 global $sum;
                 function extracted($users1): void
                 {
-                   global $sum;
+                    global $sum;
                     $every_item = [];
                     $sum = 0;
                     foreach ($users1 as $user) {
@@ -29,7 +29,6 @@ why_are_you_here();
                     }
 
 
-
                 }
 
 
@@ -39,14 +38,15 @@ why_are_you_here();
 
                 ?>
 
-                </ul>
-                <?php echo "Your total is: $" . $sum; ?>
-                <button name="process" onclick="openPopup()">Cash out</button>
-            </div>
+            </ul>
+            <?php echo "<div class='success'>Your total is: $" . $sum ?>
+            <button name="process" onclick="openPopup()">Cash out</button>
+            <?php echo "</div>"; ?>
+        </div>
 
         <div class="overlay" id="overlay">
             <div class="popup" id="popup">
-                <div class="X" onclick="closePopup()">X</div>
+                <div class="exit_press" style="pointer-events: none" onclick="closePopup()">X</div>
                 <h2>Please enter the following information</h2>
                 <form method="post" id="form_login" enctype="multipart/form-data" autocomplete="on">
                     <fieldset>
@@ -56,10 +56,14 @@ why_are_you_here();
                                placeholder="1111222233334444">
                         <label>Expiry Date:</label>
                         <div>
-                            <input type="text" name="expiry-date" maxlength="2" size="2"
-                                   placeholder="00"> /
-                            <input type="text" name="expiry-date" maxlength="2" size="2"
-                                   placeholder="00">
+                            <label>
+                                <input type="text" name="expiry-date" maxlength="2" size="2"
+                                       placeholder="00">
+                            </label>
+                            <label>
+                                <input type="text" name="expiry-date" maxlength="2" size="2"
+                                       placeholder="00">
+                            </label>
                         </div>
                         <label for="cvv">CVV:</label>
                         <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123">
