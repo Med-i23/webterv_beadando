@@ -53,7 +53,45 @@ foreach ($users["users"] as $user) {
                     <button name="shopping_cart_b">Shopping cart</button>
 
                 </form>
+                <button name="account_delete_b" onclick="openPopup()">Delete account</button>
             </div>
+            <div class="overlay" id="overlay">
+                <div class="popup" id="popup">
+                    <div class="exit_press" style="pointer-events: none" onclick="closePopup()">X</div>
+                    <h2>Are you sure about that?</h2>
+                    <form method="post" id="form_login" enctype="multipart/form-data" autocomplete="on">
+                        <fieldset>
+                            <button name="yes">YES</button>
+                            <button onclick="closePopup()" name="no">NO</button>
+                        </fieldset>
+                    </form>
+
+                </div>
+                <script>
+                    let popup = document.getElementById("popup");
+                    let overlay = document.getElementById("overlay");
+                    let thanks = document.getElementById("thanks");
+
+                    function openPopup() {
+                        popup.classList.add("open-popup");
+                        overlay.classList.add("overlay-open");
+                    }
+
+                    function closePopup() {
+                        popup.classList.remove("open-popup");
+                        overlay.classList.remove("overlay-open");
+                    }
+
+                    function openThanks() {
+                        thanks.classList.add("open-thanks");
+                        overlay.classList.add("overlay-open");
+                    }
+
+                    function closeThanks() {
+                        thanks.classList.remove("open-thanks");
+                        overlay.classList.remove("overlay-open");
+                    }
+                </script>
 
             <div class="card_2">
 
@@ -232,6 +270,11 @@ foreach ($users["users"] as $user) {
 
 
                         <?php
+                        break;
+                    case isset($_POST["yes"]):
+                        changer("data/fan_data.json","account_delete","",$_SESSION["username"]);
+                        session_unset();
+                        session_destroy();
                         break;
                 }
 

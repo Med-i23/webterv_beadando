@@ -133,6 +133,10 @@ function changer($filename, $type, $given, $who): void
                     }
 
                     break;
+                case "account_delete" :
+                    if ($user["username"] === $_SESSION["username"]) {
+                        array_splice($users["users"], $index,1);
+                        }
             }
             break;
         }
