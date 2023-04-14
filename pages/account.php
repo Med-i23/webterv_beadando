@@ -8,6 +8,7 @@ foreach ($users["users"] as $user) {
         $admin = true;
     }
 }
+const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
 
 
 ?>
@@ -49,40 +50,30 @@ foreach ($users["users"] as $user) {
 
                     <button name="shopping_cart_b">Shopping cart</button>
 
-                    <button name="idk">Beer</button>
-
-                    <button name="idk">Fire Water</button>
-
-                    <button name="idk">Saxof</button>
-
-                    <button name="idk">Construction</button>
-
-                    <button name="idk">Klomel</button>
-
-                    <button name="idk">Felis</button>
                 </div>
                 <div class="card_2">
 
-                        <?php
-                        $user_data = [];
-                        $usernames = [];
-                        $friends = [];
-                        $messages = [];
-                        $cart = [];
-                        $username_errors = [];
-                        if ($admin && isset($_POST["manage_users_b"])){
+                    <?php
+                    $user_data = [];
+                    $usernames = [];
+                    $friends = [];
+                    $messages = [];
+                    $cart = [];
+                    $username_errors = [];
+                    if ($admin && isset($_POST["manage_users_b"])) {
                         foreach ($users["users"] as $user) {
-                        echo "<div><form method='post'><input type='text' name='the_managable' value='" . $user["username"] . "' >";
-                        echo "</label>
+                            if ($user !== null)
+                            echo "<div><form method='post'><input type='text' name='the_managable' value='" . $user["username"] . "'  style='pointer-events: none;' >
                                 <button class='error' name='bann'>Bann</button>
                                 <button class='success' name='pardon'>Pardon</button>
                                 </form></div>
                             ";
-                        ?>
+
+                            ?>
 
 
-                    <?php
-                    }
+                            <?php
+                        }
                     }
                     if (isset($_POST["bann"])) {
                         foreach ($users["users"] as $user) {
@@ -117,7 +108,7 @@ foreach ($users["users"] as $user) {
                         } else {
                             ?>
                             <div class="error">
-                                Username might be duplicate or has too many characters
+                                Username might have been occupied, or has too many characters!
                             </div>
                             <?php
                         }
@@ -127,8 +118,10 @@ foreach ($users["users"] as $user) {
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
                                     changer("data/fan_data.json", "password", $_POST["password_changed"], $_SESSION["username"]);
-                                    echo "Your password has been succsessfully changed!";
+                                    echo "<div class='success'>Your password has been successfully changed!</div>";
                                     break;
+                                }else{
+                                    echo "<div class='error'>Your password does not meet the requirements!</div>";
                                 }
                             }
                         }
@@ -137,13 +130,12 @@ foreach ($users["users"] as $user) {
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
                                     changer("data/fan_data.json", "email", $_POST["email_changed"], $_SESSION["username"]);
-                                    echo "Your email has been succsessfully changed!";
-                                    $did = true;
+                                    echo "<div class='success'>Your email has been successfully changed!</div>";
                                     break;
                                 }
                             }
                         } else {
-                            echo "Your email might have been occupied or you did not filled this field!";
+                            echo "<div class='error'>Your email might have been occupied, or you did not fill this field!</div>";
                         }
 
                     }
@@ -190,7 +182,16 @@ foreach ($users["users"] as $user) {
                             <?php
                             break;
                         case isset($_POST["find_user_b"]):
+                                ?>
+                            <form method="post" enctype="multipart/form-data">
+                                <label for="find_user" class="label-required">
+                                    The username:
+                                    <input type="search" maxlength="30" name="find_user">
+                                </label>
+                                <button name="user_find">Change username</button>
+                            </form>
 
+                    <?php
                             break;
                         case isset($_POST["add_friend_b"]):
 
@@ -207,8 +208,6 @@ foreach ($users["users"] as $user) {
                         case isset($_POST["shopping_cart_b"]):
 
                             break;
-
-
                     }
 
                     ?>

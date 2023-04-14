@@ -21,7 +21,7 @@
             "status": "available",
             "agree_terms_of_use": "on",
             "subscribe": "on",
-            "remember": "off",
+            "remember": "on",
             "friends": [],
             "messages": [],
             "cart": []
