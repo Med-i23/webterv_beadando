@@ -18,7 +18,7 @@ function load_data(string $filename): array
 
 function why_are_you_here(): void
 {
-    if (isset($_SESSION["username"])) {
+    if (!isset($_SESSION["username"])) {
         header("Location: index.php?page=main");
     }
 }

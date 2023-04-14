@@ -223,24 +223,9 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
 
                             break;
                         case isset($_POST["shopping_cart_b"]):
-                            echo "<div>";
-                            $every_item = [];
-                            $sum = 0;
-                            foreach ($users["users"] as $user){
-                                if ($_SESSION["username"] === $user["username"]){
-                                    foreach ($user["cart"] as $item){
-                                        $every_item[] = explode(";",$item);
-                                    }
-                                }
-                            }
-                            foreach ($every_item as $index => $item) {
-                                echo "<div><form method='post'>".$item[0]."<button name='remove'>Remove</button></form></div>";
-                                $sum+=$item[1];
-                            }
-                            echo "Your total is: $".$sum;
-                            echo "</div>";
-                            echo "";?>
-                        """"""""""""poup helye"""""""""""""""
+                            header("Location: index.php?page=cart");
+                            extracted($users["users"]); ?>
+
 
 <?php
                             break;

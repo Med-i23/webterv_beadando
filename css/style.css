@@ -393,8 +393,9 @@ a.terms{
     flex-direction: column;
 
 }
-.card_2 > div{
+.card_3 > ul > div >li {
 
+    margin-bottom: 5px;
 
 }
 .card_1 > button{
