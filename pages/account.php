@@ -63,7 +63,7 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                     if ($admin && isset($_POST["manage_users_b"])) {
                         foreach ($users["users"] as $user) {
                             if ($user !== null)
-                            echo "<div><form method='post'><input type='text' name='the_managable' value='" . $user["username"] . "'  style='pointer-events: none;' >
+                                echo "<div><form method='post'><input type='text' name='the_managable' value='" . $user["username"] . "'  style='pointer-events: none;' >
                                 <button class='error' name='bann'>Bann</button>
                                 <button class='success' name='pardon'>Pardon</button>
                                 </form></div>
@@ -95,22 +95,29 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                         if ($_SESSION["username"] === $user["username"])
                             $friends = $user["friends"];
                     }
+                    $found = false;
                     if (isset($_POST["change_username"])) {
                         if (username_longness($_POST["username_changed"]) === "" && empty_username_check($_POST["username_changed"]) === "" && duplicate_username_check($_POST["username_changed"]) === "") {
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
                                     changer("data/fan_data.json", "username", $_POST["username_changed"], $_SESSION["username"]);
                                     $_SESSION["username"] = $_POST["username_changed"];
-                                    header("Refresh: 0");
+                                    header("Refresh: 5");
+                                    echo "<div class='success'>
+                                    Username changed successfully!
+                                    </div>";
+                                    $found = true;
                                     break;
                                 }
                             }
+
                         } else {
-                            ?>
-                            <div class="error">
-                                Username might have been occupied, or has too many characters!
-                            </div>
-                            <?php
+                            echo "<div class='error'>
+                            Username might have been occupied, or has too many characters!
+                            </div>";
+                        }
+                        if ($found){
+
                         }
 
                     } else if (isset($_POST["change_password"])) {
@@ -120,7 +127,7 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                                     changer("data/fan_data.json", "password", $_POST["password_changed"], $_SESSION["username"]);
                                     echo "<div class='success'>Your password has been successfully changed!</div>";
                                     break;
-                                }else{
+                                } else {
                                     echo "<div class='error'>Your password does not meet the requirements!</div>";
                                 }
                             }
@@ -138,13 +145,25 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                             echo "<div class='error'>Your email might have been occupied, or you did not fill this field!</div>";
                         }
 
+                    } else if (isset($_POST["user_find"])) {
+                        $exist = false;
+                        foreach ($users["users"] as $user) {
+                            if ($user["username"] === $_POST["find_user"]) {
+                                echo "Name : " . $user["username"] . "<br>";
+                                echo $user["status"] === "banned" ? "<div class='error'> Status: " . $user["status"] . "</div>" : "<div class='success'> Status: " . $user["status"] . "</div>";
+                                $exist = true;
+                            }
+                        }
+                        if (!$exist) {
+                            echo "<div class='error'>This user does not exist!</div>";
+                        }
                     }
 
                     switch (true) {
                         case isset($_POST["change_username_b"]):
 
                             ?>
-                            <form method="post" enctype="multipart/form-data">
+                            <form method="post" onsubmit="return false;" enctype="multipart/form-data">
                                 <label for="username_changed" class="label-required">
                                     The new username:
                                     <input type="text" maxlength="30" name="username_changed">
@@ -182,16 +201,16 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                             <?php
                             break;
                         case isset($_POST["find_user_b"]):
-                                ?>
+                            ?>
                             <form method="post" enctype="multipart/form-data">
                                 <label for="find_user" class="label-required">
                                     The username:
                                     <input type="search" maxlength="30" name="find_user">
                                 </label>
-                                <button name="user_find">Change username</button>
+                                <button name="user_find">Find user</button>
                             </form>
 
-                    <?php
+                            <?php
                             break;
                         case isset($_POST["add_friend_b"]):
 

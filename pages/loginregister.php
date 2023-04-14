@@ -36,7 +36,7 @@ if (isset($_POST["signup"])) {
             "email" => $email,
             "password" => $password,
             "privilege" => $privilege,
-            "status" => "available",
+            "status" => "allowed",
             "agree_terms_of_use" => $agree_terms_of_use,
             "subscribe" => $subscribe,
             "remember" => "off",

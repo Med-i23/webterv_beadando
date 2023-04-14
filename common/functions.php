@@ -112,7 +112,7 @@ function changer($filename, $type, $given, $who): void
                     $users["users"][$index]["status"] = "banned";
                     break;
                 case "pardon" :
-                    $users["users"][$index]["status"] = "available";
+                    $users["users"][$index]["status"] = "allowed";
                     break;
                 case "remember_on" :
                     $users["users"][$index]["remember"] = "on";
