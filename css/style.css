@@ -404,7 +404,7 @@ a.terms{
     background-color: black;
     color: turquoise;
     border: 2pt solid ;
-    min-width: 100pt;
+    min-width: 160pt;
 }
 .card_2 > button{
     align-content: center;
