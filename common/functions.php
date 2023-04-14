@@ -128,3 +128,8 @@ function changer($filename, $type, $given, $who): void
 
     file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
 }
+
+function is_someone_logged(): void
+{
+    echo isset($_SESSION["username"]) ? "Add to cart" : "Buy now";
+}
