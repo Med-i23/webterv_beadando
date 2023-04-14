@@ -410,7 +410,7 @@ a.terms{
     width: fit-content;
 
 }
-.card_1 > form > button{
+.card_1 > form > button,.card_1 > button{
     display: grid;
     grid-gap: 10pt;
     align-content: center;
@@ -421,6 +421,10 @@ a.terms{
     min-width: 70%;
 
 }
+#form_popup > button{
+    margin:0 50pt ;
+}
+
 .flex-box > .card_2 > div{
     height: fit-content;
 }

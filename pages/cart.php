@@ -34,6 +34,7 @@ why_are_you_here();
                         $temRay = explode(" $",$_POST["removable_item"]);
                         $madeUp = $temRay[0].";".$temRay[1];
                         changer("data/fan_data.json","remove_from_cart",$madeUp,$_SESSION["username"]);
+
                     }
 
 
@@ -56,7 +57,7 @@ why_are_you_here();
             <div class="popup" id="popup">
                 <div class="exit_press" onclick="closePopup()">X</div>
                 <h2>Please enter the following information</h2>
-                <form method="post" id="form_login" enctype="multipart/form-data" autocomplete="on">
+                <form method="post" id="form_popup" enctype="multipart/form-data" autocomplete="on">
                     <fieldset>
                         <label>Payment</label>
                         <label for="card-number">Card Number:</label>

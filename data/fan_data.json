@@ -18,7 +18,7 @@
             "username": "Baka",
             "email": "gojamat266@dogemn.com",
             "password": "$2y$10$.10GCVEhcWjwy2zSkdf7vuoh.HvRnBRFCNHeUYfT7H4ilVNjfbvtS",
-            "privilege": "admin",
+            "privilege": "normal",
             "status": "allowed",
             "agree_terms_of_use": "on",
             "subscribe": "on",
