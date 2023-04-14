@@ -1,6 +1,5 @@
 <?php
 include_once "common/functions.php";
-why_are_you_here();
 $errors = [];
 global $username, $email, $password, $password_check, $agree_terms_of_use, $subscribe;
 if (isset($_POST["signup"])) {

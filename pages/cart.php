@@ -10,9 +10,10 @@ why_are_you_here();
             <div class="card_3">
                 <ul>
                 <?php
+                global $sum;
                 function extracted($users1): void
                 {
-                    echo "<div>";
+                   global $sum;
                     $every_item = [];
                     $sum = 0;
                     foreach ($users1 as $user) {
@@ -26,9 +27,9 @@ why_are_you_here();
                         echo "<li><form method='post'>" . $item[0] . "<button name='remove'>Remove</button></form></li>";
                         $sum += $item[1];
                     }
-                    echo "<div class='success'>Your total is: $" . $sum."</div>";
-                    echo "</div>";
-                    echo "";
+
+
+
                 }
 
 
@@ -37,8 +38,10 @@ why_are_you_here();
                 extracted($users["users"]);
 
                 ?>
-                    <button name="process" onclick="openPopup()">Cash out</button>
+
                 </ul>
+                <?php echo "Your total is: $" . $sum; ?>
+                <button name="process" onclick="openPopup()">Cash out</button>
             </div>
 
 
@@ -49,22 +52,22 @@ why_are_you_here();
                 <h2>Please enter the following information</h2>
                 <form method="post" id="form_login" enctype="multipart/form-data" autocomplete="on">
                     <fieldset>
-                        <label for="payment">Payment</label>
+                        <label>Payment</label>
                         <label for="card-number">Card Number:</label>
                         <input type="text" id="card-number" name="card-number" minlength="16" maxlength="16"
                                placeholder="1111222233334444">
-                        <label for="expiry-date">Expiry Date:</label>
+                        <label>Expiry Date:</label>
                         <div>
-                            <input type="text" id="expiry-date" name="expiry-date" maxlength="2" size="2"
+                            <input type="text" name="expiry-date" maxlength="2" size="2"
                                    placeholder="00"> /
-                            <input type="text" id="expiry-date" name="expiry-date" maxlength="2" size="2"
+                            <input type="text" name="expiry-date" maxlength="2" size="2"
                                    placeholder="00">
                         </div>
                         <label for="cvv">CVV:</label>
                         <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123">
                         <label for="name">Cardholder Name:</label>
                         <input type="text" id="name" name="name" placeholder="Your Name" minlength="1">
-                        <label for="address">Address</label>
+                        <label>Address</label>
                         <label for="zip">Zip code:</label>
                         <input type="text" id="zip" name="zip" placeholder="1234">
                         <label for="city">City:</label>
