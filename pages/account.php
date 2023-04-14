@@ -163,7 +163,7 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                         case isset($_POST["change_username_b"]):
 
                             ?>
-                            <form method="post" onsubmit="return false;" enctype="multipart/form-data">
+                            <form method="post" enctype="multipart/form-data">
                                 <label for="username_changed" class="label-required">
                                     The new username:
                                     <input type="text" maxlength="30" name="username_changed">
