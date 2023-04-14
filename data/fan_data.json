@@ -9,6 +9,7 @@
             "agree_terms_of_use": "on",
             "subscribe": "on",
             "remember": "on",
+            "notifications": [],
             "friends": [],
             "messages": [],
             "cart": []
@@ -22,6 +23,7 @@
             "agree_terms_of_use": "on",
             "subscribe": "on",
             "remember": "on",
+            "notifications": [],
             "friends": [],
             "messages": [],
             "cart": []
@@ -35,6 +37,7 @@
             "agree_terms_of_use": "on",
             "subscribe": "on",
             "remember": "on",
+            "notifications": [],
             "friends": [],
             "messages": [],
             "cart": []

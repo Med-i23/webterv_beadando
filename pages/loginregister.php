@@ -40,6 +40,7 @@ if (isset($_POST["signup"])) {
             "agree_terms_of_use" => $agree_terms_of_use,
             "subscribe" => $subscribe,
             "remember" => "off",
+            "notifications" => [],
             "friends" => $friends = [],
             "messages" => $messages = [],
             "cart" => $cart = []
