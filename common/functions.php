@@ -120,11 +120,21 @@ function changer($filename, $type, $given, $who): void
                 case "remember_off" :
                     $users["users"][$index]["remember"] = "off";
                     break;
-                case "" :
+                case "add_to_cart" :
+                    $users["users"][$index]["cart"][] = $given;
+                    break;
+                case "remove_from_cart" :
+                    $users["users"][$index]["cart"][$given] = "" ;
+                    break;
             }
             break;
         }
     }
 
     file_put_contents($filename, json_encode($users, JSON_PRETTY_PRINT));
+}
+
+function is_someone_logged(): void
+{
+    echo isset($_SESSION["username"]) ? "Add to cart" : "Buy now";
 }

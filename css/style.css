@@ -377,13 +377,14 @@ a.terms{
     flex-wrap: wrap;
     right: 450pt;
     top: 300pt;
+    gap: 10pt;
 }
 
 .flex-box > .card_1{
     display: flex;
-    flex: 0 1;
+    flex: 0 1 30%;
     flex-direction: column;
-    width: 20%;
+
 }
 
 .flex-box > .card_2{
@@ -393,7 +394,7 @@ a.terms{
 
 }
 .card_2 > div{
-    width: 80%;
+
 
 }
 .card_1 > button{
@@ -404,7 +405,8 @@ a.terms{
     background-color: black;
     color: turquoise;
     border: 2pt solid ;
-    min-width: 80pt;
+    min-width: 70%;
+
 }
 .card_2 > button{
     align-content: center;

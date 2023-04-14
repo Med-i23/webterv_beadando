@@ -26,7 +26,23 @@
             "notifications": [],
             "friends": [],
             "messages": [],
-            "cart": []
+            "cart": [
+                "men_t-shirt_black;20",
+                "woman_t-shirt_white;20",
+                "hoodie_black;35",
+                "men_t-shirt_black;20",
+                "men_t-shirt_white;20",
+                "men_t-shirt_white;20",
+                "men_t-shirt_white;20",
+                "men_t-shirt_black;20",
+                "woman_t-shirt_black;20",
+                "woman_t-shirt_black;20",
+                "woman_t-shirt_black;20",
+                "men_t-shirt_white;20",
+                "woman_t-shirt_white;20",
+                "hoodie_black;35",
+                "hoodie_white;35"
+            ]
         },
         {
             "username": "kollupo",
