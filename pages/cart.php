@@ -54,7 +54,7 @@ why_are_you_here();
 
         <div class="overlay" id="overlay">
             <div class="popup" id="popup">
-                <div class="exit_press" style="pointer-events: none" onclick="closePopup()">X</div>
+                <div class="exit_press" onclick="closePopup()">X</div>
                 <h2>Please enter the following information</h2>
                 <form method="post" id="form_login" enctype="multipart/form-data" autocomplete="on">
                     <fieldset>
