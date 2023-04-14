@@ -124,7 +124,14 @@ function changer($filename, $type, $given, $who): void
                     $users["users"][$index]["cart"][] = $given;
                     break;
                 case "remove_from_cart" :
-                    $users["users"][$index]["cart"][$given] = "" ;
+                    foreach ($users["users"][$index]["cart"] as $index_2 => $user_2){
+                        if ($users["users"][$index]["cart"][$index_2] === $given) {
+                           array_splice($users["users"][$index]["cart"],$index_2,1);
+                           header("Refresh: 0");
+                           break;
+                        }
+                    }
+
                     break;
             }
             break;
