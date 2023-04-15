@@ -363,11 +363,13 @@ a.terms{
 #cookies{
     border: 1pt solid;
     position: fixed;
+    bottom: 0;
     background-color: turquoise;
     margin-top: 80pt;
     width: 99.9%;
     text-align: center;
     margin-left: -6pt;
+    z-index: 30;
 
 }
 #wanna_send{
