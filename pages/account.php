@@ -139,6 +139,8 @@ header("Location: index.php?page=cart");
                                 if ($user["username"] === $_SESSION["username"]) {
                                     changer("data/fan_data.json", "username", $_POST["username_changed"], $_SESSION["username"]);
                                     $_SESSION["username"] = $_POST["username_changed"];
+                                    header_remove("Location: index.php?page=cart");
+                                    header("Refresh: 0");
                                     echo "<div class='success'>
                                     Username changed successfully!
                                     </div>";
