@@ -37,7 +37,6 @@ why_are_you_here();
 
                     }
 
-
                 }
 
                 $users = load_data("data/fan_data.json");
