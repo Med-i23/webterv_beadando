@@ -3,7 +3,6 @@ include_once "common/functions.php";
 why_are_you_here();
 $canIdoIt = false;
 
-
 ?>
 
 <div class="h1-imitator">Shopping Cart</div>
@@ -65,11 +64,11 @@ $canIdoIt = false;
                         <label>Expiry Date:</label>
                         <div>
                             <label>
-                                <input type="text" name="expiry-date" maxlength="2" size="2"
+                                <input type="text" name="expiry-date_d" maxlength="2" size="2"
                                        placeholder="00">
                             </label>
                             <label>
-                                <input type="text" name="expiry-date" maxlength="2" size="2"
+                                <input type="text" name="expiry-date_m" maxlength="2" size="2"
                                        placeholder="00">
                             </label>
                         </div>
@@ -87,20 +86,14 @@ $canIdoIt = false;
                         <label for="email">Email:</label>
                         <input type="text" id="email" name="email" placeholder="youremail@mail.com">
                     </fieldset>
-                    <button name="proceed_purchase_test">
-                        Card Test
-                    </button>
                 </form>
-                <?php
-                if (isset($_POST["proceed_purchase_test"])){
-                    $canIdoIt = validate_cc($_POST["card_number"]);
-                }
-                ?>
-
-                <button onclick="<?php echo $canIdoIt ? "closePopup(); openThanks();" : "" ?>"
+                <button onclick="<?php echo !$canIdoIt ? "closePopup(); openThanks();" : "closePopup()" ?>"
                         name="proceed_purchase">
                     Proceed
                 </button>
+
+
+
 
 
             </div>
@@ -108,6 +101,7 @@ $canIdoIt = false;
                 <img src="sources/websiteElement/checkmark.png" alt="checkmark" width="60">
                 <h2>Thank you for your purchase!</h2>
                 <div>We will send will you an email with the necessary information.</div>
+                <div class="error"><a class="error" target="_blank" href="https://youtu.be/dQw4w9WgXcQ">Sadly cash out is currently unavailable, our team is working on the problem, while you wait try to click on this text</a></div>
                 <button onclick="closeThanks()">Close</button>
             </div>
         </div>
