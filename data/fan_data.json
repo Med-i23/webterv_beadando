@@ -10,7 +10,9 @@
             "subscribe": "on",
             "remember": "on",
             "notifications": [],
-            "friends": [],
+            "friends": [
+                "Baka"
+            ],
             "messages": [],
             "cart": []
         },
