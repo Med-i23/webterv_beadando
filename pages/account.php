@@ -11,8 +11,8 @@ foreach ($users["users"] as $user) {
 }
 //const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
 
-if (isset($_POST["shopping_cart_b"])){
-header("Location: index.php?page=cart");
+if (isset($_POST["shopping_cart_b"])) {
+    header("Location: index.php?page=cart");
 }
 
 ?>
@@ -100,6 +100,7 @@ header("Location: index.php?page=cart");
                     $messages = [];
                     $cart = [];
                     $username_errors = [];
+
                     if ($admin && isset($_POST["manage_users_b"])) {
                         foreach ($users["users"] as $user) {
                             if ($user !== null)
@@ -130,7 +131,6 @@ header("Location: index.php?page=cart");
                         if ($_SESSION["username"] === $user["username"])
                             $friends = $user["friends"];
                     }
-                    $found = false;
                     if (isset($_POST["change_username"])) {
                         if (username_longness($_POST["username_changed"]) === "" && empty_username_check($_POST["username_changed"]) === "" && duplicate_username_check($_POST["username_changed"]) === "") {
                             foreach ($users["users"] as $user) {
@@ -180,25 +180,28 @@ header("Location: index.php?page=cart");
 
                     } else if (isset($_POST["user_find"])) {
                         $exist = false;
-                        $savedUser = [];
                         foreach ($users["users"] as $user) {
                             if ($user["username"] === $_POST["find_user"]) {
-                                $savedUser = $user;
+
+                                $_SESSION["savedUser"] = $user;
                                 echo "Name : " . $user["username"] . "<br>";
                                 echo $user["status"] === "banned" ? "<div class='error'> Status: " . $user["status"] . "</div>" : "<div class='success'> Status: " . $user["status"] . "</div>";
                                 echo "<form method='post'><button name='friend_add'>Add friend</button></form>";
                                 $exist = true;
                             }
                         }
+
                         if (!$exist) {
                             echo "<div class='error'>This user does not exist!</div>";
                         }
-                        if (isset($_POST["friend_add"])){
-                            changer("data/fan_data.json","add_friend",$savedUser["username"],$_SESSION["username"]);
-                            echo "<div class='success'>You added ".$savedUser["username"]." to your friends, be aware if this friend changes username you have to add it again!</div>";
-                        }
+
                     }
 
+                    if (isset($_POST["friend_add"])) {
+                        $savedUser = $_SESSION["savedUser"];
+                        changer("data/fan_data.json", "add_friend", $savedUser["username"], $_SESSION["username"]);
+                        echo "<div class='success'>You added " . $savedUser["username"] . " to your friends, be aware if this friend changes username you have to add it again!</div>";
+                    }
 
                     switch (true) {
                         case isset($_POST["change_username_b"]):

@@ -124,23 +124,23 @@ function changer($filename, $type, $given, $who): void
                     $users["users"][$index]["cart"][] = $given;
                     break;
                 case "remove_from_cart" :
-                    foreach ($users["users"][$index]["cart"] as $index_2 => $user_2){
+                    foreach ($users["users"][$index]["cart"] as $index_2 => $user_2) {
                         if ($users["users"][$index]["cart"][$index_2] === $given) {
-                           array_splice($users["users"][$index]["cart"],$index_2,1);
-                           break;
+                            array_splice($users["users"][$index]["cart"], $index_2, 1);
+                            break;
                         }
                     }
 
                     break;
                 case "account_delete" :
                     if ($user["username"] === $_SESSION["username"]) {
-                        array_splice($users["users"], $index,1);
-                        }
+                        array_splice($users["users"], $index, 1);
+                    }
                     break;
                 case "add_friend" :
-
-                    $users["users"][$index]["friends"][] = $given;
-
+                    if (!in_array($given, $users["users"][$index]["friends"])) {
+                        $users["users"][$index]["friends"][] = $given;
+                    }
                     break;
             }
             break;

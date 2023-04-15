@@ -26,23 +26,21 @@ why_are_you_here();
                     }
                     foreach ($every_item as $item) {
                         echo "<li><form method='post'>" . "<input type='text' name='removable_item' style='pointer-events: none' value='";
-                        echo $item[0]." $".$item[1]."' >" . "<button name='remove'>Remove</button></form></li>";
+                        echo $item[0] . " $" . $item[1] . "' >" . "<button name='remove'>Remove</button></form></li>";
                         $sum += $item[1];
 
                     }
-                    if (isset($_POST["remove"])){
-                        $temRay = explode(" $",$_POST["removable_item"]);
-                        $madeUp = $temRay[0].";".$temRay[1];
-                        changer("data/fan_data.json","remove_from_cart",$madeUp,$_SESSION["username"]);
+                    if (isset($_POST["remove"])) {
+                        $temRay = explode(" $", $_POST["removable_item"]);
+                        $madeUp = $temRay[0] . ";" . $temRay[1];
+                        changer("data/fan_data.json", "remove_from_cart", $madeUp, $_SESSION["username"]);
 
                     }
 
 
                 }
 
-
                 $users = load_data("data/fan_data.json");
-
                 extracted($users["users"]);
 
                 ?>

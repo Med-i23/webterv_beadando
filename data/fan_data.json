@@ -24,7 +24,9 @@
             "subscribe": "on",
             "remember": "on",
             "notifications": [],
-            "friends": [],
+            "friends": [
+                "Kekszharcos"
+            ],
             "messages": [],
             "cart": []
         },
