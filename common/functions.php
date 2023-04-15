@@ -127,7 +127,6 @@ function changer($filename, $type, $given, $who): void
                     foreach ($users["users"][$index]["cart"] as $index_2 => $user_2){
                         if ($users["users"][$index]["cart"][$index_2] === $given) {
                            array_splice($users["users"][$index]["cart"],$index_2,1);
-                           header("Refresh: 0");
                            break;
                         }
                     }

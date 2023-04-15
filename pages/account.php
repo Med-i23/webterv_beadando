@@ -11,6 +11,9 @@ foreach ($users["users"] as $user) {
 }
 //const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
 
+if (isset($_POST["shopping_cart_b"])){
+header("Location: index.php?page=cart");
+}
 
 ?>
 
@@ -29,7 +32,6 @@ foreach ($users["users"] as $user) {
                     if ($admin) {
                         ?>
                         <button name="manage_users_b">Manage users</button>
-
                         <?php
                     }
                     ?>
@@ -108,11 +110,6 @@ foreach ($users["users"] as $user) {
                                 <button class='success' name='pardon'>Pardon</button>
                                 </form></div>
                             ";
-
-                            ?>
-
-
-                            <?php
                         }
                     }
                     if (isset($_POST["bann"])) {
@@ -142,7 +139,6 @@ foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
                                     changer("data/fan_data.json", "username", $_POST["username_changed"], $_SESSION["username"]);
                                     $_SESSION["username"] = $_POST["username_changed"];
-                                    header("Refresh: 5");
                                     echo "<div class='success'>
                                     Username changed successfully!
                                     </div>";
@@ -262,13 +258,6 @@ foreach ($users["users"] as $user) {
                             break;
                         case isset($_POST["send_messages_b"]):
 
-                            break;
-                        case isset($_POST["shopping_cart_b"]):
-                            header("Location: index.php?page=cart");
-                            extracted($users["users"]); ?>
-
-
-                            <?php
                             break;
                         case isset($_POST["yes"]):
                             changer("data/fan_data.json", "account_delete", "", $_SESSION["username"]);
