@@ -61,9 +61,9 @@ if (isset($_POST["shopping_cart_b"])) {
                         <button name="yes">YES</button>
                         <button onclick="closePopup()" name="no">NO</button>
                     </form>
-
                 </div>
-                <script type="text/javascript">
+            </div>
+                <script>
                     let popup = document.getElementById("popup");
                     let overlay = document.getElementById("overlay");
                     let thanks = document.getElementById("thanks");
@@ -182,8 +182,8 @@ if (isset($_POST["shopping_cart_b"])) {
                             if ($user["username"] === $_POST["find_user"]) {
 
                                 $_SESSION["savedUser"] = $user;
-                                echo "Name : " . $user["username"] . "<br>";
-                                echo $user["status"] === "banned" ? "<div class='error'> Status: " . $user["status"] . "</div>" : "<div class='success'> Status: " . $user["status"] . "</div>";
+                                echo "Name : " . $user["username"] . " |";
+                                echo $user["status"] === "banned" ? "<div class='error'>&nbsp; Status: " . $user["status"] . "</div><br>" : "<div class='success'> Status: " . $user["status"] . "</div>";
                                 echo "<form method='post'><button name='friend_add'>Add friend</button></form>";
                                 $exist = true;
                             }
@@ -258,20 +258,19 @@ if (isset($_POST["shopping_cart_b"])) {
                         case isset($_POST["friends_b"]):
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
-                                    foreach ($user["friends"] as $friend){
-                                        $_SESSION["friend"] = $friend;
-                                        echo "<form method='post'><input name='the_removable_friend' style='pointer-events: none' value='$friend'>";
-                                        echo "<button name='remove_friend'>Remove Friend</button>
+                                    if (empty($user["friends"])){
+                                        echo "<div class='error'>You do not have friends (sadge)</div>";
+                                    }else {
+                                        foreach ($user["friends"] as $friend) {
+                                            $_SESSION["friend"] = $friend;
+                                            echo "<form method='post'><input name='the_removable_friend' style='pointer-events: none' value='$friend'>";
+                                            echo "<button name='remove_friend'>Remove Friend</button>
                                               <button name='send_message_b'>Send message</button></form>";
+                                        }
                                     }
+
                                 }
                             }
-
-                            break;
-                        case isset($_POST["received_messages_b"]):
-
-                            break;
-                        case isset($_POST["send_messages"]):
 
                             break;
                         case isset($_POST["yes"]):
@@ -282,9 +281,31 @@ if (isset($_POST["shopping_cart_b"])) {
                         case isset($_POST["remove_friend"]):
                             changer("data/fan_data.json","remove_friend", $_POST["the_removable_friend"],$_SESSION["username"]);
                         break;
+                        case isset($_POST["received_messages_b"]):
+                            foreach ($users["users"] as $user){
+                                if ($user["username"] === $_SESSION["username"]) {
+                                    if (empty($user["messages"])){
+                                        echo "<div class='error'>You do not have messages</div>";
+                                    }else {
+                                        echo "<ul>";
+                                        foreach ($user["messages"] as $message) {
+                                            echo "<li>".$message."</li>";
+                                        }
+                                        echo "</ul>";
+                                    }
+
+                                }
+                            }
+                            break;
                         case isset($_POST["send_message_b"]):
-                            echo "<from method='post'><div><labal>The message for ".$_SESSION["friend"] ." :</labal></div><div><textarea type='text' name='wanna_send' id='wanna_send'></textarea></div><button name='send'>Send</button></from>";
+                            echo "<form method='post'><div><label>The message for ".$_SESSION["friend"] ." :</label></div><div><textarea name='wanna_send' id='wanna_send'></textarea></div><button name='send'>Send</button></form>";
                         break;
+                        case isset($_POST["send"]):
+                            if (trim($_POST["wanna_send"]) !== "") {
+                                changer("data/fan_data.json", "send_message", "From: " . $_SESSION["username"] . " | The message is: " . $_POST["wanna_send"], $_SESSION["friend"]);
+                            }
+                            echo trim($_POST["wanna_send"] !== "") ? "<div class='success'>You sent the message!</div>" : "<div class='error'>You can not send empty messages</div>";
+                            break;
                     }
 
                     ?>

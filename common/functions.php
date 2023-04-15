@@ -142,9 +142,9 @@ function changer($filename, $type, $given, $who): void
                         $users["users"][$index]["friends"][] = $given;
                     }
                     foreach ($users["users"] as $index_2 => $user_2) {
-                        if ($user_2["username"] === $given){
+                        if ($user_2["username"] === $given) {
                             if (!in_array($who, $users["users"][$index_2]["friends"])) {
-                            $users["users"][$index_2]["friends"][] = $who;
+                                $users["users"][$index_2]["friends"][] = $who;
                             }
                         }
                     }
@@ -156,6 +156,9 @@ function changer($filename, $type, $given, $who): void
                             break;
                         }
                     }
+                    break;
+                case "send_message" :
+                        $users["users"][$index]["messages"][] = $given;
                     break;
             }
             break;
