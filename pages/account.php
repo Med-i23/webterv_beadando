@@ -48,8 +48,6 @@ if (isset($_POST["shopping_cart_b"])) {
 
                     <button name="received_messages_b">Messages</button>
 
-                    <button name="send_messages_b">Send message</button>
-
                     <button name="shopping_cart_b">Shopping cart</button>
 
                 </form>
@@ -63,8 +61,8 @@ if (isset($_POST["shopping_cart_b"])) {
                         <button name="yes">YES</button>
                         <button onclick="closePopup()" name="no">NO</button>
                     </form>
-
                 </div>
+            </div>
                 <script>
                     let popup = document.getElementById("popup");
                     let overlay = document.getElementById("overlay");
@@ -104,7 +102,7 @@ if (isset($_POST["shopping_cart_b"])) {
                     if ($admin && isset($_POST["manage_users_b"])) {
                         foreach ($users["users"] as $user) {
                             if ($user !== null)
-                                echo "<div><form method='post'><input type='text' name='the_managable' value='" . $user["username"] . "'  style='pointer-events: none;' >
+                                echo "<div><form method='post'><input type='text' name='the_manageable' value='" . $user["username"] . "'  style='pointer-events: none;' >
                                 <button class='error' name='bann'>Bann</button>
                                 <button class='success' name='pardon'>Pardon</button>
                                 </form></div>
@@ -113,16 +111,16 @@ if (isset($_POST["shopping_cart_b"])) {
                     }
                     if (isset($_POST["bann"])) {
                         foreach ($users["users"] as $user) {
-                            if ($_POST["the_managable"] === $user["username"]) {
-                                changer("data/fan_data.json", "bann", $_POST["the_managable"], $_POST["the_managable"]);
+                            if ($_POST["the_manageable"] === $user["username"]) {
+                                changer("data/fan_data.json", "bann", $_POST["the_manageable"], $_POST["the_manageable"]);
                             }
 
                         }
                     }
                     if (isset($_POST["pardon"])) {
                         foreach ($users["users"] as $user) {
-                            if ($_POST["the_managable"] === $user["username"]) {
-                                changer("data/fan_data.json", "pardon", $_POST["the_managable"], $_POST["the_managable"]);
+                            if ($_POST["the_manageable"] === $user["username"]) {
+                                changer("data/fan_data.json", "pardon", $_POST["the_manageable"], $_POST["the_manageable"]);
                             }
 
                         }
@@ -184,8 +182,8 @@ if (isset($_POST["shopping_cart_b"])) {
                             if ($user["username"] === $_POST["find_user"]) {
 
                                 $_SESSION["savedUser"] = $user;
-                                echo "Name : " . $user["username"] . "<br>";
-                                echo $user["status"] === "banned" ? "<div class='error'> Status: " . $user["status"] . "</div>" : "<div class='success'> Status: " . $user["status"] . "</div>";
+                                echo "Name : " . $user["username"] . " |";
+                                echo $user["status"] === "banned" ? "<div class='error'>&nbsp; Status: " . $user["status"] . "</div><br>" : "<div class='success'> Status: " . $user["status"] . "</div>";
                                 echo "<form method='post'><button name='friend_add'>Add friend</button></form>";
                                 $exist = true;
                             }
@@ -200,7 +198,7 @@ if (isset($_POST["shopping_cart_b"])) {
                     if (isset($_POST["friend_add"])) {
                         $savedUser = $_SESSION["savedUser"];
                         changer("data/fan_data.json", "add_friend", $savedUser["username"], $_SESSION["username"]);
-                        echo "<div class='success'>You added " . $savedUser["username"] . " to your friends, be aware if this friend changes username you have to add it again!</div>";
+                        echo "<div class='success'>You added " . $savedUser["username"] . " to your friends, be aware if this friend changes username you have to add eachother again!</div>";
                     }
 
                     switch (true) {
@@ -257,19 +255,56 @@ if (isset($_POST["shopping_cart_b"])) {
 
                             <?php
                             break;
-                        case isset($_POST["remove_friend_b"]):
+                        case isset($_POST["friends_b"]):
+                            foreach ($users["users"] as $user) {
+                                if ($user["username"] === $_SESSION["username"]) {
+                                    if (empty($user["friends"])){
+                                        echo "<div class='error'>You do not have friends (sadge)</div>";
+                                    }else {
+                                        foreach ($user["friends"] as $friend) {
+                                            $_SESSION["friend"] = $friend;
+                                            echo "<form method='post'><input name='the_removable_friend' style='pointer-events: none' value='$friend'>";
+                                            echo "<button name='remove_friend'>Remove Friend</button>
+                                              <button name='send_message_b'>Send message</button></form>";
+                                        }
+                                    }
 
-                            break;
-                        case isset($_POST["received_messages_b"]):
-
-                            break;
-                        case isset($_POST["send_messages_b"]):
+                                }
+                            }
 
                             break;
                         case isset($_POST["yes"]):
                             changer("data/fan_data.json", "account_delete", "", $_SESSION["username"]);
                             session_unset();
                             session_destroy();
+                            break;
+                        case isset($_POST["remove_friend"]):
+                            changer("data/fan_data.json","remove_friend", $_POST["the_removable_friend"],$_SESSION["username"]);
+                        break;
+                        case isset($_POST["received_messages_b"]):
+                            foreach ($users["users"] as $user){
+                                if ($user["username"] === $_SESSION["username"]) {
+                                    if (empty($user["messages"])){
+                                        echo "<div class='error'>You do not have messages</div>";
+                                    }else {
+                                        echo "<ul>";
+                                        foreach ($user["messages"] as $message) {
+                                            echo "<li>".$message."</li>";
+                                        }
+                                        echo "</ul>";
+                                    }
+
+                                }
+                            }
+                            break;
+                        case isset($_POST["send_message_b"]):
+                            echo "<form method='post'><div><label>The message for ".$_SESSION["friend"] ." :</label></div><div><textarea name='wanna_send' id='wanna_send'></textarea></div><button name='send'>Send</button></form>";
+                        break;
+                        case isset($_POST["send"]):
+                            if (trim($_POST["wanna_send"]) !== "") {
+                                changer("data/fan_data.json", "send_message", "From: " . $_SESSION["username"] . " | The message is: " . $_POST["wanna_send"], $_SESSION["friend"]);
+                            }
+                            echo trim($_POST["wanna_send"] !== "") ? "<div class='success'>You sent the message!</div>" : "<div class='error'>You can not send empty messages</div>";
                             break;
                     }
 

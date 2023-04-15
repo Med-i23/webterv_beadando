@@ -141,6 +141,24 @@ function changer($filename, $type, $given, $who): void
                     if (!in_array($given, $users["users"][$index]["friends"])) {
                         $users["users"][$index]["friends"][] = $given;
                     }
+                    foreach ($users["users"] as $index_2 => $user_2) {
+                        if ($user_2["username"] === $given) {
+                            if (!in_array($who, $users["users"][$index_2]["friends"])) {
+                                $users["users"][$index_2]["friends"][] = $who;
+                            }
+                        }
+                    }
+                    break;
+                case "remove_friend" :
+                    foreach ($users["users"][$index]["friends"] as $index_2 => $user_2) {
+                        if ($users["users"][$index]["friends"][$index_2] === $given) {
+                            array_splice($users["users"][$index]["friends"], $index_2, 1);
+                            break;
+                        }
+                    }
+                    break;
+                case "send_message" :
+                        $users["users"][$index]["messages"][] = $given;
                     break;
             }
             break;

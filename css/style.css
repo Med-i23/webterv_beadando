@@ -23,7 +23,7 @@ body{
 }
 
 script{
-    display: none;
+    display: none !important;
 }
 
 nav{
@@ -369,6 +369,11 @@ a.terms{
     text-align: center;
     margin-left: -6pt;
 
+}
+#wanna_send{
+    !important;
+ max-width: 600pt;
+    width: 60%;
 }
 
 .flex-box{
