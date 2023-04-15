@@ -18,7 +18,7 @@ function load_data(string $filename): array
 
 function why_are_you_here(): void
 {
-    if (isset($_SESSION["username"])) {
+    if (!isset($_SESSION["username"])) {
         header("Location: index.php?page=main");
     }
 }
@@ -124,7 +124,23 @@ function changer($filename, $type, $given, $who): void
                     $users["users"][$index]["cart"][] = $given;
                     break;
                 case "remove_from_cart" :
-                    $users["users"][$index]["cart"][$given] = "" ;
+                    foreach ($users["users"][$index]["cart"] as $index_2 => $user_2) {
+                        if ($users["users"][$index]["cart"][$index_2] === $given) {
+                            array_splice($users["users"][$index]["cart"], $index_2, 1);
+                            break;
+                        }
+                    }
+
+                    break;
+                case "account_delete" :
+                    if ($user["username"] === $_SESSION["username"]) {
+                        array_splice($users["users"], $index, 1);
+                    }
+                    break;
+                case "add_friend" :
+                    if (!in_array($given, $users["users"][$index]["friends"])) {
+                        $users["users"][$index]["friends"][] = $given;
+                    }
                     break;
             }
             break;

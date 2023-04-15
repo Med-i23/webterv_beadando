@@ -1,6 +1,5 @@
 <?php
 include_once "common/functions.php";
-why_are_you_here();
 $errors = [];
 global $username, $email, $password, $password_check, $agree_terms_of_use, $subscribe;
 if (isset($_POST["signup"])) {
@@ -9,7 +8,6 @@ if (isset($_POST["signup"])) {
     $password = $_POST["sign-up-password"];
     $password_check = $_POST["sign-up-password-again"];
     $privilege = "normal";
-
 
     if (isset($_POST["agree_terms_of_use"])) {
         $agree_terms_of_use = $_POST["agree_terms_of_use"];

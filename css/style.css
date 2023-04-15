@@ -378,26 +378,39 @@ a.terms{
     right: 450pt;
     top: 300pt;
     gap: 10pt;
+    width: fit-content;
+
 }
 
 .flex-box > .card_1{
     display: flex;
-    flex: 0 1 30%;
+    flex: 0 1 fit-content;
     flex-direction: column;
-
 }
 
 .flex-box > .card_2{
-    display: flex;
+    display: inline-flex;
     flex: 1 0;
-    flex-direction: column;
+    flex-direction: row;
+    border: 1pt solid;
+    flex-wrap: wrap;
+    height: 50%;
 
 }
-.card_2 > div{
-
+.card_3 > ul >li {
+    margin-bottom: 5px;
 
 }
-.card_1 > button{
+.card_3 > .success {
+    margin: 10pt;
+}
+
+.exit_press{
+    border: 2pt solid;
+    width: fit-content;
+
+}
+.card_1 > form > button,.card_1 > button{
     display: grid;
     grid-gap: 10pt;
     align-content: center;
@@ -408,21 +421,27 @@ a.terms{
     min-width: 70%;
 
 }
-.card_2 > button{
+#form_popup > button{
+    margin:0 50pt ;
+}
+
+.flex-box > .card_2 > div{
+    height: fit-content;
+}
+.card_2 > button,.card_2 > form > button, li > form > button {
     align-content: center;
     background-color: black;
     color: red;
     border: 2pt solid ;
+
 }
-.card_2 > div > button{
+.card_2 > div > button,.card_2 > div > form > button{
     align-content: center;
     background-color: black;
     border: 2pt solid ;
 }
-.card_2 > div > form > button{
-    align-content: center;
-    background-color: black;
-    border: 2pt solid ;
+li > form > button {
+    margin: 0 10pt;
 }
 
 .flex-container{

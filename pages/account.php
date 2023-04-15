@@ -1,5 +1,6 @@
 <?php
 include_once "common/functions.php";
+why_are_you_here();
 
 $users = load_data("data/fan_data.json");
 $admin = false;
@@ -8,26 +9,29 @@ foreach ($users["users"] as $user) {
         $admin = true;
     }
 }
-const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
+//const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
 
+if (isset($_POST["shopping_cart_b"])) {
+    header("Location: index.php?page=cart");
+}
 
 ?>
 
 <div class="h1-imitator">Account management</div>
 <main>
-    <h4>You are <?php echo $_SESSION["username"];
-        if ($admin) {
-            echo " (Administrator)";
-        } ?><br></h4>
+
     <section class="article-imitator">
-        <form method="post">
-            <div class="flex-box">
-                <div class="card_1">
+        <h4>You are <?php echo $_SESSION["username"];
+            if ($admin) {
+                echo " (Administrator)";
+            } ?><br></h4>
+        <div class="flex-box">
+            <div class="card_1">
+                <form method="post">
                     <?php
                     if ($admin) {
                         ?>
                         <button name="manage_users_b">Manage users</button>
-
                         <?php
                     }
                     ?>
@@ -42,15 +46,51 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
 
                     <button name="friends_b">Friends</button>
 
-                    <button name="add_friend_b">Add friend</button>
-
                     <button name="received_messages_b">Messages</button>
 
                     <button name="send_messages_b">Send message</button>
 
                     <button name="shopping_cart_b">Shopping cart</button>
 
+                </form>
+                <button name="account_delete_b" onclick="openPopup()">Delete account</button>
+            </div>
+            <div class="overlay" id="overlay">
+                <div class="popup" id="popup">
+                    <div class="exit_press" onclick="closePopup()">X</div>
+                    <h2>Are you sure about that?</h2>
+                    <form method="post" id="form_popup" enctype="multipart/form-data" autocomplete="on">
+                        <button name="yes">YES</button>
+                        <button onclick="closePopup()" name="no">NO</button>
+                    </form>
+
                 </div>
+                <script>
+                    let popup = document.getElementById("popup");
+                    let overlay = document.getElementById("overlay");
+                    let thanks = document.getElementById("thanks");
+
+                    function openPopup() {
+                        popup.classList.add("open-popup");
+                        overlay.classList.add("overlay-open");
+                    }
+
+                    function closePopup() {
+                        popup.classList.remove("open-popup");
+                        overlay.classList.remove("overlay-open");
+                    }
+
+                    function openThanks() {
+                        thanks.classList.add("open-thanks");
+                        overlay.classList.add("overlay-open");
+                    }
+
+                    function closeThanks() {
+                        thanks.classList.remove("open-thanks");
+                        overlay.classList.remove("overlay-open");
+                    }
+                </script>
+
                 <div class="card_2">
 
                     <?php
@@ -60,6 +100,7 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                     $messages = [];
                     $cart = [];
                     $username_errors = [];
+
                     if ($admin && isset($_POST["manage_users_b"])) {
                         foreach ($users["users"] as $user) {
                             if ($user !== null)
@@ -68,11 +109,6 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                                 <button class='success' name='pardon'>Pardon</button>
                                 </form></div>
                             ";
-
-                            ?>
-
-
-                            <?php
                         }
                     }
                     if (isset($_POST["bann"])) {
@@ -95,14 +131,14 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                         if ($_SESSION["username"] === $user["username"])
                             $friends = $user["friends"];
                     }
-                    $found = false;
                     if (isset($_POST["change_username"])) {
                         if (username_longness($_POST["username_changed"]) === "" && empty_username_check($_POST["username_changed"]) === "" && duplicate_username_check($_POST["username_changed"]) === "") {
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
                                     changer("data/fan_data.json", "username", $_POST["username_changed"], $_SESSION["username"]);
                                     $_SESSION["username"] = $_POST["username_changed"];
-                                    header("Refresh: 5");
+                                    header_remove("Location: index.php?page=cart");
+                                    header("Refresh: 0");
                                     echo "<div class='success'>
                                     Username changed successfully!
                                     </div>";
@@ -146,16 +182,26 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                         $exist = false;
                         foreach ($users["users"] as $user) {
                             if ($user["username"] === $_POST["find_user"]) {
+
+                                $_SESSION["savedUser"] = $user;
                                 echo "Name : " . $user["username"] . "<br>";
                                 echo $user["status"] === "banned" ? "<div class='error'> Status: " . $user["status"] . "</div>" : "<div class='success'> Status: " . $user["status"] . "</div>";
+                                echo "<form method='post'><button name='friend_add'>Add friend</button></form>";
                                 $exist = true;
                             }
                         }
+
                         if (!$exist) {
                             echo "<div class='error'>This user does not exist!</div>";
                         }
+
                     }
 
+                    if (isset($_POST["friend_add"])) {
+                        $savedUser = $_SESSION["savedUser"];
+                        changer("data/fan_data.json", "add_friend", $savedUser["username"], $_SESSION["username"]);
+                        echo "<div class='success'>You added " . $savedUser["username"] . " to your friends, be aware if this friend changes username you have to add it again!</div>";
+                    }
 
                     switch (true) {
                         case isset($_POST["change_username_b"]):
@@ -164,7 +210,7 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                             <form method="post" enctype="multipart/form-data">
                                 <label for="username_changed" class="label-required">
                                     The new username:
-                                    <input type="text" maxlength="30" name="username_changed">
+                                    <input type="text" maxlength="30" name="username_changed" id="username_changed">
                                 </label>
                                 <button name="change_username">Change username</button>
                             </form>
@@ -175,12 +221,13 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                             <form method="post" enctype="multipart/form-data">
                                 <label for="password_changed" class="label-required">
                                     The new password:
-                                    <input type="password" maxlength="20" name="password_changed">
+                                    <input type="password" maxlength="20" name="password_changed" id="password_changed">
                                 </label>
                                 <br>
                                 <label for="password_changed_check" class="label-required">
                                     The new password again:
-                                    <input type="password" maxlength="20" name="password_changed_check">
+                                    <input type="password" maxlength="20" name="password_changed_check"
+                                           id="password_changed_check">
                                 </label>
                                 <br>
                                 <button name="change_password">Change password</button>
@@ -192,7 +239,7 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                             <form method="post" enctype="multipart/form-data">
                                 <label for="email_changed" class="label-required">
                                     The new email:
-                                    <input type="email" name="email_changed">
+                                    <input type="email" name="email_changed" id="email_changed">
                                 </label>
                                 <button name="change_email">Change email</button>
                             </form>
@@ -203,15 +250,12 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                             <form method="post" enctype="multipart/form-data">
                                 <label for="find_user" class="label-required">
                                     The username:
-                                    <input type="search" maxlength="30" name="find_user">
+                                    <input type="search" maxlength="30" name="find_user" id="find_user">
                                 </label>
                                 <button name="user_find">Find user</button>
                             </form>
 
                             <?php
-                            break;
-                        case isset($_POST["add_friend_b"]):
-
                             break;
                         case isset($_POST["remove_friend_b"]):
 
@@ -222,33 +266,16 @@ const DEFAULT_PROFILE_PIC = "sources/profiles/cot.png"
                         case isset($_POST["send_messages_b"]):
 
                             break;
-                        case isset($_POST["shopping_cart_b"]):
-                            echo "<div>";
-                            $every_item = [];
-                            $sum = 0;
-                            foreach ($users["users"] as $user){
-                                if ($_SESSION["username"] === $user["username"]){
-                                    foreach ($user["cart"] as $item){
-                                        $every_item[] = explode(";",$item);
-                                    }
-                                }
-                            }
-                            foreach ($every_item as $index => $item) {
-                                echo "<div><form method='post'>".$item[0]."<button name='remove'>Remove</button></form></div>";
-                                $sum+=$item[1];
-                            }
-                            echo "Your total is: $".$sum;
-                            echo "</div>";
-                            echo "";?>
-                        """"""""""""poup helye"""""""""""""""
-
-<?php
+                        case isset($_POST["yes"]):
+                            changer("data/fan_data.json", "account_delete", "", $_SESSION["username"]);
+                            session_unset();
+                            session_destroy();
                             break;
                     }
 
                     ?>
                 </div>
             </div>
-        </form>
+
     </section>
 </main>

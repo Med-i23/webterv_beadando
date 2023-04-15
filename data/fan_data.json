@@ -17,32 +17,18 @@
         {
             "username": "Baka",
             "email": "gojamat266@dogemn.com",
-            "password": "$2y$10$aQveWPZyvW1A7zR1hI6S7.cKJyyuS39OS8GsDyLxNpJCzmdlS7xZO",
+            "password": "$2y$10$.10GCVEhcWjwy2zSkdf7vuoh.HvRnBRFCNHeUYfT7H4ilVNjfbvtS",
             "privilege": "admin",
             "status": "allowed",
             "agree_terms_of_use": "on",
             "subscribe": "on",
             "remember": "on",
             "notifications": [],
-            "friends": [],
+            "friends": [
+                "Kekszharcos"
+            ],
             "messages": [],
-            "cart": [
-                "men_t-shirt_black;20",
-                "woman_t-shirt_white;20",
-                "hoodie_black;35",
-                "men_t-shirt_black;20",
-                "men_t-shirt_white;20",
-                "men_t-shirt_white;20",
-                "men_t-shirt_white;20",
-                "men_t-shirt_black;20",
-                "woman_t-shirt_black;20",
-                "woman_t-shirt_black;20",
-                "woman_t-shirt_black;20",
-                "men_t-shirt_white;20",
-                "woman_t-shirt_white;20",
-                "hoodie_black;35",
-                "hoodie_white;35"
-            ]
+            "cart": []
         },
         {
             "username": "kollupo",
