@@ -15,10 +15,7 @@
                 "Medi23"
             ],
             "messages": [
-                "From: Baka | The message is: Sex?",
-                "From: Baka | The message is: Sex?",
-                "From: Baka | The message is: Divorce?",
-                "From: Medi23 | The message is: dx"
+                "<div class='lil_box'>From: Medi23<br> The message is: dx</div>"
             ],
             "cart": []
         },
