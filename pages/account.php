@@ -46,8 +46,6 @@ header("Location: index.php?page=cart");
 
                     <button name="friends_b">Friends</button>
 
-                    <button name="add_friend_b">Add friend</button>
-
                     <button name="received_messages_b">Messages</button>
 
                     <button name="send_messages_b">Send message</button>
@@ -182,15 +180,22 @@ header("Location: index.php?page=cart");
 
                     } else if (isset($_POST["user_find"])) {
                         $exist = false;
+                        $savedUser = [];
                         foreach ($users["users"] as $user) {
                             if ($user["username"] === $_POST["find_user"]) {
+                                $savedUser = $user;
                                 echo "Name : " . $user["username"] . "<br>";
                                 echo $user["status"] === "banned" ? "<div class='error'> Status: " . $user["status"] . "</div>" : "<div class='success'> Status: " . $user["status"] . "</div>";
+                                echo "<form method='post'><button name='friend_add'>Add friend</button></form>";
                                 $exist = true;
                             }
                         }
                         if (!$exist) {
                             echo "<div class='error'>This user does not exist!</div>";
+                        }
+                        if (isset($_POST["friend_add"])){
+                            changer("data/fan_data.json","add_friend",$savedUser["username"],$_SESSION["username"]);
+                            echo "<div class='success'>You added ".$savedUser["username"]." to your friends, be aware if this friend changes username you have to add it again!</div>";
                         }
                     }
 
@@ -248,9 +253,6 @@ header("Location: index.php?page=cart");
                             </form>
 
                             <?php
-                            break;
-                        case isset($_POST["add_friend_b"]):
-
                             break;
                         case isset($_POST["remove_friend_b"]):
 

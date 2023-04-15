@@ -136,6 +136,12 @@ function changer($filename, $type, $given, $who): void
                     if ($user["username"] === $_SESSION["username"]) {
                         array_splice($users["users"], $index,1);
                         }
+                    break;
+                case "add_friend" :
+
+                    $users["users"][$index]["friends"][] = $given;
+
+                    break;
             }
             break;
         }
