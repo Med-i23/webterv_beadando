@@ -48,8 +48,6 @@ if (isset($_POST["shopping_cart_b"])) {
 
                     <button name="received_messages_b">Messages</button>
 
-                    <button name="send_messages_b">Send message</button>
-
                     <button name="shopping_cart_b">Shopping cart</button>
 
                 </form>
@@ -261,18 +259,19 @@ if (isset($_POST["shopping_cart_b"])) {
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
                                     foreach ($user["friends"] as $friend){
-                                        echo "<div>".$friend."</div>";
-                                        echo "<button name='remove_friend'>Remove Friend</button>";
+                                        echo "<form method='post'><input name='the_removable_friend' style='pointer-events: none' value='$friend'>";
+                                        echo "<button name='remove_friend'>Remove Friend</button>
+                                              <button name='send_message'>Send message</button></form>";
                                     }
-
                                 }
                             }
+
 
                             break;
                         case isset($_POST["received_messages_b"]):
 
                             break;
-                        case isset($_POST["send_messages_b"]):
+                        case isset($_POST["send_messages"]):
 
                             break;
                         case isset($_POST["yes"]):
@@ -280,6 +279,9 @@ if (isset($_POST["shopping_cart_b"])) {
                             session_unset();
                             session_destroy();
                             break;
+                        case isset($_POST["remove_friend"]):
+                            changer("data/fan_data.json","remove_friend", $_POST["the_removable_friend"],$_SESSION["username"]);
+                        break;
                     }
 
                     ?>

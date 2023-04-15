@@ -142,6 +142,14 @@ function changer($filename, $type, $given, $who): void
                         $users["users"][$index]["friends"][] = $given;
                     }
                     break;
+                case "remove_friend" :
+                    foreach ($users["users"][$index]["friends"] as $index_2 => $user_2) {
+                        if ($users["users"][$index]["friends"][$index_2] === $given) {
+                            array_splice($users["users"][$index]["friends"], $index_2, 1);
+                            break;
+                        }
+                    }
+                    break;
             }
             break;
         }
