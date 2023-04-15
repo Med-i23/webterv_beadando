@@ -104,7 +104,7 @@ if (isset($_POST["shopping_cart_b"])) {
                     if ($admin && isset($_POST["manage_users_b"])) {
                         foreach ($users["users"] as $user) {
                             if ($user !== null)
-                                echo "<div><form method='post'><input type='text' name='the_managable' value='" . $user["username"] . "'  style='pointer-events: none;' >
+                                echo "<div><form method='post'><input type='text' name='the_manageable' value='" . $user["username"] . "'  style='pointer-events: none;' >
                                 <button class='error' name='bann'>Bann</button>
                                 <button class='success' name='pardon'>Pardon</button>
                                 </form></div>
@@ -113,16 +113,16 @@ if (isset($_POST["shopping_cart_b"])) {
                     }
                     if (isset($_POST["bann"])) {
                         foreach ($users["users"] as $user) {
-                            if ($_POST["the_managable"] === $user["username"]) {
-                                changer("data/fan_data.json", "bann", $_POST["the_managable"], $_POST["the_managable"]);
+                            if ($_POST["the_manageable"] === $user["username"]) {
+                                changer("data/fan_data.json", "bann", $_POST["the_manageable"], $_POST["the_manageable"]);
                             }
 
                         }
                     }
                     if (isset($_POST["pardon"])) {
                         foreach ($users["users"] as $user) {
-                            if ($_POST["the_managable"] === $user["username"]) {
-                                changer("data/fan_data.json", "pardon", $_POST["the_managable"], $_POST["the_managable"]);
+                            if ($_POST["the_manageable"] === $user["username"]) {
+                                changer("data/fan_data.json", "pardon", $_POST["the_manageable"], $_POST["the_manageable"]);
                             }
 
                         }
@@ -257,7 +257,16 @@ if (isset($_POST["shopping_cart_b"])) {
 
                             <?php
                             break;
-                        case isset($_POST["remove_friend_b"]):
+                        case isset($_POST["friends_b"]):
+                            foreach ($users["users"] as $user) {
+                                if ($user["username"] === $_SESSION["username"]) {
+                                    foreach ($user["friends"] as $friend){
+                                        echo "<div>".$friend."</div>";
+                                        echo "<button name='remove_friend'>Remove Friend</button>";
+                                    }
+
+                                }
+                            }
 
                             break;
                         case isset($_POST["received_messages_b"]):
