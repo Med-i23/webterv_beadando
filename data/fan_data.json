@@ -3,7 +3,7 @@
         {
             "username": "Kekszharcos",
             "email": "b.enedek670@gmail.com",
-            "password": "$2y$10$.10GCVEhcWjwy2zSkdf7vuoh.HvRnBRFCNHeUYfT7H4ilVNjfbvtS",
+            "password": "$2y$10$aQveWPZyvW1A7zR1hI6S7.cKJyyuS39OS8GsDyLxNpJCzmdlS7xZO",
             "privilege": "admin",
             "status": "allowed",
             "agree_terms_of_use": "on",
@@ -11,12 +11,14 @@
             "remember": "on",
             "notifications": [],
             "friends": [
-                "Baka"
+                "Baka",
+                "Medi23"
             ],
             "messages": [
                 "From: Baka | The message is: Sex?",
                 "From: Baka | The message is: Sex?",
-                "From: Baka | The message is: Divorce?"
+                "From: Baka | The message is: Divorce?",
+                "From: Medi23 | The message is: dx"
             ],
             "cart": []
         },
@@ -30,11 +32,25 @@
             "subscribe": "on",
             "remember": "on",
             "notifications": [],
-            "friends": [
-                "Kekszharcos"
-            ],
+            "friends": [],
             "messages": [],
-            "cart": []
+            "cart": [
+                "men_t-shirt_black;20",
+                "woman_t-shirt_white;20",
+                "hoodie_black;35",
+                "men_t-shirt_black;20",
+                "men_t-shirt_white;20",
+                "men_t-shirt_white;20",
+                "men_t-shirt_white;20",
+                "men_t-shirt_black;20",
+                "woman_t-shirt_black;20",
+                "woman_t-shirt_black;20",
+                "woman_t-shirt_black;20",
+                "men_t-shirt_white;20",
+                "woman_t-shirt_white;20",
+                "hoodie_black;35",
+                "hoodie_white;35"
+            ]
         },
         {
             "username": "Medi23",
@@ -46,7 +62,9 @@
             "subscribe": "on",
             "remember": "on",
             "notifications": [],
-            "friends": [],
+            "friends": [
+                "Kekszharcos"
+            ],
             "messages": [],
             "cart": []
         }

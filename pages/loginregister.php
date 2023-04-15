@@ -117,6 +117,9 @@ if (isset($_POST["login"])) {
                     if (in_array("login_email_or_password_not_valid", $errors)) echo "Email or password not valid!"
                     ?>
                 </div>
+                <div>
+                    Show Password:<input type="checkbox" name="checkbox" id="checkbox" onclick="logShow()">
+                </div>
                 <label for="remember_me">Remember me (You must accept cookies before use):
                     <input type="checkbox" name="remember_me" id="remember_me"
                         <?php
@@ -186,6 +189,11 @@ if (isset($_POST["login"])) {
                     if (in_array("passwords_not_match", $errors)) echo "Passwords does not match!";
                     ?>
                 </div>
+
+                <div>
+                    Show Password:<input type="checkbox" name="checkbox" id="checkbox" onclick="signShow()">
+                </div>
+
                 <label for="agree_terms_of_use" class="label-required">I accept the <a class="terms"
                                                                                        href="index.php?page=termsofservice">Terms
                         of Use</a>:<input type="checkbox" name="agree_terms_of_use" id="agree_terms_of_use"
@@ -207,4 +215,30 @@ if (isset($_POST["login"])) {
             </div>
         </form>
     </section>
+
+        <script>
+            function signShow() {
+                let signin = document.getElementById("sign-up-password");
+                let signinagain = document.getElementById("sign-up-password-again");
+
+                if (signin.type === "password") {
+                    signin.type = "text";
+                    signinagain.type = "text";
+
+                } else {
+                    signin.type = "password";
+                    signinagain.type = "password";
+                }
+            }
+
+            function logShow() {
+                let login = document.getElementById("login-password");
+
+                if (login.type === "password") {
+                    login.type = "text";
+                } else {
+                    login.type = "password";
+                }
+            }
+        </script>
 </main>
