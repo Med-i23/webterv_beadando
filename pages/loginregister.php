@@ -118,7 +118,7 @@ if (isset($_POST["login"])) {
                     ?>
                 </div>
                 <div>
-                    Show Password:<input type="checkbox" name="checkbox" id="checkbox" onclick="logShow()">
+                   <label for="checkbox_show_login">Show Password:</label><input type="checkbox" name="checkbox_show_login" id="checkbox_show_login" onclick="logShow()">
                 </div>
                 <label for="remember_me">Remember me (You must accept cookies before use):
                     <input type="checkbox" name="remember_me" id="remember_me"
@@ -191,7 +191,7 @@ if (isset($_POST["login"])) {
                 </div>
 
                 <div>
-                    Show Password:<input type="checkbox" name="checkbox" id="checkbox" onclick="signShow()">
+                    <label for="checkbox_sign_show">Show Password:</label><input type="checkbox" name="checkbox_sign_show" id="checkbox_sign_show" onclick="signShow()">
                 </div>
 
                 <label for="agree_terms_of_use" class="label-required">I accept the <a class="terms"

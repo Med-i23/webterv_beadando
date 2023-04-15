@@ -190,7 +190,7 @@ if (isset($_POST["shopping_cart_b"])) {
                         }
 
                         if (!$exist) {
-                            echo "<div class='error'>This user does not exist!</div>";
+                            echo "<div class='error'>The user you are looking for does not exist!</div>";
                         }
 
                     }

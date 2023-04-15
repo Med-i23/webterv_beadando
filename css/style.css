@@ -397,7 +397,6 @@ a.terms{
     display: inline-flex;
     flex: 1 0;
     flex-direction: row;
-    border: 1pt solid;
     flex-wrap: wrap;
     height: 50%;
     gap: 10pt;
