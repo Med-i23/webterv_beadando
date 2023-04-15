@@ -287,11 +287,11 @@ if (isset($_POST["shopping_cart_b"])) {
                                     if (empty($user["messages"])){
                                         echo "<div class='error'>You do not have messages</div>";
                                     }else {
-                                        echo "<ul>";
+
                                         foreach ($user["messages"] as $message) {
-                                            echo "<li>".$message."</li>";
+                                            echo $message;
                                         }
-                                        echo "</ul>";
+
                                     }
 
                                 }
@@ -302,7 +302,7 @@ if (isset($_POST["shopping_cart_b"])) {
                         break;
                         case isset($_POST["send"]):
                             if (trim($_POST["wanna_send"]) !== "") {
-                                changer("data/fan_data.json", "send_message", "From: " . $_SESSION["username"] . " | The message is: " . $_POST["wanna_send"], $_SESSION["friend"]);
+                                changer("data/fan_data.json", "send_message", "<div  class='lil_box'>From: " . $_SESSION["username"] . "<br>The message is: " . $_POST["wanna_send"] . "<br> (At ".date("h:i:sa").")</div>", $_SESSION["friend"]);
                             }
                             echo trim($_POST["wanna_send"] !== "") ? "<div class='success'>You sent the message!</div>" : "<div class='error'>You can not send empty messages</div>";
                             break;

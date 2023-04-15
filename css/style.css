@@ -400,11 +400,19 @@ a.terms{
     border: 1pt solid;
     flex-wrap: wrap;
     height: 50%;
+    gap: 10pt;
 
+}
+.card_2 > ul > li{
+    margin-right: 20pt;
+    margin-bottom: 5pt;
 }
 .card_3 > ul >li {
     margin-bottom: 5px;
 
+}
+.lil_box{
+    border: 2pt solid;
 }
 .card_3 > .success {
     margin: 10pt;
