@@ -1,6 +1,7 @@
 <?php
 include_once "common/functions.php";
 why_are_you_here();
+$canIdoIt = false;
 
 
 ?>
@@ -47,7 +48,7 @@ why_are_you_here();
 
             </ul>
             <?php echo "<div class='success'>Your total is: $" . $sum ?>
-            <button name="process" onclick="openPopup()">Cash out</button>
+            <button name="cash_out" onclick="openPopup()">Cash out</button>
             <?php echo "</div>"; ?>
         </div>
 
@@ -58,8 +59,8 @@ why_are_you_here();
                 <form method="post" id="form_popup" enctype="multipart/form-data" autocomplete="on">
                     <fieldset>
                         <label>Payment</label>
-                        <label for="card-number">Card Number:</label>
-                        <input type="text" id="card-number" name="card-number" minlength="16" maxlength="16"
+                        <label for="card_number">Card Number:</label>
+                        <input type="text" id="card_number" name="card_number" minlength="10" maxlength="14"
                                placeholder="1111222233334444">
                         <label>Expiry Date:</label>
                         <div>
@@ -86,8 +87,20 @@ why_are_you_here();
                         <label for="email">Email:</label>
                         <input type="text" id="email" name="email" placeholder="youremail@mail.com">
                     </fieldset>
+                    <button name="proceed_purchase_test">
+                        Card Test
+                    </button>
                 </form>
-                <button onclick="closePopup(); openThanks()" name="proceed_purchase">Proceed</button>
+                <?php
+                if (isset($_POST["proceed_purchase_test"])){
+                    $canIdoIt = validate_cc($_POST["card_number"]);
+                }
+                ?>
+
+                <button onclick="<?php echo $canIdoIt ? "closePopup(); openThanks();" : "" ?>"
+                        name="proceed_purchase">
+                    Proceed
+                </button>
 
 
             </div>

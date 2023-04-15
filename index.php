@@ -62,7 +62,6 @@ $page = $_GET["page"] ?? "main";
 </header>
 <?php
 if (!isset($_COOKIE["use_cookies"])){
-    setcookie()
 ?>
 
     <div id="cookies">
