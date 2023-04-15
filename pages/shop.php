@@ -30,7 +30,7 @@ if (isset($_SESSION["username"])){
             <source src="../sources/audio/Rockin'%20Robin.mp3" type="audio/mp3">
             This text appears when your browser does not support embedding audio files.
         </audio>
-        <script>
+        <script type="text/javascript">
             let audio = document.getElementById("music");
             audio.volume = 0.06;
         </script>

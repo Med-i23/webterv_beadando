@@ -63,7 +63,7 @@ if (isset($_POST["shopping_cart_b"])) {
                     </form>
 
                 </div>
-                <script>
+                <script type="text/javascript">
                     let popup = document.getElementById("popup");
                     let overlay = document.getElementById("overlay");
                     let thanks = document.getElementById("thanks");
@@ -198,7 +198,7 @@ if (isset($_POST["shopping_cart_b"])) {
                     if (isset($_POST["friend_add"])) {
                         $savedUser = $_SESSION["savedUser"];
                         changer("data/fan_data.json", "add_friend", $savedUser["username"], $_SESSION["username"]);
-                        echo "<div class='success'>You added " . $savedUser["username"] . " to your friends, be aware if this friend changes username you have to add it again!</div>";
+                        echo "<div class='success'>You added " . $savedUser["username"] . " to your friends, be aware if this friend changes username you have to add eachother again!</div>";
                     }
 
                     switch (true) {
@@ -259,13 +259,13 @@ if (isset($_POST["shopping_cart_b"])) {
                             foreach ($users["users"] as $user) {
                                 if ($user["username"] === $_SESSION["username"]) {
                                     foreach ($user["friends"] as $friend){
+                                        $_SESSION["friend"] = $friend;
                                         echo "<form method='post'><input name='the_removable_friend' style='pointer-events: none' value='$friend'>";
                                         echo "<button name='remove_friend'>Remove Friend</button>
-                                              <button name='send_message'>Send message</button></form>";
+                                              <button name='send_message_b'>Send message</button></form>";
                                     }
                                 }
                             }
-
 
                             break;
                         case isset($_POST["received_messages_b"]):
@@ -281,6 +281,9 @@ if (isset($_POST["shopping_cart_b"])) {
                             break;
                         case isset($_POST["remove_friend"]):
                             changer("data/fan_data.json","remove_friend", $_POST["the_removable_friend"],$_SESSION["username"]);
+                        break;
+                        case isset($_POST["send_message_b"]):
+                            echo "<from method='post'><div><labal>The message for ".$_SESSION["friend"] ." :</labal></div><div><textarea type='text' name='wanna_send' id='wanna_send'></textarea></div><button name='send'>Send</button></from>";
                         break;
                     }
 

@@ -83,7 +83,7 @@
                 <source src="../sources/video/CatDivision.mp4" type="video/mp4">
                 This text appears when your browser does not support embedding video files.
             </video>
-            <script>
+            <script type="text/javascript">
                 let kek = document.getElementById("video");
                 kek.volume = 0.06;
             </script>
