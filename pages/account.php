@@ -135,6 +135,7 @@ if (isset($_POST["shopping_cart_b"])) {
                             if ($user["username"] === $_SESSION["username"]) {
                                 changer("data/fan_data.json", "username", $_POST["username_changed"], $_SESSION["username"]);
                                 $_SESSION["username"] = $_POST["username_changed"];
+
                                 echo "<div class='success'>
                                     Username changed successfully (The displayed name will refresh if click on another button)!
                                     </div>";
@@ -159,7 +160,6 @@ if (isset($_POST["shopping_cart_b"])) {
                                 break;
                             }
                         }
-                        setcookie("login_password", $_POST["password_changed"], time() + 60 * 60 * 24 * 15);
                     } else {
                         echo "<div class='error'>Your password does not meet the requirements!</div>";
                     }
@@ -172,7 +172,6 @@ if (isset($_POST["shopping_cart_b"])) {
                                 break;
                             }
                         }
-                        setcookie("login_email", $_POST["email_changed"], time() + 60 * 60 * 24 * 15);
                     } else {
                         echo "<div class='error'>Your email might have been occupied, or you did not fill this field!</div>";
                     }
