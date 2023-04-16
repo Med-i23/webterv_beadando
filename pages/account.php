@@ -157,6 +157,7 @@ if (isset($_POST["shopping_cart_b"])) {
                             if ($user["username"] === $_SESSION["username"]) {
                                 changer("data/fan_data.json", "password", $_POST["password_changed"], $_SESSION["username"]);
                                 echo "<div class='success'>Your password has been successfully changed!</div>";
+                                setcookie("login_password","", time()-3600);
                                 break;
                             }
                         }
@@ -169,6 +170,7 @@ if (isset($_POST["shopping_cart_b"])) {
                             if ($user["username"] === $_SESSION["username"]) {
                                 changer("data/fan_data.json", "email", $_POST["email_changed"], $_SESSION["username"]);
                                 echo "<div class='success'>Your email has been successfully changed!</div>";
+                                setcookie("login_email","", time()-3600);
                                 break;
                             }
                         }
