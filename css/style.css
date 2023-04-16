@@ -475,7 +475,7 @@ li > form > button {
     align-items: center;
     border: black 1pt solid;
     background-color: lightgray;
-    transition: transform 1s ease-in-out;
+    transition: transform 0.3s ease-in-out;
 
 }
 .flex-container > .card:hover,.shop-item > img:hover{
