@@ -8,7 +8,7 @@ $canIdoIt = false;
 <div class="h1-imitator">Shopping Cart</div>
 <main>
     <section>
-        <div class="card"><a href="index.php?page=account">< Back</a></div>
+        <div class="card"><a href="index.php?page=account">&lt; Back</a></div>
         <div class="card_3">
             <ul>
                 <?php
