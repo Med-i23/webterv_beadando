@@ -290,6 +290,7 @@ if (isset($_POST["shopping_cart_b"])) {
                         setcookie("use_cookies", "", time() - 3600);
                         setcookie("login_password", "", time() - 3600);
                         setcookie("login_email", "", time() - 3600);
+                        header_remove("Location: index.php?page=cart");
                         header("Refresh: 0");
                         break;
                     case isset($_POST["remove_friend"]):
