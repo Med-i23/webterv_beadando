@@ -156,8 +156,7 @@ if (isset($_POST["shopping_cart_b"])) {
                         foreach ($users["users"] as $user) {
                             if ($user["username"] === $_SESSION["username"]) {
                                 changer("data/fan_data.json", "password", $_POST["password_changed"], $_SESSION["username"]);
-                                echo "<div class='success'>Your password has been successfully changed!</div>";
-                                setcookie("login_password","", time()-3600);
+                                echo "<div class='success'>Your password has been successfully changed!You have to use your new password when logging in!</div>";
                                 break;
                             }
                         }
@@ -169,8 +168,7 @@ if (isset($_POST["shopping_cart_b"])) {
                         foreach ($users["users"] as $user) {
                             if ($user["username"] === $_SESSION["username"]) {
                                 changer("data/fan_data.json", "email", $_POST["email_changed"], $_SESSION["username"]);
-                                echo "<div class='success'>Your email has been successfully changed!</div>";
-                                setcookie("login_email","", time()-3600);
+                                echo "<div class='success'>Your email has been successfully changed! You have to use your new email when logging in!</div>";
                                 break;
                             }
                         }
