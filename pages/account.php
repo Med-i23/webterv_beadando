@@ -286,9 +286,6 @@ if (isset($_POST["shopping_cart_b"])) {
                         changer("data/fan_data.json", "account_delete", "", $_SESSION["username"]);
                         session_unset();
                         session_destroy();
-                        setcookie("use_cookies", "", time() - 3600);
-                        setcookie("login_password", "", time() - 3600);
-                        setcookie("login_email", "", time() - 3600);
                         header("Refresh: 0");
                         break;
                     case isset($_POST["remove_friend"]):
