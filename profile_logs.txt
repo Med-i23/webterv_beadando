@@ -1,0 +1,12 @@
+"username": "Kekszharcos",
+		"email": "b.enedek670@gmail.com",
+		"password": "Asdasd123$",
+
+
+"username": "Kokokiraly",
+		"email": "kexakel545@dogemn.com",
+		"password": "Asdasd123$",
+
+"username": "Medi",
+		"email": "csetemedard@gmail.com",
+		"password": "Asdasd123$",
