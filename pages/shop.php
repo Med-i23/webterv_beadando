@@ -35,45 +35,6 @@ if (isset($_SESSION["username"])){
             audio.volume = 0.06;
         </script>
 
-        <div class="overlay" id="overlay">
-        <div class="popup" id="popup">
-            <div class="X" onclick="closePopup()">X</div>
-            <h2>Please enter the following information</h2>
-            <form method="post" id="form_login" enctype="multipart/form-data" autocomplete="on">
-                <fieldset>
-                <label for="payment">Payment</label>
-                <label for="card-number">Card Number:</label>
-                <input type="text" id="card-number" name="card-number" minlength="16" maxlength="16" placeholder="1111222233334444">
-                <label for="expiry-date">Expiry Date:</label>
-                    <div>
-                <input type="text" id="expiry-date" name="expiry-date" maxlength="2" size="2" placeholder="00"> /
-                    <input type="text" id="expiry-date" name="expiry-date" maxlength="2" size="2" placeholder="00">
-                    </div>
-                <label for="cvv">CVV:</label>
-                <input type="text" id="cvv" name="cvv" maxlength="3" placeholder="123">
-                <label for="name">Cardholder Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" minlength="1">
-                <label for="address">Address</label>
-                    <label for="zip">Zip code:</label>
-                    <input type="text" id="zip" name="zip" placeholder="1234">
-                    <label for="city">City:</label>
-                    <input type="text" id="city" name="city" placeholder="City name">
-                    <label for="street">Street and house number:</label>
-                    <input type="text" id="street" name="street" placeholder="Example Street. 15.">
-                    <label for="email">Email:</label>
-                    <input type="text" id="email" name="email" placeholder="youremail@mail.com">
-                </fieldset>
-            </form>
-            <button onclick="closePopup(); openThanks()" name="proceed_purchase">Proceed</button>
-
-
-        </div>
-            <div class="thanks" id="thanks">
-                <img src="sources/websiteElement/checkmark.png" alt="checkmark" width="60">
-                <h2>Thank you for your purchase!</h2>
-                <div>We will send will you an email with the necessary information.</div>
-                <button onclick="closeThanks()">Close</button>
-            </div>
         </div>
         <form method="post" enctype="multipart/form-data">
         <div class="shop-item">

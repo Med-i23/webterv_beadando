@@ -59,9 +59,9 @@
             ]
         },
         {
-            "username": "Medi23",
+            "username": "Medi",
             "email": "csetemedard@gmail.com",
-            "password": "$2y$10$GxkD2kPo8BwqBLPpCUhLDOY56NOa4Fc7F1UUIWc1ifCzowZHaLGYu",
+            "password": "$2y$10$EOdKCYmHV11JoH9LMg0vMOmJVNqKKZs80CYmQXRFYldyfWGvYjiZS",
             "privilege": "admin",
             "status": "available",
             "agree_terms_of_use": "on",

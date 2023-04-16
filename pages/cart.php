@@ -93,9 +93,6 @@ $canIdoIt = false;
                 </button>
 
 
-
-
-
             </div>
             <div class="thanks" id="thanks">
                 <img src="sources/websiteElement/checkmark.png" alt="checkmark" width="60">
