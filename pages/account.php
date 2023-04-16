@@ -156,7 +156,7 @@ if (isset($_POST["shopping_cart_b"])) {
                         foreach ($users["users"] as $user) {
                             if ($user["username"] === $_SESSION["username"]) {
                                 changer("data/fan_data.json", "password", $_POST["password_changed"], $_SESSION["username"]);
-                                echo "<div class='success'>Your password has been successfully changed!You have to use your new password when logging in!</div>";
+                                echo "<div class='success'>Your password has been successfully changed! You have to use your new password when logging in!</div>";
                                 break;
                             }
                         }
